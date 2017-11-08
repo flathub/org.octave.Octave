@@ -324,6 +324,35 @@
       ]
     },
     {
+      "name": "mpmath",
+      "buildsystem": "simple",
+      "sources": [
+        {
+            "type": "archive",
+            "url": "http://mpmath.org/files/mpmath-1.0.0.tar.gz",
+            "sha256": "d32ba7afffbae688229a15f54fbc37c11f4989e4fac628c99b3c5b6889aee03d"
+        }
+      ],
+      "build-commands": [
+        "chmod +x ./setup.py",
+        "./setup.py install --prefix=/app"
+      ]
+    },
+    {
+      "name": "sympy",
+      "buildsystem": "simple",
+      "sources": [
+        {
+            "type": "archive",
+            "url": "https://github.com/sympy/sympy/archive/sympy-1.1.1.tar.gz",
+            "sha256": "4420a1e31939244d7ea73e164fdbb0d4a6a2e764d56e5bf632f57a988f13767f"
+        }
+      ],
+      "build-commands": [
+        "./setup.py install --prefix=/app"
+      ]
+    },
+    {
       "name": "octave",
       "config-opts": [
         "--disable-silent-rules",
