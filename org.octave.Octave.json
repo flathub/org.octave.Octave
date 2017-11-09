@@ -17,7 +17,9 @@
     "--socket=pulseaudio",
     "--share=network",
     "--device=dri",
-    "--filesystem=home",
+    "--filesystem=host",
+    "--env=QT_QPA_PLATFORM=flatpak",
+    "--env=QT_QPA_FLATPAK_PLATFORM=xcb",
     "--env=PATH=/usr/bin:/app/bin:/usr/lib/sdk/gfortran-62/bin:/usr/lib/sdk/openjdk9/bin"
   ],
   "build-options": {
