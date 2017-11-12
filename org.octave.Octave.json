@@ -7,6 +7,7 @@
   "rename-icon": "octave",
   "rename-desktop-file": "www.octave.org-octave.desktop",
   "rename-appdata-file": "www.octave.org-octave.appdata.xml",
+  "desktop-file-name-suffix": "-test",
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.gfortran-62",
     "org.freedesktop.Sdk.Extension.openjdk9"
