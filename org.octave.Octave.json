@@ -8,6 +8,9 @@
   "rename-desktop-file": "www.octave.org-octave.desktop",
   "rename-appdata-file": "www.octave.org-octave.appdata.xml",
   "desktop-file-name-suffix": "-test",
+  "platform-extensions": [
+		"org.freedesktop.Sdk.Extension.gfortran-62"
+  ],
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.gfortran-62",
     "org.freedesktop.Sdk.Extension.openjdk9"
@@ -361,8 +364,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "octave-4.3.0+.tar.gz",
-          "sha256": "bd8cbcbac61cf552479e2163394ee4b7c6aeef7bd7a660ed1ddc1b48bb6f4899"
+          "path": "octave-4.3.0+.tar.xz",
+          "sha256": "ede80f083cc63a74dd2c0da130641f2ad206ac27d5c2489f6cd9aa7f69aec0b7"
         }
       ]
     }
