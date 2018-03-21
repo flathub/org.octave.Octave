@@ -270,19 +270,6 @@
       ]
     },
     {
-      "name": "mesa",
-      "config-opts": [
-        "--enable-osmesa"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://mesa.freedesktop.org/archive/mesa-17.3.6.tar.xz",
-          "sha256": "e5915680d44ac9d05defdec529db7459ac9edd441c9845266eff2e2d3e57fbf8"
-        }
-      ]
-    },
-    {
       "name": "qscintilla",
       "buildsystem": "simple",
       "sources": [
