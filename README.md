@@ -3,6 +3,7 @@
 ```
 hg clone http://www.octave.org/hg/octave
 cd octave
+hg update stable
 ./bootstrap
 ./configure
 make
