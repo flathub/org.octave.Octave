@@ -300,8 +300,9 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/LLNL/sundials/archive/v3.1.0.tar.gz",
-          "sha256": "aa980dc17114e459c4ac6858ee508bbd6ced50d6d07036877bc567b9ea68a018"
+          "url": "https://github.com/LLNL/sundials/archive/v2.7.0.tar.gz",
+          "sha256": "2cbedd5b4063078c7b060b346a3150e31fc2e9fea336aeb930a7c6b556b123c8"
+
         }
       ]
     },
