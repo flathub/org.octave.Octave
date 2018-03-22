@@ -5,9 +5,6 @@
   "sdk": "org.kde.Sdk",
   "command": "octave",
   "rename-icon": "octave",
-  "platform-extensions": [
-    "org.freedesktop.Sdk.Extension.gfortran-62"
-  ],
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.gfortran-62",
     "org.freedesktop.Sdk.Extension.openjdk9"
@@ -76,7 +73,7 @@
     "shared-modules/glu/glu-9.0.0.json",
     {
       "name": "fltk",
-      "buildsystem": "cmake",
+      "buildsystem": "cmake-ninja",
       "config-opts": [
         "-DOPTION_BUILD_SHARED_LIBS=ON",
         "-DFLTK_LIBDIR:PATH=lib"
@@ -121,7 +118,7 @@
     },
     {
       "name": "gl2ps",
-      "buildsystem": "cmake",
+      "buildsystem": "cmake-ninja",
       "sources": [
         {
           "type": "archive",
@@ -132,7 +129,7 @@
     },
     {
       "name": "qhull",
-      "buildsystem": "cmake",
+      "buildsystem": "cmake-ninja",
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=Release"
       ],
@@ -310,7 +307,7 @@
     },
     {
       "name": "sundials",
-      "buildsystem": "cmake",
+      "buildsystem": "cmake-ninja",
       "config-opts": [
         "-DKLU_ENABLE=ON",
         "-DKLU_INCLUDE_DIR:PATH=/app/include",
