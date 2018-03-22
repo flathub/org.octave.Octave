@@ -27,12 +27,14 @@
     "/include/QSci",
     "/man",
     "/share/applications/fluid.desktop",
+    "/share/doc",
     "/share/hdf5_examples",
     "/lib/lib*.a",
     "/lib/lib*.la",
     "/lib/libqhull_*",
     "/lib/octave/*/lib*.la",
-    "fluid.png"
+    "fluid",
+    "fluid.*"
   ],
   "build-options": {
     "cflags": "-O2",
