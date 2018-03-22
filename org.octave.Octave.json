@@ -22,6 +22,18 @@
     "--filesystem=host",
     "--env=PATH=/usr/bin:/app/bin:/usr/lib/sdk/gfortran-62/bin:/usr/lib/sdk/openjdk9/bin"
   ],
+  "cleanup": [
+    "/examples",
+    "/include/QSci",
+    "/man",
+    "/share/applications/fluid.desktop",
+    "/share/hdf5_examples",
+    "/lib/lib*.a",
+    "/lib/lib*.la",
+    "/lib/libqhull_*",
+    "/lib/octave/*/lib*.la",
+    "fluid.png"
+  ],
   "build-options": {
     "cflags": "-O2",
     "cxxflags": "-O2",
