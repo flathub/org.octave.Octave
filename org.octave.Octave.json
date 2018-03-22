@@ -5,9 +5,6 @@
   "sdk": "org.kde.Sdk",
   "command": "octave",
   "rename-icon": "octave",
-  "rename-desktop-file": "www.octave.org-octave.desktop",
-  "rename-appdata-file": "www.octave.org-octave.appdata.xml",
-  "desktop-file-name-suffix": "-test",
   "platform-extensions": [
     "org.freedesktop.Sdk.Extension.gfortran-62"
   ],
@@ -17,11 +14,25 @@
   ],
   "finish-args": [
     "--socket=x11",
+    "--share=ipc",
+    "--socket=wayland",
+    "--device=dri",
     "--socket=pulseaudio",
     "--share=network",
-    "--device=dri",
     "--filesystem=host",
     "--env=PATH=/usr/bin:/app/bin:/usr/lib/sdk/gfortran-62/bin:/usr/lib/sdk/openjdk9/bin"
+  ],
+  "cleanup": [
+    "/examples",
+    "/include/QSci",
+    "/man",
+    "/share/applications/fluid.desktop",
+    "/share/hdf5_examples",
+    "/lib/lib*.a",
+    "/lib/lib*.la",
+    "/lib/libqhull_*",
+    "/lib/octave/*/lib*.la",
+    "fluid.png"
   ],
   "build-options": {
     "cflags": "-O2",
@@ -82,8 +93,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://sourceforge.net/projects/gnuplot/files/gnuplot/5.0.6/gnuplot-5.0.6.tar.gz",
-          "sha256": "5bbe4713e555c2e103b7d4ffd45fca69551fff09cf5c3f9cb17428aaacc9b460"
+          "url": "https://sourceforge.net/projects/gnuplot/files/gnuplot/5.2.2/gnuplot-5.2.2.tar.gz",
+          "sha256": "a416d22f02bdf3873ef82c5eb7f8e94146795811ef808e12b035ada88ef7b1a1"
         }
       ]
     },
@@ -98,8 +109,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs921/ghostscript-9.21.tar.gz",
-          "sha256": "02bceadbc4dddeb6f2eec9c8b1623d945d355ca11b8b4df035332b217d58ce85"
+          "url": "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs922/ghostscript-9.22.tar.gz",
+          "sha256": "7f5f4487c0df9dce37481e4c8f192c0322e4c69f5a2ba900a7833c992331bcf4"
         }
       ]
     },
@@ -191,8 +202,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-4.5.5.tar.gz",
-          "sha256": "b9a98de0ddafe7659adffad8a58ca3911c1afa8b509355e7aa58b02feb35d9b6"
+          "url": "http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-5.2.0.tar.gz",
+          "sha256": "3c46c035ea8217649958a0f73360e825b0c9dcca4e32a9349d2c7678c0d48813"
         }
       ]
     },
@@ -201,8 +212,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://ftp.gnu.org/gnu/glpk/glpk-4.63.tar.gz",
-          "sha256": "914d27f1a51c2bf4a51f1bd4a507f875fcca99db7b219380b836a25b29b3e7f6"
+          "url": "https://ftp.gnu.org/gnu/glpk/glpk-4.65.tar.gz",
+          "sha256": "4281e29b628864dfe48d393a7bedd781e5b475387c20d8b0158f329994721a10"
         }
       ]
     },
@@ -224,8 +235,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.26/GraphicsMagick-1.3.26.tar.bz2",
-          "sha256": "054bd6e10c6d82b6adb36d1a9f860e9db90689d3b61e77a344d2f962b33167e5"
+          "url": "https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.28/GraphicsMagick-1.3.28.tar.xz",
+          "sha256": "942a68a9a8a5af6f682b896fd4f0ad617d8b49907e474acfe59549956bcc994a"
         }
       ]
     },
@@ -249,8 +260,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "http://www.fftw.org/fftw-3.3.6-pl2.tar.gz",
-          "sha256": "a5de35c5c824a78a058ca54278c706cdf3d4abba1c56b63531c2cb05f5d57da2"
+          "url": "http://www.fftw.org/fftw-3.3.7.tar.gz",
+          "sha256": "3b609b7feba5230e8f6dd8d245ddbefac324c5a6ae4186947670d9ac2cd25573"
         }
       ]
     },
@@ -265,21 +276,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "http://www.fftw.org/fftw-3.3.6-pl2.tar.gz",
-          "sha256": "a5de35c5c824a78a058ca54278c706cdf3d4abba1c56b63531c2cb05f5d57da2"
-        }
-      ]
-    },
-    {
-      "name": "mesa",
-      "config-opts": [
-        "--enable-osmesa"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://mesa.freedesktop.org/archive/mesa-17.2.0-rc6.tar.gz",
-          "sha256": "ce25345b7da886cdc730299065e2f27ac285eddc75c89595be16cb8ec8497fcc"
+          "url": "http://www.fftw.org/fftw-3.3.7.tar.gz",
+          "sha256": "3b609b7feba5230e8f6dd8d245ddbefac324c5a6ae4186947670d9ac2cd25573"
         }
       ]
     },
@@ -289,8 +287,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://sourceforge.net/projects/pyqt/files/QScintilla2/QScintilla-2.10/QScintilla_gpl-2.10.tar.gz",
-          "sha256": "16be30577bc178470936c458551f2512cc068aff6e7a7de6ed244e28c045f6ec"
+          "url": "https://sourceforge.net/projects/pyqt/files/QScintilla2/QScintilla-2.10.3/QScintilla_gpl-2.10.3.tar.gz",
+          "sha256": "d2657a68e7699d37209ff97db965de7c67884d99b33066d0ba457e6f39b581e7"
         }
       ],
       "build-commands": [
@@ -316,6 +314,7 @@
           "type": "archive",
           "url": "https://github.com/LLNL/sundials/archive/v2.7.0.tar.gz",
           "sha256": "2cbedd5b4063078c7b060b346a3150e31fc2e9fea336aeb930a7c6b556b123c8"
+
         }
       ]
     },
@@ -365,7 +364,7 @@
         {
           "type": "archive",
           "path": "octave-4.3.0+.tar.xz",
-          "sha256": "ede80f083cc63a74dd2c0da130641f2ad206ac27d5c2489f6cd9aa7f69aec0b7"
+          "sha256": "e085f8cec4e84cb1d6d8137dc414f384c12c7e3eb18ee96b0017bbf7ab430db6"
         }
       ]
     }

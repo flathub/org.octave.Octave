@@ -8,5 +8,5 @@ hg update stable
 ./configure
 make
 make dist
-cp octave-4.3.0+.tar.gz ..
+cp octave-4.3.0+.tar.xz ..
 ```
