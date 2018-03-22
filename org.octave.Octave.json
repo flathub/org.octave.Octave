@@ -20,7 +20,7 @@
     "--socket=pulseaudio",
     "--share=network",
     "--filesystem=host",
-    "--env=PATH=/usr/bin:/app/bin:/usr/lib/sdk/gfortran-62/bin:/usr/lib/sdk/openjdk9/bin"
+    "--env=PATH=/app/bin:/usr/bin:/usr/lib/sdk/gfortran-62/bin:/usr/lib/sdk/openjdk9/bin"
   ],
   "cleanup": [
     "/examples",
@@ -38,7 +38,7 @@
     "cflags": "-O2",
     "cxxflags": "-O2",
     "env": {
-      "PATH": "/usr/bin:/app/bin:/usr/lib/sdk/gfortran-62/bin:/usr/lib/sdk/openjdk9/bin"
+      "PATH": "/app/bin:/usr/bin:/usr/lib/sdk/gfortran-62/bin:/usr/lib/sdk/openjdk9/bin"
     }
   },
   "modules": [
