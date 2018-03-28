@@ -17,7 +17,7 @@
     "--socket=pulseaudio",
     "--share=network",
     "--filesystem=host",
-    "--env=PATH=/app/bin:/usr/bin:/usr/lib/sdk/gfortran-62/bin:/usr/lib/sdk/openjdk9/bin"
+    "--env=PATH=/app/bin:/usr/bin:/usr/lib/sdk/openjdk9/bin"
   ],
   "cleanup": [
     "/examples",
@@ -37,7 +37,7 @@
     "cflags": "-O2",
     "cxxflags": "-O2",
     "env": {
-      "PATH": "/app/bin:/usr/bin:/usr/lib/sdk/gfortran-62/bin:/usr/lib/sdk/openjdk9/bin"
+      "PATH": "/app/bin:/usr/bin:/usr/lib/sdk/openjdk9/bin"
     }
   },
   "modules": [
@@ -45,7 +45,7 @@
       "name": "gfortran",
       "buildsystem": "simple",
       "build-commands": [
-        "/usr/lib/sdk/gfortran-62/install.sh",
+        "cp -a /usr/lib/sdk/gfortran-62/. /app/",
         "cd /app/lib && ln -sf libgfortran.so.3.* libgfortran.so.3",
         "cd /app/lib && ln -sf libgfortran.so.3.* libgfortran.so",
         "cd /app/lib && ln -sf libquadmath.so.0.* libquadmath.so.0",
