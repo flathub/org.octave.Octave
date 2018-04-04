@@ -65,11 +65,9 @@
       "name": "gfortran",
       "buildsystem": "simple",
       "build-commands": [
-        "cp -a /usr/lib/sdk/gfortran-62/. /app/",
-        "cd /app/lib && ln -sf libgfortran.so.3.* libgfortran.so.3",
-        "cd /app/lib && ln -sf libgfortran.so.3.* libgfortran.so",
-        "cd /app/lib && ln -sf libquadmath.so.0.* libquadmath.so.0",
-        "cd /app/lib && ln -sf libquadmath.so.0.* libquadmath.so"
+        "cp -a /usr/lib/sdk/gfortran-62/bin /app",
+        "cp -a /usr/lib/sdk/gfortran-62/lib /app",
+        "cp -a /usr/lib/sdk/gfortran-62/libexec /app"
       ]
     },
     {
