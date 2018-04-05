@@ -17,7 +17,7 @@
     "--socket=pulseaudio",
     "--share=network",
     "--filesystem=host",
-    "--env=PATH=/app/bin:/usr/bin:/usr/lib/sdk/openjdk9/bin"
+    "--env=PATH=/app/bin:/usr/bin:/app/jre/bin"
   ],
   "cleanup": [
     "/bin/*lpr*.sh",
@@ -390,7 +390,9 @@
       "name": "octave",
       "config-opts": [
         "--disable-silent-rules",
-        "--with-blas=openblas"
+        "--with-blas=openblas",
+        "--with-java-homedir=/app/jre",
+        "--with-java-includedir=/usr/lib/sdk/openjdk9/jvm/openjdk-9/include"
       ],
       "sources": [
         {
