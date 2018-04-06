@@ -90,6 +90,7 @@
       "name": "fltk",
       "buildsystem": "cmake-ninja",
       "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release",
         "-DOPTION_BUILD_SHARED_LIBS=ON",
         "-DFLTK_LIBDIR:PATH=lib"
       ],
@@ -134,6 +135,9 @@
     {
       "name": "gl2ps",
       "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -159,6 +163,9 @@
     {
       "name": "epstool",
       "no-autogen": true,
+      "make-args": [
+        "GSCDEBUG="
+      ],
       "make-install-args": [
         "EPSTOOL_BASE=/app"
       ],
@@ -317,13 +324,14 @@
         "sed -e 's|\\(trans.path\\) = .*|\\1 = /app/share/qt5/translations|' -i Qt4Qt5/qscintilla.pro",
         "sed -e 's|\\(qsci.path\\) = .*|\\1 = /app/share/qt5|' -i Qt4Qt5/qscintilla.pro",
         "sed -e 's|\\(features.path\\) = .*|\\1 = /app/lib/qt5/mkspecs/features|' -i Qt4Qt5/qscintilla.pro",
-        "cd Qt4Qt5 && qmake && make install"
+        "cd Qt4Qt5 && qmake CONFIG+=release && make install"
       ]
     },
     {
       "name": "sundials",
       "buildsystem": "cmake-ninja",
       "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release",
         "-DKLU_ENABLE=ON",
         "-DKLU_INCLUDE_DIR:PATH=/app/include",
         "-DKLU_LIBRARY_DIR:PATH=/app/lib"
