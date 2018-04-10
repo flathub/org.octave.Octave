@@ -6,7 +6,7 @@ cd octave
 hg update stable
 ./bootstrap
 ./configure
-make
-make dist
+make -j$(nproc)
+make -j$(nproc) dist
 cp octave-4.3.0+.tar.xz ..
 ```
