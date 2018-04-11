@@ -1,7 +1,7 @@
 {
   "app-id": "org.octave.Octave",
   "runtime": "org.kde.Sdk",
-  "runtime-version": "5.10",
+  "runtime-version": "5.9",
   "sdk": "org.kde.Sdk",
   "command": "octave",
   "rename-icon": "octave",
