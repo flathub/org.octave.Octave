@@ -396,6 +396,17 @@
       ]
     },
     {
+      "name": "lzip",
+      "cleanup": ["*"],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz",
+          "sha256": "c93b81a5a7788ef5812423d311345ba5d3bd4f5ebf1f693911e3a13553c1290c"
+        }
+      ]
+    },
+    {
       "name": "octave",
       "config-opts": [
         "--disable-silent-rules",
