@@ -396,17 +396,6 @@
       ]
     },
     {
-      "name": "lzip",
-      "cleanup": ["*"],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz",
-          "sha256": "c93b81a5a7788ef5812423d311345ba5d3bd4f5ebf1f693911e3a13553c1290c"
-        }
-      ]
-    },
-    {
       "name": "octave",
       "config-opts": [
         "--disable-silent-rules",
@@ -416,13 +405,9 @@
       ],
       "sources": [
         {
-          "type": "file",
-          "url": "https://alpha.gnu.org/gnu/octave/octave-4.3.90.tar.lz",
-          "sha256": "2cda63d4b0e372736c46ca61d48f1c699e3e86482c7aaf98e8f95b02a5a54ccd"
-        },
-        {
-            "type": "shell",
-            "commands": ["tar --strip-components=1 --lzip -xvf octave-4.3.90.tar.lz"]
+          "type": "archive",
+          "url": "https://alpha.gnu.org/gnu/octave/octave-4.3.91.tar.bz2",
+          "sha256": "b49a4658a3f267416358098260920533a876f371641f2be5c8d42d98b751ea08"
         }
       ]
     }
