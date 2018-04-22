@@ -165,9 +165,6 @@
     {
       "name": "epstool",
       "no-autogen": true,
-      "make-args": [
-        "GSCDEBUG="
-      ],
       "make-install-args": [
         "EPSTOOL_BASE=/app"
       ],
@@ -326,7 +323,7 @@
         "sed -e 's|\\(trans.path\\) = .*|\\1 = /app/share/qt5/translations|' -i Qt4Qt5/qscintilla.pro",
         "sed -e 's|\\(qsci.path\\) = .*|\\1 = /app/share/qt5|' -i Qt4Qt5/qscintilla.pro",
         "sed -e 's|\\(features.path\\) = .*|\\1 = /app/lib/qt5/mkspecs/features|' -i Qt4Qt5/qscintilla.pro",
-        "cd Qt4Qt5 && qmake CONFIG+=release && make install"
+        "cd Qt4Qt5 && qmake && make install"
       ]
     },
     {
