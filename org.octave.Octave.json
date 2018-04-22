@@ -92,7 +92,7 @@
       "name": "fltk",
       "buildsystem": "cmake-ninja",
       "config-opts": [
-        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
         "-DOPTION_BUILD_SHARED_LIBS=ON",
         "-DFLTK_LIBDIR:PATH=lib"
       ],
@@ -138,7 +138,7 @@
       "name": "gl2ps",
       "buildsystem": "cmake-ninja",
       "config-opts": [
-        "-DCMAKE_BUILD_TYPE=Release"
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
       ],
       "sources": [
         {
@@ -152,7 +152,7 @@
       "name": "qhull",
       "buildsystem": "cmake-ninja",
       "config-opts": [
-        "-DCMAKE_BUILD_TYPE=Release"
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
       ],
       "sources": [
         {
@@ -333,7 +333,7 @@
       "name": "sundials",
       "buildsystem": "cmake-ninja",
       "config-opts": [
-        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
         "-DKLU_ENABLE=ON",
         "-DKLU_INCLUDE_DIR:PATH=/app/include",
         "-DKLU_LIBRARY_DIR:PATH=/app/lib"
