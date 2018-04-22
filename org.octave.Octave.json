@@ -50,10 +50,7 @@
     "fluid.*"
   ],
   "build-options": {
-    "cflags": "-O2",
-    "cxxflags": "-O2",
     "env": {
-      "FFLAGS": "-O2",
       "PATH": "/app/bin:/usr/bin:/usr/lib/sdk/openjdk9/bin"
     }
   },
