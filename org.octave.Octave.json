@@ -72,7 +72,9 @@
       "no-autogen": true,
       "make-args": [
         "DYNAMIC_ARCH=1",
-        "FC=gfortran"
+        "FC=gfortran",
+        "NO_CBLAS=1",
+        "NO_LAPACKE=1"
       ],
       "make-install-args": [
         "PREFIX=/app"
