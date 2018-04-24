@@ -38,6 +38,7 @@
     "/lib/cmake",
     "/lib/lib*.a",
     "/lib/lib*.la",
+    "/lib/lib*.settings",
     "/lib/libqhull_*",
     "/lib/octave/*/lib*.la",
     "/man",
@@ -179,8 +180,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://support.hdfgroup.org/ftp/HDF5/current18/src/hdf5-1.8.20.tar.bz2",
-          "sha256": "a4f2db7e0a078aa324f64e0216a80731731f73025367fa94d158c9b1d3fbdf6f"
+          "url": "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.2/src/hdf5-1.10.2.tar.bz2",
+          "sha256": "1cad5b7bfdf128dfc53cd16fba48f6e7ae4e93c75c371d9ec8dfc4df0c1fcb71"
         }
       ]
     },
