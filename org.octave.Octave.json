@@ -403,8 +403,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://alpha.gnu.org/gnu/octave/octave-4.3.91.tar.bz2",
-          "sha256": "b49a4658a3f267416358098260920533a876f371641f2be5c8d42d98b751ea08"
+          "url": "https://alpha.gnu.org/gnu/octave/octave-4.3.92.tar.bz2",
+          "sha256": "07086efe625745be81460dc6982328c1da93c72579252cb768d485d126823539"
         }
       ]
     }
