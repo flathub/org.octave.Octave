@@ -1,0 +1,22 @@
+# HG changeset patch
+# User Mike Miller <mtmiller@octave.org>
+# Date 1525114923 25200
+#      Mon Apr 30 12:02:03 2018 -0700
+# Branch stable
+# Node ID f926ae89f58b0f649bc5dd2badad3049d6985e37
+# Parent  d703d8bbc6aecd48237806564164635ff9d09a94
+add version 4.4.0 to AppStream metadata
+
+* org.octave.Octave.appdata.xml: Add version 4.4.0 release tag.
+
+diff --git a/etc/icons/org.octave.Octave.appdata.xml b/etc/icons/org.octave.Octave.appdata.xml
+--- a/etc/icons/org.octave.Octave.appdata.xml
++++ b/etc/icons/org.octave.Octave.appdata.xml
+@@ -80,6 +80,7 @@
+   <project_group>GNU</project_group>
+   <developer_name>John W. Eaton and others</developer_name>
+   <releases>
++    <release date="2018-04-30" version="4.4.0"/>
+     <release date="2018-03-13" version="4.2.2"/>
+   </releases>
+ </component>
