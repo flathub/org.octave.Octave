@@ -1,0 +1,11 @@
+--- a/libgui/src/settings-dialog.cc
++++ b/libgui/src/settings-dialog.cc
+@@ -34,6 +34,8 @@
+ #include "workspace-model.h"
+ #include "settings-dialog.h"
+ #include "ui-settings-dialog.h"
++
++#include <QButtonGroup>
+ #include <QDir>
+ #include <QFileInfo>
+ #include <QFileDialog>
