@@ -285,3 +285,5 @@ modules:
     sha256: d6867c57bc108ae988106d3c3fb6a380b5be5fee61b23ceedf44051477e8f0bc
   - type: patch
     path: octave-4.4.0-appdata.patch
+  - type: patch
+    path: qt511.patch
