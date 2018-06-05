@@ -6,7 +6,7 @@ command: octave
 rename-icon: octave
 sdk-extensions:
 - org.freedesktop.Sdk.Extension.gfortran-62
-- org.freedesktop.Sdk.Extension.openjdk9
+- org.freedesktop.Sdk.Extension.openjdk10
 finish-args:
 - --socket=wayland
 - --socket=x11
@@ -48,7 +48,7 @@ cleanup:
 - fluid.*
 build-options:
   env:
-    PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk9/bin
+    PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk10/bin
 modules:
 - name: gfortran
   buildsystem: simple
@@ -245,7 +245,7 @@ modules:
 - name: openjdk
   buildsystem: simple
   build-commands:
-  - /usr/lib/sdk/openjdk9/install.sh
+  - /usr/lib/sdk/openjdk10/install.sh
 
 - name: mpmath
   buildsystem: simple
@@ -279,7 +279,7 @@ modules:
   - --disable-silent-rules
   - --with-blas=openblas
   - --with-java-homedir=/app/jre
-  - --with-java-includedir=/usr/lib/sdk/openjdk9/jvm/openjdk-9/include
+  - --with-java-includedir=/usr/lib/sdk/openjdk10/jvm/openjdk-10.0.1/include
   sources:
   - type: archive
     url: https://ftp.gnu.org/gnu/octave/octave-4.4.0.tar.xz
