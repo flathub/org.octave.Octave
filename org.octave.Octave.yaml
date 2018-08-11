@@ -15,6 +15,7 @@ finish-args:
 - --socket=pulseaudio
 - --share=network
 - --filesystem=host
+- --talk-name=org.freedesktop.Flatpak # allows spawning processes on the host via flatpak-spawn --host
 - --env=PATH=/app/bin:/usr/bin:/app/jre/bin
 cleanup:
 - /bin/*lpr*.sh
