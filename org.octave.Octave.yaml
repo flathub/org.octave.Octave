@@ -283,9 +283,5 @@ modules:
   - --with-java-includedir=/usr/lib/sdk/openjdk10/jvm/openjdk-10/include
   sources:
   - type: archive
-    url: https://ftp.gnu.org/gnu/octave/octave-4.4.0.tar.xz
-    sha256: d6867c57bc108ae988106d3c3fb6a380b5be5fee61b23ceedf44051477e8f0bc
-  - type: patch
-    path: octave-4.4.0-appdata.patch
-  - type: patch
-    path: qt511.patch
+    url: https://ftp.gnu.org/gnu/octave/octave-4.4.1.tar.xz
+    sha256: 7e4e9ac67ed809bd56768fb69807abae0d229f4e169db63a37c11c9f08215f90
