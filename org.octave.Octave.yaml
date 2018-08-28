@@ -17,6 +17,8 @@ finish-args:
 - --filesystem=host
 - --talk-name=org.freedesktop.Flatpak # allows spawning processes on the host via flatpak-spawn --host
 - --env=PATH=/app/bin:/usr/bin:/app/jre/bin
+- --env=CPPFLAGS=-I/app/include # required for building some Octave forge packages
+- --env=LDFLAGS=-L/app/lib # required for building some Octave forge packages
 cleanup:
 - /bin/*lpr*.sh
 - /bin/GraphicsMagick*config
@@ -220,8 +222,8 @@ modules:
   buildsystem: simple
   sources:
   - type: archive
-    url: https://sourceforge.net/projects/pyqt/files/QScintilla2/QScintilla-2.10.3/QScintilla_gpl-2.10.3.tar.gz
-    sha256: d2657a68e7699d37209ff97db965de7c67884d99b33066d0ba457e6f39b581e7
+    url: https://sourceforge.net/projects/pyqt/files/QScintilla2/QScintilla-2.10.7/QScintilla_gpl-2.10.7.tar.gz
+    sha256: 670458de71dd4205e92d8f3b7bad9f667afece925703cde9df6d04bc23331a1a
   build-commands:
   - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -i Qt4Qt5/qscintilla.pro
   - sed -e 's|\(header.path\) = .*|\1 = /app/include|' -i Qt4Qt5/qscintilla.pro
@@ -248,7 +250,7 @@ modules:
   build-commands:
   - /usr/lib/sdk/openjdk10/install.sh
 
-- name: mpmath
+- name: mpmath # dependency of sympy
   buildsystem: simple
   sources:
   - type: archive
@@ -258,7 +260,7 @@ modules:
   - chmod +x ./setup.py
   - ./setup.py install --prefix=/app
 
-- name: sympy
+- name: sympy # dependency of the symbolic package
   buildsystem: simple
   sources:
   - type: archive
@@ -285,3 +287,19 @@ modules:
   - type: archive
     url: https://ftp.gnu.org/gnu/octave/octave-4.4.1.tar.xz
     sha256: 7e4e9ac67ed809bd56768fb69807abae0d229f4e169db63a37c11c9f08215f90
+
+- name: asciidoc # dependency of zeromq
+  sources:
+  - type: archive
+    url: https://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.9/asciidoc-8.6.9.tar.gz
+    sha256: 78db9d0567c8ab6570a6eff7ffdf84eadd91f2dfc0a92a2d0105d323cab4e1f0
+
+- name: zeromq # dependency of the zeromq package
+  buildsystem: cmake-ninja
+  builddir: true
+  config-opts:
+  - -DWITH_DOC=OFF
+  sources:
+  - type: archive
+    url: https://github.com/zeromq/libzmq/archive/v4.2.5.tar.gz
+    sha256: f33807105ce47f684c26751ce4e27a708a83ce120cbabbc614c8df21252b238c
