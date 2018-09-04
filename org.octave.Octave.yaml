@@ -103,8 +103,8 @@ modules:
     ldflags: -L/app/lib
   sources:
   - type: archive
-    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/ghostscript-9.23.tar.xz
-    sha256: 1fcedc27d4d6081105cdf35606cb3f809523423a6cf9e3c23cead3525d6ae8d9
+    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs924/ghostscript-9.24.tar.xz
+    sha256: d44917df24979a05e0cb3916531928cc2adc91f5b17b419ee023d16ab31069d6
 
 - name: gl2ps
   buildsystem: cmake-ninja
