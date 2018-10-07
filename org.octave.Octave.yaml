@@ -15,6 +15,8 @@ finish-args:
 - --socket=pulseaudio
 - --share=network
 - --filesystem=host
+- --filesystem=xdg-config/kdeglobals:ro # gives application access to kdeglobals
+- --talk-name=com.canonical.AppMenu.Registrar # gives application access to dbus menu
 - --talk-name=org.freedesktop.Flatpak # allows spawning processes on the host via flatpak-spawn --host
 - --env=PATH=/app/bin:/usr/bin:/app/jre/bin
 - --env=CPPFLAGS=-I/app/include # required for building some Octave forge packages
