@@ -80,6 +80,7 @@ modules:
   - -DCMAKE_BUILD_TYPE=RelWithDebInfo
   - -DOPTION_BUILD_SHARED_LIBS=ON
   - -DFLTK_LIBDIR:PATH=lib
+  - -DOpenGL_GL_PREFERENCE=GLVND
   build-options:
     cflags: -fPIC
     cxxflags: -fPIC
@@ -108,6 +109,7 @@ modules:
   buildsystem: cmake-ninja
   config-opts:
   - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+  - -DOpenGL_GL_PREFERENCE=GLVND
   sources:
   - type: archive
     url: http://geuz.org/gl2ps/src/gl2ps-1.4.0.tgz
@@ -128,8 +130,9 @@ modules:
   - EPSTOOL_BASE=/app
   sources:
   - type: archive
-    url: http://www.ghostgum.com.au/download/epstool-3.09.tar.gz
-    sha256: e3538857e0c8c21a5a6cbd28fba75d71825318daea6525a4d20e385d758ca847
+    # upstream archive has broken permissions, cf. https://launchpad.net/ubuntu/+source/epstool/3.09-1
+    url: https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/epstool/3.09-1/epstool_3.09.orig.tar.xz
+    sha256: 1e85249d1a44f9418b1f95a3aebd8b0784dab8e49deb6417ac9b996ca08f6011
 
 - name: hdf5
   no-autogen: true
