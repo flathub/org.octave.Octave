@@ -1,11 +1,10 @@
 app-id: org.octave.Octave
 runtime: org.kde.Sdk
-runtime-version: '5.11'
+runtime-version: '5.12'
 sdk: org.kde.Sdk
 command: octave
 rename-icon: octave
 sdk-extensions:
-- org.freedesktop.Sdk.Extension.gfortran-62
 - org.freedesktop.Sdk.Extension.openjdk10
 finish-args:
 - --socket=wayland
@@ -55,12 +54,9 @@ build-options:
   env:
     PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk10/bin
 modules:
-- name: gfortran
-  buildsystem: simple
-  build-commands:
-  - cp -a /usr/lib/sdk/gfortran-62/bin /app
-  - cp -a /usr/lib/sdk/gfortran-62/lib /app
-  - cp -a /usr/lib/sdk/gfortran-62/libexec /app
+
+# gfortran is part of the Freedesktop Sdk 18.08:
+# https://github.com/flathub/org.freedesktop.Sdk.Extension.gfortran-62/issues/3
 
 - name: openblas
   no-autogen: true
@@ -73,8 +69,8 @@ modules:
   - PREFIX=/app
   sources:
   - type: archive
-    url: https://github.com/xianyi/OpenBLAS/archive/v0.2.20.tar.gz
-    sha256: 5ef38b15d9c652985774869efd548b8e3e972e1e99475c673b25537ed7bcf394
+    url: https://github.com/xianyi/OpenBLAS/archive/v0.3.5.tar.gz
+    sha256: 0950c14bd77c90a6427e26210d6dab422271bc86f9fc69126725833ecdaa0e85
 
 - shared-modules/glu/glu-9.0.0.json
 
@@ -89,14 +85,14 @@ modules:
     cxxflags: -fPIC
   sources:
   - type: archive
-    url: http://fltk.org/pub/fltk/1.3.4/fltk-1.3.4-1-source.tar.gz
-    sha256: 7fb2c8882433ce694e6900c94fda505e8f4ed3fa9c7e597007098a33b85c53f4
+    url: https://www.fltk.org/pub/fltk/1.3.4/fltk-1.3.4-2-source.tar.bz2
+    sha256: 8cfe7690d70f9a3db5cd88748a82aa7958a9dc7ec3d7e94eef9063e107864150
 
 - name: gnuplot
   sources:
   - type: archive
-    url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.2.2/gnuplot-5.2.2.tar.gz
-    sha256: a416d22f02bdf3873ef82c5eb7f8e94146795811ef808e12b035ada88ef7b1a1
+    url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.2.6/gnuplot-5.2.6.tar.gz
+    sha256: 35dd8f013139e31b3028fac280ee12d4b1346d9bb5c501586d1b5a04ae7a94ee
 
 - name: ghostscript
   config-opts:
@@ -123,8 +119,8 @@ modules:
   - -DCMAKE_BUILD_TYPE=RelWithDebInfo
   sources:
   - type: archive
-    url: http://www.qhull.org/download/qhull-2015-src-7.2.0.tgz
-    sha256: 78b010925c3b577adc3d58278787d7df08f7c8fb02c3490e375eab91bb58a436
+    url: https://github.com/qhull/qhull/archive/v7.3.0.tar.gz
+    sha256: 05a2311d8e6397c96802ee5a9d8db32b83dac7e42e2eb2cd81c5547c18e87de6
 
 - name: epstool
   no-autogen: true
@@ -132,15 +128,15 @@ modules:
   - EPSTOOL_BASE=/app
   sources:
   - type: archive
-    url: https://src.fedoraproject.org/repo/pkgs/epstool/epstool-3.08.tar.gz/465a57a598dbef411f4ecbfbd7d4c8d7/epstool-3.08.tar.gz
-    sha256: f3f14b95146868ff3f93c8720d5539deef3b6531630a552165664c7ee3c2cfdd
+    url: http://www.ghostgum.com.au/download/epstool-3.09.tar.gz
+    sha256: e3538857e0c8c21a5a6cbd28fba75d71825318daea6525a4d20e385d758ca847
 
 - name: hdf5
   no-autogen: true
   sources:
   - type: archive
-    url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.2/src/hdf5-1.10.2.tar.bz2
-    sha256: 1cad5b7bfdf128dfc53cd16fba48f6e7ae4e93c75c371d9ec8dfc4df0c1fcb71
+    url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.4/src/hdf5-1.10.4.tar.bz2
+    sha256: 1267ff06aaedc04ca25f7c6026687ea2884b837043431195f153401d942b28df
 
 - name: qrupdate
   no-autogen: true
@@ -170,8 +166,8 @@ modules:
   no-autogen: true
   sources:
   - type: archive
-    url: http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-5.2.0.tar.gz
-    sha256: 3c46c035ea8217649958a0f73360e825b0c9dcca4e32a9349d2c7678c0d48813
+    url: http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-5.4.0.tar.gz
+    sha256: 374dd136696c653e34ef3212dc8ab5b61d9a67a6791d5ec4841efb838e94dbd1
 
 - name: glpk
   sources:
@@ -190,14 +186,14 @@ modules:
   - --enable-shared=yes
   sources:
   - type: archive
-    url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.28/GraphicsMagick-1.3.28.tar.xz
-    sha256: 942a68a9a8a5af6f682b896fd4f0ad617d8b49907e474acfe59549956bcc994a
+    url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.31/GraphicsMagick-1.3.31.tar.xz
+    sha256: 096bbb59d6f3abd32b562fc3b34ea90d88741dc5dd888731d61d17e100394278
 
 - name: arpack-ng
   sources:
   - type: archive
-    url: https://github.com/opencollab/arpack-ng/archive/3.5.0.tar.gz
-    sha256: 50f7a3e3aec2e08e732a487919262238f8504c3ef927246ec3495617dde81239
+    url: https://github.com/opencollab/arpack-ng/archive/3.6.3.tar.gz
+    sha256: 64f3551e5a2f8497399d82af3076b6a33bf1bc95fc46bbcabe66442db366f453
 
 - name: fftw3
   no-autogen: true
@@ -206,8 +202,8 @@ modules:
   - --enable-threads
   sources:
   - type: archive
-    url: http://www.fftw.org/fftw-3.3.7.tar.gz
-    sha256: 3b609b7feba5230e8f6dd8d245ddbefac324c5a6ae4186947670d9ac2cd25573
+    url: http://www.fftw.org/fftw-3.3.8.tar.gz
+    sha256: 6113262f6e92c5bd474f2875fa1b01054c4ad5040f6b0da7c03c98821d9ae303
 
 - name: fftw3f
   no-autogen: true
@@ -217,15 +213,15 @@ modules:
   - --enable-float
   sources:
   - type: archive
-    url: http://www.fftw.org/fftw-3.3.7.tar.gz
-    sha256: 3b609b7feba5230e8f6dd8d245ddbefac324c5a6ae4186947670d9ac2cd25573
+    url: http://www.fftw.org/fftw-3.3.8.tar.gz
+    sha256: 6113262f6e92c5bd474f2875fa1b01054c4ad5040f6b0da7c03c98821d9ae303
 
 - name: qscintilla
   buildsystem: simple
   sources:
   - type: archive
-    url: https://sourceforge.net/projects/pyqt/files/QScintilla2/QScintilla-2.10.7/QScintilla_gpl-2.10.7.tar.gz
-    sha256: 670458de71dd4205e92d8f3b7bad9f667afece925703cde9df6d04bc23331a1a
+    url: https://sourceforge.net/projects/pyqt/files/QScintilla2/QScintilla-2.10.8/QScintilla_gpl-2.10.8.tar.gz
+    sha256: 46cd5b4e609ca5e13130ba8cc7028d44fd1dc5b037f97c492899006ed0c992eb
   build-commands:
   - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -i Qt4Qt5/qscintilla.pro
   - sed -e 's|\(header.path\) = .*|\1 = /app/include|' -i Qt4Qt5/qscintilla.pro
@@ -256,8 +252,8 @@ modules:
   buildsystem: simple
   sources:
   - type: archive
-    url: http://mpmath.org/files/mpmath-1.0.0.tar.gz
-    sha256: d32ba7afffbae688229a15f54fbc37c11f4989e4fac628c99b3c5b6889aee03d
+    url: https://github.com/fredrik-johansson/mpmath/archive/1.1.0.tar.gz
+    sha256: 16c01d589bcb1be5cab3a07de2855b578e5fc4a7882fb61a15f2aaf118fdd06e
   build-commands:
   - chmod +x ./setup.py
   - ./setup.py install --prefix=/app
@@ -266,8 +262,8 @@ modules:
   buildsystem: simple
   sources:
   - type: archive
-    url: https://github.com/sympy/sympy/archive/sympy-1.1.1.tar.gz
-    sha256: 4420a1e31939244d7ea73e164fdbb0d4a6a2e764d56e5bf632f57a988f13767f
+    url: https://github.com/sympy/sympy/archive/sympy-1.3.tar.gz
+    sha256: d73d8424f254640969dcb3d50f0a4b41857643fb592a1c3e0c545a9343571a70
   build-commands:
   - ./setup.py install --prefix=/app
 
@@ -279,6 +275,16 @@ modules:
     url: https://ftp.gnu.org/gnu/texinfo/texinfo-6.5.tar.xz
     sha256: 77774b3f4a06c20705cc2ef1c804864422e3cf95235e965b1f00a46df7da5f62
 
+- name: zeromq # dependency of the zeromq package
+  buildsystem: cmake-ninja
+  builddir: true
+  config-opts:
+  - -DWITH_DOC=OFF
+  sources:
+  - type: archive
+    url: https://github.com/zeromq/libzmq/archive/v4.3.0.tar.gz
+    sha256: 4bcd112222cc0e8083c81196f60b486d9a7d57f810b0121c478ee3aeac1c19a4
+    
 - name: octave
   config-opts:
   - --disable-silent-rules
@@ -287,15 +293,5 @@ modules:
   - --with-java-includedir=/usr/lib/sdk/openjdk10/jvm/openjdk-10/include
   sources:
   - type: archive
-    url: https://ftp.gnu.org/gnu/octave/octave-4.4.1.tar.xz
-    sha256: 7e4e9ac67ed809bd56768fb69807abae0d229f4e169db63a37c11c9f08215f90
-
-- name: zeromq # dependency of the zeromq package
-  buildsystem: cmake-ninja
-  builddir: true
-  config-opts:
-  - -DWITH_DOC=OFF
-  sources:
-  - type: archive
-    url: https://github.com/zeromq/libzmq/archive/v4.2.5.tar.gz
-    sha256: f33807105ce47f684c26751ce4e27a708a83ce120cbabbc614c8df21252b238c
+    url: https://s3.amazonaws.com/octave-snapshot/public/octave-5.0.1%2Bbf835b1d04b1.tar.xz
+    sha256: 8a69de212db5511c13db03dcf0a87930929b58898ad12eae8f9ec39fa9b32a9c
