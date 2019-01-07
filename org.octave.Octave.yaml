@@ -5,7 +5,7 @@ sdk: org.kde.Sdk
 command: octave
 rename-icon: octave
 sdk-extensions:
-- org.freedesktop.Sdk.Extension.openjdk10
+- org.freedesktop.Sdk.Extension.openjdk11
 finish-args:
 - --socket=wayland
 - --socket=x11
@@ -52,7 +52,7 @@ cleanup:
 - fluid.*
 build-options:
   env:
-    PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk10/bin
+    PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk11/bin
 modules:
 
 # gfortran is part of the Freedesktop Sdk 18.08:
@@ -249,7 +249,7 @@ modules:
 - name: openjdk
   buildsystem: simple
   build-commands:
-  - /usr/lib/sdk/openjdk10/install.sh
+  - /usr/lib/sdk/openjdk11/install.sh
 
 - name: mpmath # dependency of sympy
   buildsystem: simple
@@ -296,7 +296,7 @@ modules:
   - --disable-silent-rules
   - --with-blas=openblas
   - --with-java-homedir=/app/jre
-  - --with-java-includedir=/usr/lib/sdk/openjdk10/jvm/openjdk-10/include
+  - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
   sources:
   - type: archive
     url: https://s3.amazonaws.com/octave-snapshot/public/octave-5.0.1%2Bbf835b1d04b1.tar.xz
