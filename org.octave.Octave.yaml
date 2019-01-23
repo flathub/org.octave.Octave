@@ -290,6 +290,10 @@ modules:
     
 - name: octave
   build-options:
+    cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
+    cflags-override: true
+    cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
+    cxxflags-override: true
     env:
       QCOLLECTIONGENERATOR: qhelpgenerator-qt5 # workaround for https://savannah.gnu.org/bugs/?55187
   config-opts:
