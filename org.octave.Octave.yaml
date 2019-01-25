@@ -65,6 +65,7 @@ modules:
   - FC=gfortran
   - NO_CBLAS=1
   - NO_LAPACKE=1
+  - USE_OPENMP=0    ## OpenMP off by default, this hack skips 'test_fork' which crashes on i386
   make-install-args:
   - PREFIX=/app
   sources:
