@@ -308,5 +308,5 @@ modules:
   - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
   sources:
   - type: archive
-    url: https://alpha.gnu.org/gnu/octave/octave-5.0.90.tar.bz2
-    sha256: d8bc1371643959817ea4d77dfbf5385c9e79e79a163a7aec5ddfaa03e0699bc3
+    url: https://alpha.gnu.org/gnu/octave/octave-5.0.91.tar.bz2
+    sha256: 3383e221d58dc0c868dbb9ea8d668a20b49515f18fa3bd180ff39de71810c7ad
