@@ -105,6 +105,14 @@ modules:
   - type: archive
     url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26.tar.xz
     sha256: 90ed475f37584f646e9ef829932b2525d5c6fc2e0147e8d611bc50aa0e718598
+    # newer libpng version required to build on ARM
+  - type: shell
+    commands:
+    - rm -rf libpng
+  - type: archive
+    url: https://sourceforge.net/projects/libpng/files/libpng16/1.6.36/libpng-1.6.36.tar.xz
+    sha256: eceb924c1fa6b79172fdfd008d335f0e59172a86a66481e09d4089df872aa319
+    dest-filename: libpng.tar.xz
 
 - name: gl2ps
   buildsystem: cmake-ninja
@@ -126,6 +134,10 @@ modules:
     sha256: 05a2311d8e6397c96802ee5a9d8db32b83dac7e42e2eb2cd81c5547c18e87de6
 
 - name: epstool
+  skip-arches:
+  - i386
+  - arm
+  - aarch64
   no-autogen: true
   make-install-args:
   - EPSTOOL_BASE=/app
