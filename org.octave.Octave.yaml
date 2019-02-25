@@ -304,7 +304,7 @@ modules:
   - type: archive
     url: https://github.com/zeromq/libzmq/archive/v4.3.0.tar.gz
     sha256: 4bcd112222cc0e8083c81196f60b486d9a7d57f810b0121c478ee3aeac1c19a4
-    
+
 - name: octave
   build-options:
     cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
@@ -320,5 +320,5 @@ modules:
   - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
   sources:
   - type: archive
-    url: https://alpha.gnu.org/gnu/octave/octave-5.0.91.tar.bz2
-    sha256: 3383e221d58dc0c868dbb9ea8d668a20b49515f18fa3bd180ff39de71810c7ad
+    url: https://ftp.gnu.org/gnu/octave/octave-5.1.0.tar.xz
+    sha256: 87b4df6dfa28b1f8028f69659f7a1cabd50adfb81e1e02212ff22c863a29454e
