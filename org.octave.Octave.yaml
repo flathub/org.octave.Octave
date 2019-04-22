@@ -87,8 +87,8 @@ modules:
     cxxflags: -fPIC
   sources:
   - type: archive
-    url: https://www.fltk.org/pub/fltk/1.3.4/fltk-1.3.4-2-source.tar.bz2
-    sha256: 8cfe7690d70f9a3db5cd88748a82aa7958a9dc7ec3d7e94eef9063e107864150
+    url: https://www.fltk.org/pub/fltk/1.3.5/fltk-1.3.5-source.tar.gz
+    sha256: 8729b2a055f38c1636ba20f749de0853384c1d3e9d1a6b8d4d1305143e115702
 
 - name: gnuplot
   sources:
