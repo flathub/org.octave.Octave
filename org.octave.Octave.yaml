@@ -114,7 +114,7 @@ modules:
   - type: archive
     url: https://sourceforge.net/projects/libpng/files/libpng16/1.6.36/libpng-1.6.36.tar.xz
     sha256: eceb924c1fa6b79172fdfd008d335f0e59172a86a66481e09d4089df872aa319
-    dest-filename: libpng.tar.xz
+    dest: libpng
 
 - name: gl2ps
   buildsystem: cmake-ninja
