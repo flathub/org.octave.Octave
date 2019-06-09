@@ -103,6 +103,10 @@ modules:
   - --disable-cups
   build-options:
     ldflags: -L/app/lib
+    arch:
+      aarch64:
+        config-opts:
+        - -DPNG_ARM_NEON=OFF
   sources:
   - type: archive
     url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26.tar.xz
