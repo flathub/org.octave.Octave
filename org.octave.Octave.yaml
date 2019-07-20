@@ -105,8 +105,7 @@ modules:
     ldflags: -L/app/lib
     arch:
       aarch64:
-        config-opts:
-        - -DPNG_ARM_NEON=OFF
+        cppflags: -DPNG_ARM_NEON_OPT=0
   sources:
   - type: archive
     url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26.tar.xz
