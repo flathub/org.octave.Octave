@@ -144,6 +144,7 @@ modules:
   - arm
   - aarch64
   no-autogen: true
+  no-parallel-make: true
   make-install-args:
   - EPSTOOL_BASE=/app
   sources:
