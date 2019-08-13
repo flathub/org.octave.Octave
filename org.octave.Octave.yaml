@@ -327,7 +327,5 @@ modules:
   - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
   sources:
   - type: archive
-    url: https://ftp.gnu.org/gnu/octave/octave-5.1.0.tar.xz
-    sha256: 87b4df6dfa28b1f8028f69659f7a1cabd50adfb81e1e02212ff22c863a29454e
-  - type: patch
-    path: octave-add-content-rating.patch
+    url: http://www.math.twcu.ac.jp/kai/octave-stable.tar.xz
+    sha256: 4f8c58c51f8c6f9618eab0a47d84f52b5ecef8aaf199b081833d7ff4cb5518ca
