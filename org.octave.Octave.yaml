@@ -325,6 +325,8 @@ modules:
   - --with-blas=openblas
   - --with-java-homedir=/app/jre
   - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
+  cleanup:
+  - /share/icons/hicolor/1024x1024
   sources:
   - type: archive
     url: http://www.math.twcu.ac.jp/kai/octave-stable.tar.xz
