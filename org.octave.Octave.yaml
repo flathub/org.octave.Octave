@@ -76,7 +76,7 @@ modules:
     url: https://github.com/xianyi/OpenBLAS/archive/v0.3.6.tar.gz
     sha256: e64c8fe083832ffbc1459ab6c72f71d53afd3b36e8497c922a15a06b72e9002f
 
-- shared-modules/glu/glu-9.0.0.json
+- shared-modules/glu/glu-9.json
 
 - name: fltk
   buildsystem: cmake-ninja
