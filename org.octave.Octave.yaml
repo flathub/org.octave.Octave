@@ -34,6 +34,7 @@ cleanup:
 - /bin/qhull
 - /bin/qvoronoi
 - /bin/rbox
+- /com
 - /examples
 - /include/QSci
 - /lib/cmake
@@ -48,6 +49,7 @@ cleanup:
 - /share/fltk
 - /share/hdf5_examples
 - /share/man
+- /share/units/locale_map.txt
 - fluid
 - fluid.*
 build-options:
@@ -301,6 +303,18 @@ modules:
     sha256: 77774b3f4a06c20705cc2ef1c804864422e3cf95235e965b1f00a46df7da5f62
   - type: patch
     path: texinfo-perl-528.patch
+
+- name: units # dependency of the miscellaneous package
+  config-opts:
+  - PYTHON=/usr/bin/python3
+  sources:
+  - type: archive
+    url: https://ftpmirror.gnu.org/gnu/units/units-2.19.tar.gz
+    sha256: 4262136bdfc152b63ff5a9b93a7d80ce18b5e8bebdcffddc932dda769e306556
+  - type: patch
+    path: units-install-info.patch
+  post-install:
+  - mv -f /app/com/units/currency.units /app/share/units/currency.units
 
 - name: zeromq # dependency of the zeromq package
   buildsystem: cmake-ninja
