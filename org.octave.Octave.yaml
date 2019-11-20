@@ -313,6 +313,8 @@ modules:
     sha256: 4262136bdfc152b63ff5a9b93a7d80ce18b5e8bebdcffddc932dda769e306556
   - type: patch
     path: units-install-info.patch
+  post-install:
+  - mv -f /app/com/units/currency.units /app/share/units/currency.units
 
 - name: zeromq # dependency of the zeromq package
   buildsystem: cmake-ninja
