@@ -200,7 +200,7 @@ modules:
 - name: glpk
   sources:
   - type: archive
-    url: https://ftp.gnu.org/gnu/glpk/glpk-4.65.tar.gz
+    url: https://ftpmirror.gnu.org/glpk/glpk-4.65.tar.gz
     sha256: 4281e29b628864dfe48d393a7bedd781e5b475387c20d8b0158f329994721a10
 
 - name: portaudio
@@ -300,7 +300,7 @@ modules:
   - --disable-nls
   sources:
   - type: archive
-    url: https://ftp.gnu.org/gnu/texinfo/texinfo-6.5.tar.xz
+    url: https://ftpmirror.gnu.org/texinfo/texinfo-6.5.tar.xz
     sha256: 77774b3f4a06c20705cc2ef1c804864422e3cf95235e965b1f00a46df7da5f62
   - type: patch
     path: texinfo-perl-528.patch
@@ -310,7 +310,7 @@ modules:
   - PYTHON=/usr/bin/python3
   sources:
   - type: archive
-    url: https://ftpmirror.gnu.org/gnu/units/units-2.19.tar.gz
+    url: https://ftpmirror.gnu.org/units/units-2.19.tar.gz
     sha256: 4262136bdfc152b63ff5a9b93a7d80ce18b5e8bebdcffddc932dda769e306556
   - type: patch
     path: units-install-info.patch
@@ -344,5 +344,5 @@ modules:
   - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
   sources:
   - type: archive
-    url: https://ftp.gnu.org/gnu/octave/octave-5.2.0.tar.xz
+    url: https://ftpmirror.gnu.org/octave/octave-5.2.0.tar.xz
     sha256: 2757b5cc1854c9326d6c99d2900c7cec2909ac7ed500212d170d0df592bfd26b
