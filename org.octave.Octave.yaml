@@ -1,6 +1,6 @@
 app-id: org.octave.Octave
 runtime: org.kde.Sdk
-runtime-version: '5.13'
+runtime-version: '5.14'
 sdk: org.kde.Sdk
 command: octave
 rename-icon: octave
