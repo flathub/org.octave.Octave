@@ -204,6 +204,8 @@ modules:
         sha256: 4281e29b628864dfe48d393a7bedd781e5b475387c20d8b0158f329994721a10
 
   - name: portaudio
+    config-opts:
+      - --enable-debug-output
     sources:
       - type: archive
         url: http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
