@@ -1,0 +1,12 @@
+diff -Naur portaudio/src/hostapi/alsa/pa_linux_alsa.c portaudio_/src/hostapi/alsa/pa_linux_alsa.c
+--- portaudio/src/hostapi/alsa/pa_linux_alsa.c	2016-10-30 10:23:04.000000000 +0900
++++ portaudio_/src/hostapi/alsa/pa_linux_alsa.c	2020-02-14 16:50:07.993742218 +0900
+@@ -1450,7 +1450,7 @@
+
+         PA_ENSURE( FillInDevInfo( alsaApi, hwInfo, blocking, devInfo, &devIdx ) );
+     }
+-    assert( devIdx < numDeviceNames );
++    //assert( devIdx < numDeviceNames );
+     /* Now inspect 'dmix' and 'default' plugins */
+     for( i = 0; i < numDeviceNames; ++i )
+     {
