@@ -251,8 +251,8 @@ modules:
     buildsystem: simple
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/pyqt/files/QScintilla2/QScintilla-2.10.8/QScintilla_gpl-2.10.8.tar.gz
-        sha256: 46cd5b4e609ca5e13130ba8cc7028d44fd1dc5b037f97c492899006ed0c992eb
+        url: https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.11.4/QScintilla-2.11.4.tar.gz
+        sha256: 723f8f1d1686d9fc8f204cd855347e984322dd5cd727891d324d0d7d187bee20
     build-commands:
       - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -i Qt4Qt5/qscintilla.pro
       - sed -e 's|\(header.path\) = .*|\1 = /app/include|' -i Qt4Qt5/qscintilla.pro
