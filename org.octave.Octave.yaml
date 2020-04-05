@@ -291,8 +291,8 @@ modules:
     buildsystem: simple
     sources:
       - type: archive
-        url: https://github.com/sympy/sympy/archive/sympy-1.3.tar.gz
-        sha256: d73d8424f254640969dcb3d50f0a4b41857643fb592a1c3e0c545a9343571a70
+        url: https://github.com/sympy/sympy/archive/sympy-1.5.1.tar.gz
+        sha256: d0702fca5df9bb48e89175b48dba54727e0ad94971157c33842d20036ed7e080
     build-commands:
       - python3 ./setup.py install --prefix=/app
 
