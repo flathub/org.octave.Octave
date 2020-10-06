@@ -220,6 +220,10 @@ modules:
         sha256: 096bbb59d6f3abd32b562fc3b34ea90d88741dc5dd888731d61d17e100394278
 
   - name: arpack-ng
+    build-options:
+      env:
+        FFLAGS: -fallow-argument-mismatch
+        FCFLAGS: -fallow-argument-mismatch
     sources:
       - type: archive
         url: https://github.com/opencollab/arpack-ng/archive/3.7.0.tar.gz
