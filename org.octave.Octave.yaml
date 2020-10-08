@@ -1,6 +1,6 @@
 app-id: org.octave.Octave
 runtime: org.kde.Sdk
-runtime-version: '5.14'
+runtime-version: '5.15'
 sdk: org.kde.Sdk
 command: octave
 rename-icon: octave
@@ -73,8 +73,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.6.tar.gz
-        sha256: e64c8fe083832ffbc1459ab6c72f71d53afd3b36e8497c922a15a06b72e9002f
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.10.tar.gz
+        sha256: 0484d275f87e9b8641ff2eecaa9df2830cbe276ac79ad80494822721de6e1693
 
   - shared-modules/glu/glu-9.json
 
@@ -220,6 +220,10 @@ modules:
         sha256: 096bbb59d6f3abd32b562fc3b34ea90d88741dc5dd888731d61d17e100394278
 
   - name: arpack-ng
+    build-options:
+      env:
+        FFLAGS: -fallow-argument-mismatch
+        FCFLAGS: -fallow-argument-mismatch
     sources:
       - type: archive
         url: https://github.com/opencollab/arpack-ng/archive/3.7.0.tar.gz
