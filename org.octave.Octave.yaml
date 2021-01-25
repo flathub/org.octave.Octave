@@ -73,8 +73,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.10.tar.gz
-        sha256: 0484d275f87e9b8641ff2eecaa9df2830cbe276ac79ad80494822721de6e1693
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.13.tar.gz
+        sha256: 79197543b17cc314b7e43f7a33148c308b0807cd6381ee77f77e15acf3e6459e
 
   - shared-modules/glu/glu-9.json
 
