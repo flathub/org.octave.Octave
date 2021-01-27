@@ -98,8 +98,8 @@ modules:
   - name: gnuplot
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.2.6/gnuplot-5.2.6.tar.gz
-        sha256: 35dd8f013139e31b3028fac280ee12d4b1346d9bb5c501586d1b5a04ae7a94ee
+        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.1/gnuplot-5.4.1.tar.gz
+        sha256: 6b690485567eaeb938c26936e5e0681cf70c856d273cc2c45fabf64d8bc6590e
 
   - name: ghostscript
     config-opts:
@@ -111,8 +111,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26.tar.xz
-        sha256: 90ed475f37584f646e9ef829932b2525d5c6fc2e0147e8d611bc50aa0e718598
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/ghostscript-9.53.3.tar.gz
+        sha512: c142ef9d83896aa8fd18c8e412220fe8f4950614be00d327d27ab051fe85e16524bf2ee00f46c2aca7a352ce47bc3acf2c4de0f7bbea7e4c55474b8af6cdc0a6
         # newer libpng version required to build on ARM
       - type: shell
         commands:
