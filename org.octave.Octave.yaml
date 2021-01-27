@@ -1,7 +1,7 @@
 app-id: org.octave.Octave
-runtime: org.kde.Sdk
-runtime-version: '5.15'
-sdk: org.kde.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: '20.08'
+sdk: org.freedesktop.Sdk
 command: octave
 rename-icon: octave
 sdk-extensions:
