@@ -58,9 +58,6 @@ build-options:
     PYTHON: python3
 modules:
 
-  # gfortran is part of the Freedesktop Sdk 18.08:
-  # https://github.com/flathub/org.freedesktop.Sdk.Extension.gfortran-62/issues/3
-
   - name: openblas
     no-autogen: true
     make-args:
@@ -75,6 +72,10 @@ modules:
       - type: archive
         url: https://github.com/xianyi/OpenBLAS/archive/v0.3.13.tar.gz
         sha256: 79197543b17cc314b7e43f7a33148c308b0807cd6381ee77f77e15acf3e6459e
+        x-checker-data:
+          type: anitya
+          project-id: 2540
+          url-template: https://github.com/xianyi/OpenBLAS/archive/v$version.tar.gz
 
   - shared-modules/glu/glu-9.json
 
@@ -92,6 +93,10 @@ modules:
       - type: archive
         url: https://www.fltk.org/pub/fltk/1.3.5/fltk-1.3.5-source.tar.gz
         sha256: 8729b2a055f38c1636ba20f749de0853384c1d3e9d1a6b8d4d1305143e115702
+        x-checker-data:
+          type: anitya
+          project-id: 823
+          url-template: https://www.fltk.org/pub/fltk/$version/fltk-$version-source.tar.gz
       - type: patch
         path: fltk-ninja-build-error.patch
 
@@ -100,6 +105,10 @@ modules:
       - type: archive
         url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.2.6/gnuplot-5.2.6.tar.gz
         sha256: 35dd8f013139e31b3028fac280ee12d4b1346d9bb5c501586d1b5a04ae7a94ee
+        x-checker-data:
+          type: anitya
+          project-id: 1216
+          url-template: https://sourceforge.net/projects/gnuplot/files/gnuplot/$version/gnuplot-$version.tar.gz
 
   - name: ghostscript
     config-opts:
@@ -113,14 +122,7 @@ modules:
       - type: archive
         url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26.tar.xz
         sha256: 90ed475f37584f646e9ef829932b2525d5c6fc2e0147e8d611bc50aa0e718598
-        # newer libpng version required to build on ARM
-      - type: shell
-        commands:
-          - rm -rf libpng
-      - type: archive
-        url: https://sourceforge.net/projects/libpng/files/libpng16/1.6.36/libpng-1.6.36.tar.xz
-        sha256: eceb924c1fa6b79172fdfd008d335f0e59172a86a66481e09d4089df872aa319
-        dest: libpng
+        # x-checker-data: URL contains version without period
 
   - name: gl2ps
     buildsystem: cmake-ninja
@@ -131,6 +133,10 @@ modules:
       - type: archive
         url: http://geuz.org/gl2ps/src/gl2ps-1.4.0.tgz
         sha256: 03cb5e6dfcd87183f3b9ba3b22f04cd155096af81e52988cc37d8d8efe6cf1e2
+        x-checker-data:
+          type: anitya
+          project-id: 1173
+          url-template: http://geuz.org/gl2ps/src/gl2ps-$version.tgz
 
   - name: qhull
     buildsystem: cmake-ninja
@@ -140,6 +146,10 @@ modules:
       - type: archive
         url: https://github.com/qhull/qhull/archive/v7.3.0.tar.gz
         sha256: 05a2311d8e6397c96802ee5a9d8db32b83dac7e42e2eb2cd81c5547c18e87de6
+        x-checker-data:
+          type: anitya
+          project-id: 21736
+          url-template: https://github.com/qhull/qhull/archive/v$version.tar.gz
 
   - name: epstool
     skip-arches:
@@ -162,6 +172,7 @@ modules:
       - type: archive
         url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.4/src/hdf5-1.10.4.tar.bz2
         sha256: 1267ff06aaedc04ca25f7c6026687ea2884b837043431195f153401d942b28df
+        # x-checker-data: URL contains a subset of $version
 
   - name: qrupdate
     no-autogen: true
@@ -175,6 +186,7 @@ modules:
       - type: archive
         url: https://sourceforge.net/projects/qrupdate/files/qrupdate/1.2/qrupdate-1.1.2.tar.gz
         sha256: e2a1c711dc8ebc418e21195833814cb2f84b878b90a2774365f0166402308e08
+        # x-checker-data: upstream directory structure on Sourceforge doesn't seem to make sense
       - type: shell
         commands:
           - sed -e 's|FFLAGS=-fimplicit-none -O3 -funroll-loops|FFLAGS=-fimplicit-none -O3 -funroll-loops -L/app/lib|' -i Makeconf
@@ -193,6 +205,10 @@ modules:
       - type: archive
         url: http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-5.4.0.tar.gz
         sha256: 374dd136696c653e34ef3212dc8ab5b61d9a67a6791d5ec4841efb838e94dbd1
+        x-checker-data:
+          type: anitya
+          project-id: 4908
+          url-template: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v$version.tar.gz
       - type: patch
         path: suitesparse-reduce-build.patch
 
@@ -201,6 +217,10 @@ modules:
       - type: archive
         url: https://ftpmirror.gnu.org/glpk/glpk-4.65.tar.gz
         sha256: 4281e29b628864dfe48d393a7bedd781e5b475387c20d8b0158f329994721a10
+        x-checker-data:
+          type: anitya
+          project-id: 1183
+          url-template: https://ftpmirror.gnu.org/glpk/glpk-$version.tar.gz
       - type: patch
         path: long-step-dual-simplex-msg.patch
 
@@ -209,6 +229,10 @@ modules:
       - type: archive
         url: http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
         sha256: f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513
+        x-checker-data:
+          type: anitya
+          project-id: 10597
+          url-template: http://www.portaudio.com/archives/pa_stable_v$version.tgz
 
   - name: graphicsmagick
     config-opts:
@@ -218,6 +242,10 @@ modules:
       - type: archive
         url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.31/GraphicsMagick-1.3.31.tar.xz
         sha256: 096bbb59d6f3abd32b562fc3b34ea90d88741dc5dd888731d61d17e100394278
+        x-checker-data:
+          type: anitya
+          project-id: 1248
+          url-template: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/$version/GraphicsMagick-$version.tar.xz
 
   - name: arpack-ng
     build-options:
@@ -228,6 +256,10 @@ modules:
       - type: archive
         url: https://github.com/opencollab/arpack-ng/archive/3.7.0.tar.gz
         sha256: 972e3fc3cd0b9d6b5a737c9bf6fd07515c0d6549319d4ffb06970e64fa3cc2d6
+        x-checker-data:
+          type: anitya
+          project-id: 111
+          url-template: https://github.com/opencollab/arpack-ng/archive/$version.tar.gz
 
   - name: fftw3
     no-autogen: true
@@ -238,6 +270,10 @@ modules:
       - type: archive
         url: http://www.fftw.org/fftw-3.3.8.tar.gz
         sha256: 6113262f6e92c5bd474f2875fa1b01054c4ad5040f6b0da7c03c98821d9ae303
+        x-checker-data:
+          type: anitya
+          project-id: 14534
+          url-template: http://www.fftw.org/fftw-$version.tar.gz
 
   - name: fftw3f
     no-autogen: true
@@ -249,6 +285,10 @@ modules:
       - type: archive
         url: http://www.fftw.org/fftw-3.3.8.tar.gz
         sha256: 6113262f6e92c5bd474f2875fa1b01054c4ad5040f6b0da7c03c98821d9ae303
+        x-checker-data:
+          type: anitya
+          project-id: 14534
+          url-template: http://www.fftw.org/fftw-$version.tar.gz
 
   - name: qscintilla
     buildsystem: simple
@@ -256,6 +296,10 @@ modules:
       - type: archive
         url: https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.11.4/QScintilla-2.11.4.tar.gz
         sha256: 723f8f1d1686d9fc8f204cd855347e984322dd5cd727891d324d0d7d187bee20
+        x-checker-data:
+          type: anitya
+          project-id: 37195
+          url-template: https://www.riverbankcomputing.com/static/Downloads/QScintilla/$version/QScintilla-$version.tar.gz
     build-commands:
       - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -i Qt4Qt5/qscintilla.pro
       - sed -e 's|\(header.path\) = .*|\1 = /app/include|' -i Qt4Qt5/qscintilla.pro
@@ -288,6 +332,10 @@ modules:
       - type: archive
         url: https://github.com/fredrik-johansson/mpmath/archive/1.1.0.tar.gz
         sha256: 16c01d589bcb1be5cab3a07de2855b578e5fc4a7882fb61a15f2aaf118fdd06e
+        x-checker-data:
+          type: anitya
+          project-id: 3930
+          url-template: https://github.com/fredrik-johansson/mpmath/archive/$version.tar.gz
     build-commands:
       - python3 ./setup.py install --prefix=/app
 
@@ -297,6 +345,10 @@ modules:
       - type: archive
         url: https://github.com/sympy/sympy/archive/sympy-1.5.1.tar.gz
         sha256: d0702fca5df9bb48e89175b48dba54727e0ad94971157c33842d20036ed7e080
+        x-checker-data:
+          type: anitya
+          project-id: 4923
+          url-template: https://github.com/sympy/sympy/archive/sympy-$version.tar.gz
     build-commands:
       - python3 ./setup.py install --prefix=/app
 
@@ -307,6 +359,10 @@ modules:
       - type: archive
         url: https://ftpmirror.gnu.org/texinfo/texinfo-6.5.tar.xz
         sha256: 77774b3f4a06c20705cc2ef1c804864422e3cf95235e965b1f00a46df7da5f62
+        x-checker-data:
+          type: anitya
+          project-id: 4958
+          url-template: https://ftpmirror.gnu.org/texinfo/texinfo-$version.tar.xz
       - type: patch
         path: texinfo-perl-528.patch
 
@@ -317,6 +373,10 @@ modules:
       - type: archive
         url: https://ftpmirror.gnu.org/units/units-2.19.tar.gz
         sha256: 4262136bdfc152b63ff5a9b93a7d80ce18b5e8bebdcffddc932dda769e306556
+        x-checker-data:
+          type: anitya
+          project-id: 5048
+          url-template: https://ftpmirror.gnu.org/units/units-$version.tar.gz
       - type: patch
         path: units-install-info.patch
     post-install:
@@ -331,6 +391,10 @@ modules:
       - type: archive
         url: https://github.com/zeromq/libzmq/archive/v4.3.0.tar.gz
         sha256: 4bcd112222cc0e8083c81196f60b486d9a7d57f810b0121c478ee3aeac1c19a4
+        x-checker-data:
+          type: anitya
+          project-id: 16245
+          url-template: https://github.com/zeromq/libzmq/archive/v$version.tar.gz
 
   - name: octave
     build-options:
@@ -351,3 +415,7 @@ modules:
       - type: archive
         url: https://ftpmirror.gnu.org/octave/octave-6.1.0.tar.xz
         sha256: d6cd6b79ef023e300b9287b56aa79333cfb6b651771d43ade7cbde63ca5a6010
+        x-checker-data:
+          type: anitya
+          project-id: 2528
+          url-template: https://ftpmirror.gnu.org/octave/octave-$version.tar.xz
