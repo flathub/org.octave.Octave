@@ -14,7 +14,7 @@ finish-args:
   - --socket=pulseaudio
   - --share=network
   - --filesystem=host
-  - --talk-name=com.canonical.AppMenu.Registrar # gives application access to dbus menu
+  - --talk-name=com.canonical.AppMenu.Registrar # required for global menu
   - --talk-name=org.freedesktop.Flatpak # allows spawning processes on the host via flatpak-spawn --host
   - --env=PATH=/app/bin:/usr/bin:/app/jre/bin
   - --env=CPPFLAGS=-I/app/include # required for building some Octave forge packages
@@ -417,8 +417,8 @@ modules:
       cflags-override: true
       cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
       cxxflags-override: true
-    build-commands:
-      - make check
+    #build-commands:
+      #- make check
     cleanup:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
