@@ -1,7 +1,16 @@
 diff --git a/Makefile b/Makefile
-index 76319551..306fdcd6 100644
+index 76319551..669099b0 100644
 --- a/Makefile
 +++ b/Makefile
+@@ -35,7 +35,7 @@ ifneq ($(GPU_CONFIG),)
+ endif
+ 	( cd SPQR && $(MAKE) )
+ 	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' )
+-	( cd SLIP_LU && $(MAKE) )
++#	( cd SLIP_LU && $(MAKE) )
+ #	( cd PIRO_BAND && $(MAKE) )
+ #	( cd SKYLINE_SVD && $(MAKE) )
+ 
 @@ -46,7 +46,7 @@ endif
  # (note that CSparse is not installed; CXSparse is installed instead)
  install: metisinstall
@@ -11,7 +20,7 @@ index 76319551..306fdcd6 100644
  	( cd AMD && $(MAKE) install )
  	( cd BTF && $(MAKE) install )
  	( cd CAMD && $(MAKE) install )
-@@ -54,16 +54,16 @@ install: metisinstall
+@@ -54,19 +54,19 @@ install: metisinstall
  	( cd COLAMD && $(MAKE) install )
  	( cd CHOLMOD && $(MAKE) install )
  	( cd CXSparse && $(MAKE) install )
@@ -31,7 +40,11 @@ index 76319551..306fdcd6 100644
 +#	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' install )
  #	( cd PIRO_BAND && $(MAKE) install )
  #	( cd SKYLINE_SVD && $(MAKE) install )
- 	( cd SLIP_LU && $(MAKE) install )
+-	( cd SLIP_LU && $(MAKE) install )
++#	( cd SLIP_LU && $(MAKE) install )
+ 	$(CP) README.md $(INSTALL_DOC)/SuiteSparse_README.md
+ 	chmod 644 $(INSTALL_DOC)/SuiteSparse_README.md
+ 
 @@ -126,7 +126,7 @@ endif
  # the static library
  library: metis
