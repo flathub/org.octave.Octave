@@ -377,6 +377,8 @@ modules:
           type: anitya
           project-id: 5048
           url-template: https://ftpmirror.gnu.org/units/units-$version.tar.gz
+      - type: patch
+        path: units-install-info.patch
     post-install:
       - mv -f /app/com/units/currency.units /app/share/units/currency.units
 
@@ -385,7 +387,7 @@ modules:
     builddir: true
     config-opts:
       - -DWITH_DOC=OFF
-      - -Wno-dev # disable warning for project developers
+      - -Wno-dev # disable warnings for project developers
     sources:
       - type: archive
         url: https://github.com/zeromq/libzmq/archive/v4.3.4.tar.gz
@@ -401,6 +403,14 @@ modules:
       - --with-blas=openblas
       - --with-java-homedir=/app/jre
       - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
+    # workaround for https://savannah.gnu.org/bugs/?55547
+    # these are the build flags used in the Freedesktop SDK, without "target_flags_glibcxx_assertions":
+    # https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/blob/master/include/flags.yml
+    build-options:
+      cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
+      cflags-override: true
+      cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
+      cxxflags-override: true
     build-commands:
       - make check
     cleanup:
