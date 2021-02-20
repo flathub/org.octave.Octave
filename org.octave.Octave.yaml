@@ -196,6 +196,7 @@ modules:
     make-args:
       - LAPACK=
       - library
+      - BLAS=-lopenblas
     make-install-args:
       - LAPACK=
       - INSTALL_LIB=/app/lib
