@@ -326,8 +326,10 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/LLNL/sundials/archive/v2.7.0.tar.gz
-        sha256: 2cbedd5b4063078c7b060b346a3150e31fc2e9fea336aeb930a7c6b556b123c8
+        url: https://computing.llnl.gov/projects/sundials/download/sundials-2.6.2.tar.gz
+        sha256: d8ed0151509dd2b0f317b318a4175f8b95a174340fc3080b8c20617da8aa4d2f
+        # sundialsTB was dropped in version 2.7.0:
+        # https://octave.1599824.n4.nabble.com/sundials-td4692574.html
 
   - name: openjdk
     buildsystem: simple
