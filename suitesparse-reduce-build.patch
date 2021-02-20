@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index 76319551..669099b0 100644
+index 76319551..a8abf476 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -35,7 +35,7 @@ ifneq ($(GPU_CONFIG),)
@@ -45,6 +45,15 @@ index 76319551..669099b0 100644
  	$(CP) README.md $(INSTALL_DOC)/SuiteSparse_README.md
  	chmod 644 $(INSTALL_DOC)/SuiteSparse_README.md
  
+@@ -110,7 +110,7 @@ uninstall:
+ 	( cd SuiteSparse_GPURuntime && $(MAKE) uninstall )
+ 	( cd GPUQREngine && $(MAKE) uninstall )
+ 	( cd SPQR && $(MAKE) uninstall )
+-	( cd SLIP_LU && $(MAKE) uninstall )
++#	( cd SLIP_LU && $(MAKE) uninstall )
+ #	( cd PIRO_BAND && $(MAKE) uninstall )
+ #	( cd SKYLINE_SVD && $(MAKE) uninstall )
+ ifeq (,$(MY_METIS_LIB))
 @@ -126,7 +126,7 @@ endif
  # the static library
  library: metis
@@ -54,7 +63,7 @@ index 76319551..669099b0 100644
  	( cd AMD && $(MAKE) library )
  	( cd BTF && $(MAKE) library )
  	( cd CAMD && $(MAKE) library )
-@@ -134,17 +134,17 @@ library: metis
+@@ -134,18 +134,18 @@ library: metis
  	( cd COLAMD && $(MAKE) library )
  	( cd CHOLMOD && $(MAKE) library )
  	( cd KLU && $(MAKE) library )
@@ -71,8 +80,37 @@ index 76319551..669099b0 100644
  endif
 -	( cd SPQR && $(MAKE) library )
 -	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' library )
+-	( cd SLIP_LU && $(MAKE) library )
 +#	( cd SPQR && $(MAKE) library )
 +#	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' library )
- 	( cd SLIP_LU && $(MAKE) library )
++#	( cd SLIP_LU && $(MAKE) library )
  #	( cd PIRO_BAND && $(MAKE) library )
  #	( cd SKYLINE_SVD && $(MAKE) library )
+ 
+@@ -173,7 +173,7 @@ ifneq (,$(GPU_CONFIG))
+ endif
+ 	( cd SPQR && $(MAKE) static )
+ 	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' static )
+-	( cd SLIP_LU && $(MAKE) static )
++#	( cd SLIP_LU && $(MAKE) static )
+ #	( cd PIRO_BAND && $(MAKE) static )
+ #	( cd SKYLINE_SVD && $(MAKE) static )
+ 
+@@ -200,7 +200,7 @@ purge:
+ 	- ( cd SuiteSparse_GPURuntime && $(MAKE) purge )
+ 	- ( cd GPUQREngine && $(MAKE) purge )
+ 	- ( cd SPQR && $(MAKE) purge )
+-	- ( cd SLIP_LU && $(MAKE) purge )
++#	- ( cd SLIP_LU && $(MAKE) purge )
+ #	- ( cd PIRO_BAND && $(MAKE) purge )
+ #	- ( cd SKYLINE_SVD && $(MAKE) purge )
+ 	- $(RM) MATLAB_Tools/*/*.mex* MATLAB_Tools/spok/private/*.mex*
+@@ -227,7 +227,7 @@ clean:
+ 	- ( cd SuiteSparse_GPURuntime && $(MAKE) clean )
+ 	- ( cd GPUQREngine && $(MAKE) clean )
+ 	- ( cd SPQR && $(MAKE) clean )
+-	- ( cd SLIP_LU && $(MAKE) clean )
++#	- ( cd SLIP_LU && $(MAKE) clean )
+ #	- ( cd PIRO_BAND && $(MAKE) clean )
+ #	- ( cd SKYLINE_SVD && $(MAKE) clean )
+ 

@@ -194,10 +194,12 @@ modules:
 
   - name: suitesparse
     make-args:
+      - BLAS=-lopenblas
       - LAPACK=
       - library
       - BLAS=-lopenblas
     make-install-args:
+      - BLAS=-lopenblas
       - LAPACK=
       - INSTALL_LIB=/app/lib
       - INSTALL_INCLUDE=/app/include
@@ -223,8 +225,6 @@ modules:
           type: anitya
           project-id: 1183
           url-template: https://ftpmirror.gnu.org/glpk/glpk-$version.tar.gz
-      - type: patch
-        path: long-step-dual-simplex-msg.patch
 
   - name: portaudio
     sources:
@@ -328,31 +328,31 @@ modules:
     build-commands:
       - /usr/lib/sdk/openjdk11/install.sh
 
-  - name: mpmath # dependency of sympy
-    buildsystem: simple
-    sources:
-      - type: archive
-        url: https://github.com/fredrik-johansson/mpmath/archive/1.2.1.tar.gz
-        sha256: 663f43499c9b8866e1ed60345179daa720ba64c556ac94b02ea5d94b6aa0b239
-        x-checker-data:
-          type: anitya
-          project-id: 3930
-          url-template: https://github.com/fredrik-johansson/mpmath/archive/$version.tar.gz
-    build-commands:
-      - python3 ./setup.py install --prefix=/app
+  #- name: mpmath # dependency of sympy
+    #buildsystem: simple
+    #sources:
+      #- type: archive
+        #url: https://github.com/fredrik-johansson/mpmath/archive/1.2.1.tar.gz
+        #sha256: 663f43499c9b8866e1ed60345179daa720ba64c556ac94b02ea5d94b6aa0b239
+        #x-checker-data:
+          #type: anitya
+          #project-id: 3930
+          #url-template: https://github.com/fredrik-johansson/mpmath/archive/$version.tar.gz
+    #build-commands:
+      #- python3 ./setup.py install --prefix=/app
 
-  - name: sympy # dependency of the symbolic package
-    buildsystem: simple
-    sources:
-      - type: archive
-        url: https://github.com/sympy/sympy/archive/sympy-1.7.1.tar.gz
-        sha256: 088ad11a91be822765d33d09ae6dc82c6a54d033167e3cc328cd84f84115e3a8
-        x-checker-data:
-          type: anitya
-          project-id: 4923
-          url-template: https://github.com/sympy/sympy/archive/sympy-$version.tar.gz
-    build-commands:
-      - python3 ./setup.py install --prefix=/app
+  #- name: sympy # dependency of the symbolic package
+    #buildsystem: simple
+    #sources:
+      #- type: archive
+        #url: https://github.com/sympy/sympy/archive/sympy-1.7.1.tar.gz
+        #sha256: 088ad11a91be822765d33d09ae6dc82c6a54d033167e3cc328cd84f84115e3a8
+        #x-checker-data:
+          #type: anitya
+          #project-id: 4923
+          #url-template: https://github.com/sympy/sympy/archive/sympy-$version.tar.gz
+    #build-commands:
+      #- python3 ./setup.py install --prefix=/app
 
   - name: texinfo
     config-opts:
@@ -365,8 +365,6 @@ modules:
           type: anitya
           project-id: 4958
           url-template: https://ftpmirror.gnu.org/texinfo/texinfo-$version.tar.xz
-      - type: patch
-        path: texinfo-perl-528.patch
 
   - name: units # dependency of the miscellaneous package
     config-opts:
@@ -389,6 +387,7 @@ modules:
     builddir: true
     config-opts:
       - -DWITH_DOC=OFF
+      - -Wno-dev # disable warning for project developers
     sources:
       - type: archive
         url: https://github.com/zeromq/libzmq/archive/v4.3.4.tar.gz
@@ -399,20 +398,13 @@ modules:
           url-template: https://github.com/zeromq/libzmq/archive/v$version.tar.gz
 
   - name: octave
-    build-options:
-      cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
-        -grecord-gcc-switches
-      cflags-override: true
-      cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
-        -grecord-gcc-switches
-      cxxflags-override: true
-      env:
-        QCOLLECTIONGENERATOR: qhelpgenerator-qt5 # workaround for https://savannah.gnu.org/bugs/?55187
     config-opts:
       - --disable-silent-rules
       - --with-blas=openblas
       - --with-java-homedir=/app/jre
       - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
+    build-commands:
+      - make check
     cleanup:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
