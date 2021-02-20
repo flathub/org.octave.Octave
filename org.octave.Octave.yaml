@@ -146,6 +146,7 @@ modules:
       - cmake --build build
       - cmake --build build --target libqhull # deprecated, needed by octave
       - cmake --install build
+      - cp -P build/libqhull.so* /app/lib/
       # http://savannah.gnu.org/bugs/?60016
       # https://github.com/archlinux/svntogit-packages/blob/packages/qhull/trunk/PKGBUILD
     sources:
