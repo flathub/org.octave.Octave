@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index 76319551..8cc7d209 100644
+index 76319551..306fdcd6 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -46,7 +46,7 @@ endif
@@ -11,7 +11,7 @@ index 76319551..8cc7d209 100644
  	( cd AMD && $(MAKE) install )
  	( cd BTF && $(MAKE) install )
  	( cd CAMD && $(MAKE) install )
-@@ -54,15 +54,15 @@ install: metisinstall
+@@ -54,16 +54,16 @@ install: metisinstall
  	( cd COLAMD && $(MAKE) install )
  	( cd CHOLMOD && $(MAKE) install )
  	( cd CXSparse && $(MAKE) install )
@@ -26,10 +26,12 @@ index 76319551..8cc7d209 100644
  	( cd GPUQREngine && $(MAKE) install )
  endif
 -	( cd SPQR && $(MAKE) install )
+-	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' install )
 +#	( cd SPQR && $(MAKE) install )
- 	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' install )
++#	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' install )
  #	( cd PIRO_BAND && $(MAKE) install )
  #	( cd SKYLINE_SVD && $(MAKE) install )
+ 	( cd SLIP_LU && $(MAKE) install )
 @@ -126,7 +126,7 @@ endif
  # the static library
  library: metis
@@ -39,7 +41,7 @@ index 76319551..8cc7d209 100644
  	( cd AMD && $(MAKE) library )
  	( cd BTF && $(MAKE) library )
  	( cd CAMD && $(MAKE) library )
-@@ -134,16 +134,16 @@ library: metis
+@@ -134,17 +134,17 @@ library: metis
  	( cd COLAMD && $(MAKE) library )
  	( cd CHOLMOD && $(MAKE) library )
  	( cd KLU && $(MAKE) library )
@@ -55,7 +57,9 @@ index 76319551..8cc7d209 100644
  	( cd GPUQREngine && $(MAKE) library )
  endif
 -	( cd SPQR && $(MAKE) library )
+-	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' library )
 +#	( cd SPQR && $(MAKE) library )
- 	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' library )
++#	( cd GraphBLAS && $(MAKE) JOBS=$(JOBS) CMAKE_OPTIONS='$(CMAKE_OPTIONS)' library )
  	( cd SLIP_LU && $(MAKE) library )
  #	( cd PIRO_BAND && $(MAKE) library )
+ #	( cd SKYLINE_SVD && $(MAKE) library )
