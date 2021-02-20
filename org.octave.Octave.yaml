@@ -377,8 +377,6 @@ modules:
           type: anitya
           project-id: 5048
           url-template: https://ftpmirror.gnu.org/units/units-$version.tar.gz
-      - type: patch
-        path: units-install-info.patch
     post-install:
       - mv -f /app/com/units/currency.units /app/share/units/currency.units
 
