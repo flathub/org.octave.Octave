@@ -398,6 +398,20 @@ modules:
           project-id: 16245
           url-template: https://github.com/zeromq/libzmq/archive/v$version.tar.gz
 
+  - name: ncurses
+    config-opts:
+      - --with-shared
+    make-install-args:
+      - install.libs
+    sources:
+      - type: archive
+        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210220.tgz
+        sha256: 592bfe3c1af2774ca830070f02ffc8b6f1674dd79667c9aa9bf41509065c4803
+        x-checker-data:
+          type: anitya
+          project-id: 2057
+          url-template: https://invisible-mirror.net/archives/ncurses/current/ncurses-$version.tgz
+
   - name: octave
     config-opts:
       - --disable-silent-rules
@@ -412,6 +426,7 @@ modules:
       cflags-override: true
       cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
       cxxflags-override: true
+    # Disabled due to https://github.com/flathub/org.octave.Octave/issues/95
     #build-commands:
       #- make check
     cleanup:
