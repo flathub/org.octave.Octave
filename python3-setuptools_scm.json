@@ -1,0 +1,16 @@
+{
+    "name": "python-setuptools-scm",
+    "buildsystem": "simple",
+    "build-commands": [
+        "python3 setup.py build",
+        "python3 setup.py egg_info",
+        "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+        {
+            "type": "git",
+            "url": "https://github.com/pypa/setuptools_scm",
+            "tag": "v5.0.1"
+        }
+    ]
+}

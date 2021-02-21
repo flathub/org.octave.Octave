@@ -338,31 +338,12 @@ modules:
     build-commands:
       - /usr/lib/sdk/openjdk11/install.sh
 
-  #- name: mpmath # dependency of sympy
-    #buildsystem: simple
-    #sources:
-      #- type: archive
-        #url: https://github.com/fredrik-johansson/mpmath/archive/1.2.1.tar.gz
-        #sha256: 663f43499c9b8866e1ed60345179daa720ba64c556ac94b02ea5d94b6aa0b239
-        #x-checker-data:
-          #type: anitya
-          #project-id: 3930
-          #url-template: https://github.com/fredrik-johansson/mpmath/archive/$version.tar.gz
-    #build-commands:
-      #- python3 ./setup.py install --prefix=/app
+    # flatpak-pip-generator doesn't work for setuptools_scm:
+    # https://github.com/flatpak/flatpak-builder-tools/issues/157
+  - python3-setuptools_scm.json
 
-  #- name: sympy # dependency of the symbolic package
-    #buildsystem: simple
-    #sources:
-      #- type: archive
-        #url: https://github.com/sympy/sympy/archive/sympy-1.7.1.tar.gz
-        #sha256: 088ad11a91be822765d33d09ae6dc82c6a54d033167e3cc328cd84f84115e3a8
-        #x-checker-data:
-          #type: anitya
-          #project-id: 4923
-          #url-template: https://github.com/sympy/sympy/archive/sympy-$version.tar.gz
-    #build-commands:
-      #- python3 ./setup.py install --prefix=/app
+    # ./flatpak-pip-generator mpmath sympy
+  - python3-modules.json
 
   - name: texinfo
     config-opts:
