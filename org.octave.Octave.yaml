@@ -405,8 +405,8 @@ modules:
       - install.libs
     sources:
       - type: archive
-        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210220.tgz
-        sha256: 592bfe3c1af2774ca830070f02ffc8b6f1674dd79667c9aa9bf41509065c4803
+        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210227.tgz
+        sha256: 852e3a30e354d5c825d71798707011ec974962364ffb21dd11bf98fdacb88bc3
         x-checker-data:
           type: anitya
           project-id: 2057
@@ -422,9 +422,11 @@ modules:
     # these are the build flags used in the Freedesktop SDK, without "target_flags_glibcxx_assertions":
     # https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/blob/master/include/flags.yml
     build-options:
-      cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
+      cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
+        -grecord-gcc-switches
       cflags-override: true
-      cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
+      cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
+        -grecord-gcc-switches
       cxxflags-override: true
     # Disabled due to https://github.com/flathub/org.octave.Octave/issues/95
     #build-commands:
