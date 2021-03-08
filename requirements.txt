@@ -1,0 +1,2 @@
+setuptools_scm
+sympy == 1.5.1 # symbolic package doesn't work with sympy 1.6: https://github.com/cbm755/octsympy/issues/1023

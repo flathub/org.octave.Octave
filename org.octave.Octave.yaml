@@ -338,12 +338,8 @@ modules:
     build-commands:
       - /usr/lib/sdk/openjdk11/install.sh
 
-    # flatpak-pip-generator doesn't work for setuptools_scm:
-    # https://github.com/flatpak/flatpak-builder-tools/issues/157
-  - python3-setuptools_scm.json
-
-    # ./flatpak-pip-generator mpmath sympy
-  - python3-modules.json
+    # ./flatpak-pip-generator -r requirements.txt
+  - python3-requirements.json # dependencies of the symbolic package
 
   - name: texinfo
     config-opts:
