@@ -318,7 +318,7 @@ modules:
       - DESTDIR=/app
       - PREFIX=/app
     config-opts:
-    - CONFIG+=release
+      - CONFIG+=release
     sources:
       - type: archive
         url: https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.11.6/QScintilla-2.11.6.tar.gz
@@ -329,12 +329,10 @@ modules:
           url-template: https://www.riverbankcomputing.com/static/Downloads/QScintilla/$version/QScintilla-$version.tar.gz
       - type: shell
         commands:
-          - sed -e 's|\(target.path\) = .*|\1 = /app/lib|'
-                -e 's|\(header.path\) = .*|\1 = /app/include|'
-                -e 's|\(trans.path\) = .*|\1 = /app/share/qt5/translations|'
-                -e 's|\(qsci.path\) = .*|\1 = /app/share/qt5|'
-                -e 's|\(features.path\) = .*|\1 = /app/lib/qt5/mkspecs/features|'
-                -i Qt4Qt5/qscintilla.pro
+          - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -e 's|\(header.path\) =
+            .*|\1 = /app/include|' -e 's|\(trans.path\) = .*|\1 = /app/share/qt5/translations|'
+            -e 's|\(qsci.path\) = .*|\1 = /app/share/qt5|' -e 's|\(features.path\)
+            = .*|\1 = /app/lib/qt5/mkspecs/features|' -i Qt4Qt5/qscintilla.pro
 
   - name: sundials
     buildsystem: cmake-ninja
@@ -422,8 +420,8 @@ modules:
       - install.libs
     sources:
       - type: archive
-        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210306.tgz
-        sha256: da87466861b5cee57e0e2d5fab469b14e23130a8c0915afc99a2908cf4c2266c
+        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210313.tgz
+        sha256: 88e106a3773e8f23e92204220e14198590795f69282588d16d6e85be92ace88a
         x-checker-data:
           type: anitya
           project-id: 2057
