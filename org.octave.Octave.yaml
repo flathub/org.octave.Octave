@@ -451,7 +451,7 @@ modules:
     sources:
       - type: archive
         url: https://ftpmirror.gnu.org/octave/octave-6.2.0.tar.xz
-        sha256: 7b721324cccb3eaeb4efb455508201ac8ccbd200f77106f52342f9ab7f022d1a
+        sha256: a2e2fa63b642d4c8fbd3c858a731d3a2ee351c9167695bc0f8fbd6dd9632f99c
         x-checker-data:
           type: anitya
           project-id: 2528
