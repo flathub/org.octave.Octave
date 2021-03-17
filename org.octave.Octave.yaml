@@ -70,8 +70,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.13.tar.gz
-        sha256: 79197543b17cc314b7e43f7a33148c308b0807cd6381ee77f77e15acf3e6459e
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.14.tar.gz
+        sha256: d381935d26f9cae8e4bbd7d7f278435adf8e3a90920edf284bb9ad789ee9ad60
         x-checker-data:
           type: anitya
           project-id: 2540
