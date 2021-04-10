@@ -124,7 +124,10 @@ modules:
       - type: archive
         url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26.tar.xz
         sha256: 90ed475f37584f646e9ef829932b2525d5c6fc2e0147e8d611bc50aa0e718598
-        # x-checker-data: URL contains version without period
+        x-checker-data:
+          type: anitya
+          project-id: 1157
+          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs$major$minor$patch/ghostscript-$version.tar.xz
 
   - name: gl2ps
     buildsystem: cmake-ninja
@@ -185,7 +188,10 @@ modules:
       - type: archive
         url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.4/src/hdf5-1.10.4.tar.bz2
         sha256: 1267ff06aaedc04ca25f7c6026687ea2884b837043431195f153401d942b28df
-        # x-checker-data: URL contains a subset of $version
+        x-checker-data:
+          type: anitya
+          project-id: 1303
+          url-template: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-$major.$minor/hdf5-$version/src/hdf5-$version.tar.bz2
 
   - name: qrupdate
     no-autogen: true
@@ -199,7 +205,10 @@ modules:
       - type: archive
         url: https://sourceforge.net/projects/qrupdate/files/qrupdate/1.2/qrupdate-1.1.2.tar.gz
         sha256: e2a1c711dc8ebc418e21195833814cb2f84b878b90a2774365f0166402308e08
-        # x-checker-data: upstream directory structure on Sourceforge doesn't seem to make sense
+        x-checker-data:
+          type: anitya
+          project-id: 4132
+          url-template: https://sourceforge.net/projects/qrupdate/files/qrupdate/$major.$minor/qrupdate-$version.tar.gz
       - type: shell
         commands:
           - sed -e 's|FFLAGS=-fimplicit-none -O3 -funroll-loops|FFLAGS=-fimplicit-none
