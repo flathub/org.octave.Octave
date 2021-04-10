@@ -122,8 +122,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/ghostscript-9.26.tar.xz
-        sha256: 90ed475f37584f646e9ef829932b2525d5c6fc2e0147e8d611bc50aa0e718598
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/ghostscript-9.54.0.tar.xz
+        sha256: c2b7b43cde600f4e70efb2cd95865f6d884a67315c3de235914697d8ccde6e3b
         x-checker-data:
           type: anitya
           project-id: 1157
@@ -186,8 +186,8 @@ modules:
       - -Wno-dev # suppress warning for project developers
     sources:
       - type: archive
-        url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.4/src/hdf5-1.10.4.tar.bz2
-        sha256: 1267ff06aaedc04ca25f7c6026687ea2884b837043431195f153401d942b28df
+        url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.5/src/hdf5-1.10.5.tar.bz2
+        sha256: 68d6ea8843d2a106ec6a7828564c1689c7a85714a35d8efafa2fee20ca366f44
         x-checker-data:
           type: anitya
           project-id: 1303
