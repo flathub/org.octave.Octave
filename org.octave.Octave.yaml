@@ -20,6 +20,7 @@ finish-args:
   - --env=CPPFLAGS=-I/app/include # required for building some Octave forge packages
   - --env=LDFLAGS=-L/app/lib # required for building some Octave forge packages
   - --env=OCTAVE_HOME=/app
+  - --env=PKG_CONFIG_PATH=/app/lib/pkgconfig:/app/share/pkgconfig
 cleanup:
   - /bin/*lpr*.sh
   - /bin/GraphicsMagick*config
