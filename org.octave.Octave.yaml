@@ -223,8 +223,8 @@ modules:
     make-install-args:
       - BLAS=-lopenblas
       - LAPACK=
+      - INSTALL_INCLUDE=/app/include/suitesparse
       - INSTALL_LIB=/app/lib
-      - INSTALL_INCLUDE=/app/include
       - library
     no-autogen: true
     sources:
@@ -351,7 +351,7 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DENABLE_KLU=ON
-      - -DKLU_INCLUDE_DIR:PATH=/app/include
+      - -DKLU_INCLUDE_DIR:PATH=/app/include/suitesparse
       - -DKLU_LIBRARY_DIR:PATH=/app/lib
     builddir: true
     sources:
