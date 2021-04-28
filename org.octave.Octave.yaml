@@ -45,12 +45,15 @@ cleanup:
   - /lib/libqhull_*
   - /lib/octave/*/lib*.la
   - /man
+  - /share/*.txt
+  - /share/COPYING
   - /share/applications/fluid.desktop
   - /share/doc
   - /share/fltk
   - /share/hdf5_examples
   - /share/man
   - /share/units/locale_map.txt
+  - /share/zmq
   - fluid
   - fluid.*
 build-options:
@@ -223,8 +226,8 @@ modules:
     make-install-args:
       - BLAS=-lopenblas
       - LAPACK=
+      - INSTALL_INCLUDE=/app/include/suitesparse
       - INSTALL_LIB=/app/lib
-      - INSTALL_INCLUDE=/app/include
       - library
     no-autogen: true
     sources:
@@ -351,7 +354,7 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DENABLE_KLU=ON
-      - -DKLU_INCLUDE_DIR:PATH=/app/include
+      - -DKLU_INCLUDE_DIR:PATH=/app/include/suitesparse
       - -DKLU_LIBRARY_DIR:PATH=/app/lib
     builddir: true
     sources:
