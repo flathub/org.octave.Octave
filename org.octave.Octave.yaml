@@ -45,12 +45,15 @@ cleanup:
   - /lib/libqhull_*
   - /lib/octave/*/lib*.la
   - /man
+  - /share/*.txt
+  - /share/COPYING
   - /share/applications/fluid.desktop
   - /share/doc
   - /share/fltk
   - /share/hdf5_examples
   - /share/man
   - /share/units/locale_map.txt
+  - /share/zmq
   - fluid
   - fluid.*
 build-options:
