@@ -434,8 +434,8 @@ modules:
       - install.libs
     sources:
       - type: archive
-        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210508.tgz
-        sha256: ca0f20b11a8fe0a1835f6aa7ab53b88b9d76d1d930023112987a7d09565c5c17
+        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210515.tgz
+        sha256: f1f8da930be3690d06f2faf668467ffaf7106ad0f28e3430c20ba1b571385f83
         x-checker-data:
           type: anitya
           project-id: 2057
