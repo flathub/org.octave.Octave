@@ -104,8 +104,6 @@ modules:
           type: anitya
           project-id: 823
           url-template: https://www.fltk.org/pub/fltk/$version/fltk-$version-source.tar.gz
-      - type: patch
-        path: fltk-ninja-build-error.patch
 
   - name: gnuplot
     sources:
