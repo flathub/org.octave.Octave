@@ -435,7 +435,7 @@ modules:
     sources:
       - type: archive
         url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210522.tgz
-        sha256: ff310760939db30cc6fdd9bef732517a702992783ae4712114d436b119548ca5
+        sha256: 6753817f31fb6a6884888992f9fb9b07d9c53007b8a0d8bf2094da65c06fc404
         x-checker-data:
           type: anitya
           project-id: 2057
