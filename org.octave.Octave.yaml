@@ -108,8 +108,8 @@ modules:
   - name: gnuplot
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.1/gnuplot-5.4.1.tar.gz
-        sha256: 6b690485567eaeb938c26936e5e0681cf70c856d273cc2c45fabf64d8bc6590e
+        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.2/gnuplot-5.4.2.tar.gz
+        sha256: e57c75e1318133951d32a83bcdc4aff17fed28722c4e71f2305cfc2ae1cae7ba
         x-checker-data:
           type: anitya
           project-id: 1216
@@ -434,8 +434,8 @@ modules:
       - install.libs
     sources:
       - type: archive
-        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210522.tgz
-        sha256: 6753817f31fb6a6884888992f9fb9b07d9c53007b8a0d8bf2094da65c06fc404
+        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210605.tgz
+        sha256: 4cdd79adfa025ba5007a6bf98223711636c2850df949b0be3700cc759830b140
         x-checker-data:
           type: anitya
           project-id: 2057
