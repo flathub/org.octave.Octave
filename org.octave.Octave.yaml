@@ -109,7 +109,7 @@ modules:
     sources:
       - type: archive
         url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.2/gnuplot-5.4.2.tar.gz
-        sha256: 251a85b3bac687974f360d3796048c20ded3bf0bd69e0d1cfd1db23d013f89ed
+        sha256: e57c75e1318133951d32a83bcdc4aff17fed28722c4e71f2305cfc2ae1cae7ba
         x-checker-data:
           type: anitya
           project-id: 1216
