@@ -378,8 +378,8 @@ modules:
       - --disable-nls
     sources:
       - type: archive
-        url: https://ftpmirror.gnu.org/texinfo/texinfo-6.7.tar.xz
-        sha256: 988403c1542d15ad044600b909997ba3079b10e03224c61188117f3676b02caa
+        url: https://ftpmirror.gnu.org/texinfo/texinfo-6.8.tar.xz
+        sha256: d5cc889c72710916eb8f87eefb956fb47fa489b642238903bcf9e315ec801787
         x-checker-data:
           type: anitya
           project-id: 4958
@@ -434,8 +434,8 @@ modules:
       - install.libs
     sources:
       - type: archive
-        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210626.tgz
-        sha256: 0ffd7087372ab4be379edc0c4550bbad06ac29d59f398f220b42e5ccc767bbbe
+        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210703.tgz
+        sha256: 58cd50ce4b808c88522a9da87781fc5b86c5cbbb8105a648befc3f5b8742faea
         x-checker-data:
           type: anitya
           project-id: 2057
