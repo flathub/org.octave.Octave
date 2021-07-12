@@ -77,8 +77,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.15.tar.gz
-        sha256: 30a99dec977594b387a17f49904523e6bc8dd88bd247266e83485803759e4bbe
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.16.tar.gz
+        sha256: fa19263c5732af46d40d3adeec0b2c77951b67687e670fb6ba52ea3950460d79
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -434,8 +434,8 @@ modules:
       - install.libs
     sources:
       - type: archive
-        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210703.tgz
-        sha256: 58cd50ce4b808c88522a9da87781fc5b86c5cbbb8105a648befc3f5b8742faea
+        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210710.tgz
+        sha256: 28e558e60347820922efd942169e74a0ea5de2992e4c3799bf1ebb7ca1b5e84c
         x-checker-data:
           type: anitya
           project-id: 2057
