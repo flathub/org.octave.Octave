@@ -427,19 +427,19 @@ modules:
           project-id: 16245
           url-template: https://github.com/zeromq/libzmq/archive/v$version.tar.gz
 
-  - name: ncurses
-    config-opts:
-      - --with-shared
-    make-install-args:
-      - install.libs
-    sources:
-      - type: archive
-        url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210911.tgz
-        sha256: f0a7c31cedf440ed28e1f930bd60eb95a1c1135be6037d3c173df5753f52bde5
-        x-checker-data:
-          type: anitya
-          project-id: 2057
-          url-template: https://invisible-mirror.net/archives/ncurses/current/ncurses-$version.tgz
+  #- name: ncurses
+    #config-opts:
+      #- --with-shared
+    #make-install-args:
+      #- install.libs
+    #sources:
+      #- type: archive
+        #url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210911.tgz
+        #sha256: f0a7c31cedf440ed28e1f930bd60eb95a1c1135be6037d3c173df5753f52bde5
+        #x-checker-data:
+          #type: anitya
+          #project-id: 2057
+          #url-template: https://invisible-mirror.net/archives/ncurses/current/ncurses-$version.tgz
 
   - name: octave
     config-opts:
