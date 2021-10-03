@@ -194,7 +194,8 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 1303
-          url-template: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-$major.$minor/hdf5-$version/src/hdf5-$version.tar.bz2
+          url-template: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-$version.tar.gz
+          stable-only: true
 
   - name: qrupdate
     no-autogen: true
@@ -211,7 +212,7 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 4132
-          url-template: https://sourceforge.net/projects/qrupdate/files/qrupdate/$major.$minor/qrupdate-$version.tar.gz
+          url-template: https://sourceforge.net/projects/qrupdate/files/qrupdate/$minor.$patch/qrupdate-$version.tar.gz
       - type: shell
         commands:
           - sed -e 's|FFLAGS=-fimplicit-none -O3 -funroll-loops|FFLAGS=-fimplicit-none
@@ -339,8 +340,8 @@ modules:
         sha256: e7346057db47d2fb384467fafccfcb13aa0741373c5d593bc72b55b2f0dd20a7
         x-checker-data:
           type: anitya
-          project-id: 37195
-          url-template: https://www.riverbankcomputing.com/static/Downloads/QScintilla/$version/QScintilla-$version.tar.gz
+          project-id: 37195 # use the ID of the PyPI project, since the Anitya regex for the actual qscintilla project broke
+          url-template: https://www.riverbankcomputing.com/static/Downloads/QScintilla/$version/QScintilla_src-$version.tar.gz
       - type: shell
         commands:
           - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -e 's|\(header.path\) =
