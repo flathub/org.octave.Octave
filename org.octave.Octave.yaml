@@ -448,6 +448,7 @@ modules:
       - --with-blas=openblas
       - --with-java-homedir=/app/jre
       - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
+      - --enable-jit
     # workaround for https://savannah.gnu.org/bugs/?55547
     # these are the build flags used in the Freedesktop SDK, without "target_flags_glibcxx_assertions":
     # https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/blob/master/include/flags.yml
