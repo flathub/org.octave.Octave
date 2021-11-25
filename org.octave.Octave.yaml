@@ -63,6 +63,18 @@ build-options:
     PYTHON: python3
 modules:
 
+  - name: llvm
+    subdir: llvm
+    builddir: true
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -Wno-dev # suppress warning for project developers
+    sources:
+      - type: archive
+        url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-6.0.1.tar.gz
+        sha256: aefadceb231f4c195fe6d6cd3b1a010b269c8a22410f339b5a089c2e902aa177
+
   - name: openblas
     no-autogen: true
     make-args:
