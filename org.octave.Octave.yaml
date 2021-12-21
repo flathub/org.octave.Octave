@@ -356,7 +356,7 @@ modules:
       - -DENABLE_KLU=ON
       - -DKLU_INCLUDE_DIR:PATH=/app/include/suitesparse
       - -DKLU_LIBRARY_DIR:PATH=/app/lib
-      - -DCMAKE_C_STANDARD=GNU # https://github.com/LLNL/sundials/issues/96
+      - -DCMAKE_C_STANDARD=11 # https://github.com/LLNL/sundials/issues/96 and https://raw.githubusercontent.com/LLNL/sundials/master/INSTALL_GUIDE.pdf
     builddir: true
     sources:
       - type: archive
