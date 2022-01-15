@@ -77,8 +77,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.18.tar.gz
-        sha256: 1632c1e8cca62d8bed064b37747e331a1796fc46f688626337362bf0d16aeadb
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.19.tar.gz
+        sha256: 947f51bfe50c2a0749304fbe373e00e7637600b0a47b78a51382aeb30ca08562
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -359,8 +359,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/LLNL/sundials/archive/v5.8.0.tar.gz
-        sha256: 993a3826483fe749ae7bc589482f321cb79a7f1fdf51365b048d0ff49b815541
+        url: https://github.com/LLNL/sundials/archive/v6.1.0.tar.gz
+        sha256: 286ac6b3567a8b5c8d372391f9061024dc3c6415556c3eb0423be8bdf2de1e77
         x-checker-data:
           type: anitya
           project-id: 4910
