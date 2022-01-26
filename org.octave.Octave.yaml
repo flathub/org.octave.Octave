@@ -359,12 +359,13 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/LLNL/sundials/archive/v6.1.0.tar.gz
-        sha256: 286ac6b3567a8b5c8d372391f9061024dc3c6415556c3eb0423be8bdf2de1e77
-        x-checker-data:
-          type: anitya
-          project-id: 4910
-          url-template: https://github.com/LLNL/sundials/archive/v$version.tar.gz
+        url: https://github.com/LLNL/sundials/archive/v5.8.0.tar.gz
+        sha256: 993a3826483fe749ae7bc589482f321cb79a7f1fdf51365b048d0ff49b815541
+        # do not update, since Octave fails to build with sundials-6.0.0: https://savannah.gnu.org/bugs/?61738
+        # x-checker-data:
+        #   type: anitya
+        #   project-id: 4910
+        #   url-template: https://github.com/LLNL/sundials/archive/v$version.tar.gz
 
   - name: openjdk
     buildsystem: simple
