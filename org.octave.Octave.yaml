@@ -222,7 +222,6 @@ modules:
     buildsystem: autotools
     builddir: true
     config-opts:
-      - --disable-shared
       - --with-pic
     sources:
       - type: archive
@@ -248,14 +247,21 @@ modules:
     no-autogen: true
     sources:
       - type: archive
-        url: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v5.11.0.tar.gz
-        sha256: fdd957ed06019465f7de73ce931afaf5d40e96e14ae57d91f60868b8c123c4c8
+        url: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v5.12.0.tar.gz
+        sha256: 5fb0064a3398111976f30c5908a8c0b40df44c6dd8f0cc4bfa7b9e45d8c647de
         x-checker-data:
           type: anitya
           project-id: 4908
           url-template: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v$version.tar.gz
-      #- type: patch
-        #path: suitesparse-reduce-build.patch
+        # Comment on the module that we don't need.
+      - type: shell
+        commands:
+          - sed -i '/SLIP_LU/ s/^/# /' Makefile
+          - sed -i '/Mongoose/ s/^/# /' Makefile
+          - sed -i '/LDL/ s/^/# /' Makefile
+          - sed -i '/RBio/ s/^/# /' Makefile
+          - sed -i '/SPQR/ s/^/# /' Makefile
+          - sed -i '/GraphBLAS/ s/^/# /' Makefile
 
   - name: glpk
     sources:
