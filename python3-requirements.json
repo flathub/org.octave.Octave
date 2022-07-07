@@ -21,7 +21,7 @@
             "name": "python3-sympy",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sympy==1.5.1\" --no-build-isolation"
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sympy==1.10.1\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -31,8 +31,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/46/3e/fbe19f658d396d52975413cd2718fbada15de5d3fa2892e23e1aca6ffed4/sympy-1.5.1.tar.gz",
-                    "sha256": "d77901d748287d15281f5ffe5b0fef62dd38f357c2b827c44ff07f35695f4e7e"
+                    "url": "https://pypi.io/packages/source/s/sympy/sympy-1.10.1.tar.gz"
+                    "sha256": "5939eeffdf9e152172601463626c022a2c27e75cf6278de8d401d50c9d58787b"
                 }
             ]
         }
