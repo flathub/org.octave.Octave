@@ -108,8 +108,8 @@ modules:
   - name: gnuplot
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.3/gnuplot-5.4.3.tar.gz
-        sha256: 51f89bbab90f96d3543f95235368d188eb1e26eda296912256abcd3535bd4d84
+        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.4/gnuplot-5.4.4.tar.gz
+        sha256: 372300b7867f5b3538b25fc5d0ac7734af6e3fe0d202b6db926e4369913f0902
         x-checker-data:
           type: anitya
           project-id: 1216
@@ -473,8 +473,8 @@ modules:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
       - type: archive
-        url: https://ftpmirror.gnu.org/octave/octave-7.1.0.tar.xz
-        sha256: 3fd4615ebbab02c38c93ea6ba318756aedec38d98a5c732d409899e8b4356273
+        url: https://ftpmirror.gnu.org/octave/octave-7.2.0.tar.xz
+        sha256: 4aef78c3c9d49f75d64ccd55267df40b3020e6414f69ea8757a1939628b30171
         x-checker-data:
           type: anitya
           project-id: 2528
