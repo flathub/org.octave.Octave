@@ -367,7 +367,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/LLNL/sundials/archive/v5.8.0.tar.gz
-        sha256: 993a3826483fe749ae7bc589482f321cb79a7f1fdf51365b048d0ff49b815541
+        sha256: e8ebc2004aae8c642791fdf51aac8a7774b21fc9baf41f26b18e76ec38adfa3e
         # do not update, since Octave fails to build with sundials-6.0.0: https://savannah.gnu.org/bugs/?61738
         # x-checker-data:
         #   type: anitya
