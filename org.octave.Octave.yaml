@@ -189,8 +189,8 @@ modules:
       - -Wno-dev # suppress warning for project developers
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_1.tar.gz
-        sha256: 92552458f35c7e58128ce1bfc2831abf901cc142ea0fdd2b056311e4452db7bf
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_2.tar.gz
+        sha256: 6b97168ce262d7f9fa67355171e8e1899989046bf70ca5735341b0872760af9a
         x-checker-data:
           type: anitya
           project-id: 1303
