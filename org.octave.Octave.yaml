@@ -189,8 +189,8 @@ modules:
       - -Wno-dev # suppress warning for project developers
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_2.tar.gz
-        sha256: 6b97168ce262d7f9fa67355171e8e1899989046bf70ca5735341b0872760af9a
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_3.tar.gz
+        sha256: a59d046486c9e2076a33b5b389479a2476cfe496601dffd36bd354755630d22c
         x-checker-data:
           type: anitya
           project-id: 1303
@@ -232,8 +232,8 @@ modules:
     no-autogen: true
     sources:
       - type: archive
-        url: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v5.13.0.tar.gz
-        sha256: 59c6ca2959623f0c69226cf9afb9a018d12a37fab3a8869db5f6d7f83b6b147d
+        url: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v6.0.1.tar.gz
+        sha256: 06f55a0449775d1f43d8a33ba8c8417ea8cf76c27833b465c49825baa8741d0c
         x-checker-data:
           type: anitya
           project-id: 4908
@@ -387,8 +387,8 @@ modules:
       - --disable-nls
     sources:
       - type: archive
-        url: https://ftpmirror.gnu.org/texinfo/texinfo-6.8.tar.xz
-        sha256: 8eb753ed28bca21f8f56c1a180362aed789229bd62fff58bf8368e9beb59fec4
+        url: https://ftpmirror.gnu.org/texinfo/texinfo-7.0.1.tar.xz
+        sha256: bcd221fdb2d807a8a09938a0f8d5e010ebd2b58fca16075483d6fcb78db2c6b2
         x-checker-data:
           type: anitya
           project-id: 4958
