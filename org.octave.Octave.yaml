@@ -385,10 +385,6 @@ modules:
       - type: archive
         url: https://ftpmirror.gnu.org/texinfo/texinfo-6.8.tar.xz
         sha256: 8eb753ed28bca21f8f56c1a180362aed789229bd62fff58bf8368e9beb59fec4
-        x-checker-data:
-          type: anitya
-          project-id: 4958
-          url-template: https://ftpmirror.gnu.org/texinfo/texinfo-$version.tar.xz
 
   - name: units # dependency of the miscellaneous package
     config-opts:
