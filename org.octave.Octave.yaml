@@ -345,10 +345,6 @@ modules:
       - type: archive
         url: https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.11.6/QScintilla-2.11.6.tar.gz
         sha256: e7346057db47d2fb384467fafccfcb13aa0741373c5d593bc72b55b2f0dd20a7
-        x-checker-data:
-          type: anitya
-          project-id: 37195 # use the ID of the PyPI project, since the Anitya regex for the actual qscintilla project broke
-          url-template: https://www.riverbankcomputing.com/static/Downloads/QScintilla/$version/QScintilla_src-$version.tar.gz
       - type: shell
         commands:
           - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -e 's|\(header.path\) =
