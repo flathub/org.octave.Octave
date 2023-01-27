@@ -189,8 +189,8 @@ modules:
       - -Wno-dev # suppress warning for project developers
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_13_2.tar.gz
-        sha256: 6b97168ce262d7f9fa67355171e8e1899989046bf70ca5735341b0872760af9a
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_14_0.tar.gz
+        sha256: 0f2ec13c1bf6e9f506fd03681c83a476d722e7479cad9ce6f8585a26c317d0ad
         x-checker-data:
           type: anitya
           project-id: 1303
@@ -232,8 +232,8 @@ modules:
     no-autogen: true
     sources:
       - type: archive
-        url: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v5.13.0.tar.gz
-        sha256: 59c6ca2959623f0c69226cf9afb9a018d12a37fab3a8869db5f6d7f83b6b147d
+        url: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v7.0.1.tar.gz
+        sha256: dc2f8d5c2657c120b30cce942f634ec08fc3a4b0b10e19d3eef7790b2bec8d1e
         x-checker-data:
           type: anitya
           project-id: 4908
@@ -465,8 +465,8 @@ modules:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
       - type: archive
-        url: https://ftpmirror.gnu.org/octave/octave-7.2.0.tar.xz
-        sha256: 4aef78c3c9d49f75d64ccd55267df40b3020e6414f69ea8757a1939628b30171
+        url: https://ftpmirror.gnu.org/octave/octave-7.3.0.tar.xz
+        sha256: a508ee6aebccfa68967c9e7e0a08793c4ca8e4ddace723aabdb8f71ad34d57f1
         x-checker-data:
           type: anitya
           project-id: 2528
