@@ -218,11 +218,30 @@ modules:
           - sed -e 's|FFLAGS=-fimplicit-none -O3 -funroll-loops|FFLAGS=-fimplicit-none
             -O3 -funroll-loops -L/app/lib|' -i Makeconf
 
+  - name: mpfr4
+    no-autogen: true
+    config-opts:
+      - --enable-thread-safe
+      - --enable-shared
+    sources:
+      - type: archive
+        url: https://www.mpfr.org/mpfr-current/mpfr-4.2.0.tar.xz
+        sha256: 06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993
+        x-checker-data:
+          type: anitya
+          project-id: 2019
+          url-template: https://www.mpfr.org/mpfr-current/mpfr-$version.tar.xz
+
   - name: suitesparse
+    # https://github.com/archlinux/svntogit-packages/blob/packages/suitesparse/trunk/PKGBUILD
+    build-options:
+      env:
+        CMAKE_OPTIONS: -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None
     make-args:
       - BLAS=-lopenblas
       - LAPACK=
       - library
+      - MPFR_ROOT=/app
     make-install-args:
       - BLAS=-lopenblas
       - LAPACK=
@@ -238,9 +257,10 @@ modules:
           type: anitya
           project-id: 4908
           url-template: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v$version.tar.gz
-        # Comment on the module that we don't need.
       - type: shell
         commands:
+          - sed -e 's|CMAKE_OPTIONS ?=|CMAKE_OPTIONS ?= -DCMAKE_INSTALL_PREFIX=/app|' -i Makefile
+          # Comment out the modules that we don't need.
           - sed -i '/SLIP_LU/ s/^/# /' Makefile
           - sed -i '/Mongoose/ s/^/# /' Makefile
           - sed -i '/LDL/ s/^/# /' Makefile
