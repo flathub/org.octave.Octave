@@ -1,6 +1,6 @@
 app-id: org.octave.Octave
 runtime: org.kde.Sdk
-runtime-version: 5.15-21.08
+runtime-version: '6.4'
 sdk: org.kde.Sdk
 command: octave
 rename-icon: octave
@@ -219,6 +219,10 @@ modules:
             -O3 -funroll-loops -L/app/lib|' -i Makeconf
 
   - name: suitesparse
+    build-options:
+      env:
+        # https://github.com/archlinux/svntogit-packages/blob/packages/suitesparse/trunk/PKGBUILD
+        CMAKE_OPTIONS: -DCMAKE_INSTALL_PREFIX=/app
     make-args:
       - BLAS=-lopenblas
       - LAPACK=
@@ -247,6 +251,7 @@ modules:
           - sed -i '/RBio/ s/^/# /' Makefile
           - sed -i '/SPQR/ s/^/# /' Makefile
           - sed -i '/GraphBLAS/ s/^/# /' Makefile
+          - sed -i '/SPEX/ s/^/# /' Makefile
 
   - name: glpk
     sources:
