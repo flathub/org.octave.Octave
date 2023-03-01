@@ -353,9 +353,9 @@ modules:
       - type: shell
         commands:
           - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -e 's|\(header.path\) =
-            .*|\1 = /app/include|' -e 's|\(trans.path\) = .*|\1 = /app/share/qt5/translations|'
-            -e 's|\(qsci.path\) = .*|\1 = /app/share/qt5|' -e 's|\(features.path\)
-            = .*|\1 = /app/lib/qt5/mkspecs/features|' -i Qt4Qt5/qscintilla.pro
+            .*|\1 = /app/include|' -e 's|\(trans.path\) = .*|\1 = /app/share/qt6/translations|'
+            -e 's|\(qsci.path\) = .*|\1 = /app/share/qt6|' -e 's|\(features.path\)
+            = .*|\1 = /app/lib/qt6/mkspecs/features|' -i src/qscintilla.pro
 
   - name: sundials
     buildsystem: cmake-ninja
