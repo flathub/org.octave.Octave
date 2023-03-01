@@ -333,9 +333,10 @@ modules:
           project-id: 14534
           url-template: http://www.fftw.org/fftw-$version.tar.gz
 
+
   - name: qscintilla
     buildsystem: qmake
-    subdir: src
+    subdir: Qt4Qt5
     make-install-args:
       - DESTDIR=/app
       - PREFIX=/app
@@ -343,14 +344,14 @@ modules:
       - CONFIG+=release
     sources:
       - type: archive
-        url: https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.13.4/QScintilla_src-2.13.4.tar.gz
-        sha256: 890c261f31e116f426b0ea03a136d44fc89551ebfd126d7b0bdf8a7197879986
+        url: https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.11.6/QScintilla-2.11.6.tar.gz
+        sha256: e7346057db47d2fb384467fafccfcb13aa0741373c5d593bc72b55b2f0dd20a7
       - type: shell
         commands:
           - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -e 's|\(header.path\) =
-            .*|\1 = /app/include|' -e 's|\(trans.path\) = .*|\1 = /app/share/qt6/translations|'
-            -e 's|\(qsci.path\) = .*|\1 = /app/share/qt6|' -e 's|\(features.path\)
-            = .*|\1 = /app/lib/qt6/mkspecs/features|' -i src/qscintilla.pro
+            .*|\1 = /app/include|' -e 's|\(trans.path\) = .*|\1 = /app/share/qt5/translations|'
+            -e 's|\(qsci.path\) = .*|\1 = /app/share/qt5|' -e 's|\(features.path\)
+            = .*|\1 = /app/lib/qt5/mkspecs/features|' -i Qt4Qt5/qscintilla.pro
 
   - name: sundials
     buildsystem: cmake-ninja
