@@ -247,7 +247,6 @@ modules:
           - sed -i '/RBio/ s/^/# /' Makefile
           - sed -i '/SPQR/ s/^/# /' Makefile
           - sed -i '/GraphBLAS/ s/^/# /' Makefile
-          - sed -i '/SPEX/ s/^/# /' Makefile
 
   - name: glpk
     sources:
