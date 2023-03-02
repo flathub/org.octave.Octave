@@ -2,10 +2,11 @@ app-id: org.octave.Octave
 runtime: org.kde.Sdk
 runtime-version: '5.15-21.08'
 sdk: org.kde.Sdk
-command: octave
-rename-icon: octave
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk11
+  - org.freedesktop.Sdk.Extension.texlive
+command: octave
+rename-icon: octave
 finish-args:
   - --socket=wayland
   - --socket=x11
@@ -468,6 +469,11 @@ modules:
       cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
         -grecord-gcc-switches
       cxxflags-override: true
+      arch:
+        aarch64:
+          prepend-path: /usr/lib/sdk/texlive/bin/aarch64-linux:/usr/lib/sdk/texlive/bin
+        x86_64:
+          prepend-path: /usr/lib/sdk/texlive/bin/x86_64-linux:/usr/lib/sdk/texlive/bin
     # Disabled due to https://github.com/flathub/org.octave.Octave/issues/95
     #build-commands:
       #- make check
