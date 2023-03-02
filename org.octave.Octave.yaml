@@ -466,9 +466,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/gnu-octave/octave.git
-        tag: release-7-3-0
-        commit: 3a8f4f0f52612db53b9b5dfec192da412bcd5914
-        sha256: a508ee6aebccfa68967c9e7e0a08793c4ca8e4ddace723aabdb8f71ad34d57f1
+        branch: default
+        commit: f3e046e1b7b9675ea04f9384ee688e746dbfe5e7
         x-checker-data:
           type: anitya
           project-id: 2528
@@ -480,4 +479,4 @@ modules:
       - type: shell
         commands:
           - chmod +x ./bootstrap
-          - ./bootstrap --gnulib-refdir=gnulib
+          - ./bootstrap --gnulib-srcdir=gnulib --no-git
