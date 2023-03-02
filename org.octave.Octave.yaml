@@ -473,7 +473,11 @@ modules:
           type: anitya
           project-id: 2528
           tag-template: release-$major-$minor-$patch
+      - type: git
+        url: https://git.savannah.gnu.org/git/gnulib.git/
+        commit: fd35991c84efd535bdb5adcddd7b9a49abdc41e4
+        dest: gnulib
       - type: shell
         commands:
           - chmod +x ./bootstrap
-          - ./bootstrap
+          - ./bootstrap --gnulib-refdir=gnulib
