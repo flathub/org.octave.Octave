@@ -464,10 +464,16 @@ modules:
     cleanup:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
-      - type: archive
-        url: https://ftpmirror.gnu.org/octave/octave-7.3.0.tar.xz
+      - type: git
+        url: https://github.com/gnu-octave/octave.git
+        tag: release-7-3-0
+        commit: 3a8f4f0f52612db53b9b5dfec192da412bcd5914
         sha256: a508ee6aebccfa68967c9e7e0a08793c4ca8e4ddace723aabdb8f71ad34d57f1
         x-checker-data:
           type: anitya
           project-id: 2528
-          url-template: https://ftpmirror.gnu.org/octave/octave-$version.tar.xz
+          tag-template: release-$major-$minor-$patch
+      - type: shell
+        commands:
+          - chmod +x ./bootstrap
+          - ./bootstrap
