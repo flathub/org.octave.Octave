@@ -216,7 +216,18 @@ modules:
         commands:
           - sed -e 's|FFLAGS=-fimplicit-none -O3 -funroll-loops|FFLAGS=-fimplicit-none
             -O3 -funroll-loops -L/app/lib|' -i Makeconf
-
+            
+  - name: mpfr
+    no-autogen: true
+    sources:
+      - type: archive
+        url: https://www.mpfr.org/mpfr-current/mpfr-4.2.0.tar.xz
+        sha256: 06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993
+        x-checker-data:
+          type: anitya
+          project-id: 2019
+          url-template: https://www.mpfr.org/mpfr-current/mpfr-$version.tar.xz
+          
   - name: suitesparse
     make-args:
       - BLAS=-lopenblas
