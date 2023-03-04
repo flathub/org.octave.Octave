@@ -1,6 +1,6 @@
 app-id: org.octave.Octave
 runtime: org.kde.Sdk
-runtime-version: '5.15-21.08'
+runtime-version: 5.15-22.08
 sdk: org.kde.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk11
@@ -108,8 +108,8 @@ modules:
   - name: gnuplot
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.5/gnuplot-5.4.5.tar.gz
-        sha256: 66f679115dd30559e110498fc94d926949d4d370b4999a042e724b8e910ee478
+        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.6/gnuplot-5.4.6.tar.gz
+        sha256: 02fc27918200ed64d8f0c3b84fe81b95b59cd47ad99f270939ae497c19f27419
         x-checker-data:
           type: anitya
           project-id: 1216
