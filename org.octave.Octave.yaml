@@ -459,9 +459,8 @@ modules:
       cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
         -grecord-gcc-switches
       cxxflags-override: true
-    # Disabled due to https://github.com/flathub/org.octave.Octave/issues/95
-    #build-commands:
-      #- make check
+    build-commands:
+      - make check
     cleanup:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
