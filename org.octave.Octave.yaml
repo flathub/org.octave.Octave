@@ -135,11 +135,12 @@ modules:
     sources:
       - type: archive
         url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs1000/ghostscript-10.0.0.tar.xz
-        sha256: f1fa585f7c7d32adfa81ab389388100ac9df83444eb64db1fb92737141ef9f61
-        x-checker-data:
-          type: anitya
-          project-id: 1157
-          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs$major$minor$patch/ghostscript-$version.tar.xz
+        sha256: dfc8c3180546ebd5550c71d4ac68b04eed0f14186d93d35abc9324364bd3eac4
+        # url-template doesn't work e.g. for version 10.01.0 it gives .../gs1010/... instead of the correct .../gs10010/...
+        # x-checker-data:
+        #  type: anitya
+        #  project-id: 1157
+        #  url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs$major$minor$patch/ghostscript-$version.tar.xz
 
   - name: gl2ps
     buildsystem: cmake-ninja
