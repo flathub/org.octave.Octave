@@ -61,7 +61,17 @@ build-options:
     PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk11/bin
     PYTHON: python3
 modules:
-
+  - name: rtmidi # dependency of the audio package
+    buildsystem: cmake-ninja
+    sources:
+      - type: archive
+        url: https://github.com/thestk/rtmidi/archive/refs/tags/5.0.0.tar.gz
+        sha256: c7923e4eee82b06c007435892cb2c3212d9007fa482c6b718943bda71c02c5a7
+        x-checker-data:
+          type: anitya
+          project-id: 823 # needs to be updated
+          url-template: https://github.com/thestk/rtmidi/archive/refs/tags/$version.tar.gz
+          
   - name: openblas
     no-autogen: true
     make-args:
