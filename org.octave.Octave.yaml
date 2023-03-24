@@ -159,14 +159,6 @@ modules:
   - name: qhull
     buildsystem: cmake-ninja
     builddir: true
-    make-args:
-      - all
-      - libqhull
-    post-install:
-      - cp -P libqhull.so* /app/lib
-    # http://savannah.gnu.org/bugs/?60016
-    # Build and install deprecated libqhull until octave works with libqhull_r
-    # Both make-args and post-install can be deleted when libqhull not needed
     sources:
       - type: archive
         url: https://github.com/qhull/qhull/archive/v8.0.2.tar.gz
