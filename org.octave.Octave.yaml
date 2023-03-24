@@ -344,7 +344,6 @@ modules:
           project-id: 14534
           url-template: http://www.fftw.org/fftw-$version.tar.gz
 
-
   - name: qscintilla
     buildsystem: qmake
     subdir: Qt4Qt5
@@ -374,13 +373,12 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/LLNL/sundials/archive/v5.8.0.tar.gz
-        sha256: e8ebc2004aae8c642791fdf51aac8a7774b21fc9baf41f26b18e76ec38adfa3e
-        # do not update, since Octave fails to build with sundials-6.0.0: https://savannah.gnu.org/bugs/?61738
-        # x-checker-data:
-        #   type: anitya
-        #   project-id: 4910
-        #   url-template: https://github.com/LLNL/sundials/archive/v$version.tar.gz
+        url: https://github.com/LLNL/sundials/releases/download/v6.5.0/sundials-6.5.0.tar.gz
+        sha256: 4e0b998dff292a2617e179609b539b511eb80836f5faacf800e688a886288502
+        x-checker-data:
+          type: anitya
+          project-id: 4910
+          url-template: https://github.com/LLNL/sundials/releases/download/v$version/sundials-$version.tar.gz
 
   - name: openjdk
     buildsystem: simple
