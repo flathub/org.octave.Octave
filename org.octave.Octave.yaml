@@ -61,18 +61,7 @@ build-options:
     PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk11/bin
     PYTHON: python3
 modules:
-  - name: rtmidi # dependency of the audio package
-    buildsystem: cmake-ninja
-    sources:
-      - type: archive
-        url: https://github.com/thestk/rtmidi/archive/refs/tags/5.0.0.tar.gz
-        sha256: c7923e4eee82b06c007435892cb2c3212d9007fa482c6b718943bda71c02c5a7
-        x-checker-data:
-          type: anitya
-          project-id: 4220
-          url-template: https://github.com/thestk/rtmidi/archive/refs/tags/$version.tar.gz
-          
-  - name: openblas
+  - name: openblas # dependency of the suitesparse module
     no-autogen: true
     make-args:
       - DYNAMIC_ARCH=1
@@ -81,7 +70,7 @@ modules:
       - NO_CBLAS=1
       - NO_LAPACKE=1
       - TARGET=GENERIC
-      - USE_OPENMP=0    ## OpenMP off by default, this hack skips 'test_fork' which crashes on i386
+      - USE_OPENMP=0    # OpenMP off by default, this hack skips 'test_fork' which crashes on i386
     make-install-args:
       - PREFIX=/app
     sources:
@@ -92,6 +81,64 @@ modules:
           type: anitya
           project-id: 2540
           url-template: https://github.com/xianyi/OpenBLAS/archive/v$version.tar.gz
+          
+  - name: mpfr # dependency of the suitesparse module
+    sources:
+      - type: archive
+        url: https://www.mpfr.org/mpfr-current/mpfr-4.2.0.tar.xz
+        sha256: 06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993
+        x-checker-data:
+          type: anitya
+          project-id: 2019
+          url-template: https://www.mpfr.org/mpfr-current/mpfr-$version.tar.xz
+          
+  - name: suitesparse
+    make-args:
+      - BLAS=-lopenblas
+      - LAPACK=
+      - library
+      # https://github.com/DrTimothyAldenDavis/SuiteSparse#about-the-blas-and-lapack-libraries
+      - CMAKE_OPTIONS="-DCMAKE_INSTALL_PREFIX=/app"
+    make-install-args:
+      - BLAS=-lopenblas
+      - LAPACK=
+      - INSTALL_INCLUDE=/app/include/suitesparse
+      - INSTALL_LIB=/app/lib
+      - library
+      - MPFR_ROOT=/app
+      # https://github.com/DrTimothyAldenDavis/SuiteSparse/blob/dev/SuiteSparse_config/CMakeLists.txt#L153
+      - SUITESPARSE_LIBDIR=/app/lib
+      - SUITESPARSE_BINDIR=/app/bin
+      - SUITESPARSE_LIBDIR=/app/include
+    no-autogen: true
+    sources:
+      - type: archive
+        url: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.0.1.tar.gz
+        sha256: dc2f8d5c2657c120b30cce942f634ec08fc3a4b0b10e19d3eef7790b2bec8d1e
+        x-checker-data:
+          type: anitya
+          project-id: 4908
+          url-template: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v$version.tar.gz
+        # Comment out the modules that we don't need.
+      - type: shell
+        commands:
+          - sed -i '/SLIP_LU/ s/^/# /' Makefile
+          - sed -i '/Mongoose/ s/^/# /' Makefile
+          - sed -i '/LDL/ s/^/# /' Makefile
+          - sed -i '/RBio/ s/^/# /' Makefile
+          - sed -i '/SPQR/ s/^/# /' Makefile
+          - sed -i '/GraphBLAS/ s/^/# /' Makefile
+          
+  - name: rtmidi # dependency of the audio package
+    buildsystem: cmake-ninja
+    sources:
+      - type: archive
+        url: https://github.com/thestk/rtmidi/archive/refs/tags/5.0.0.tar.gz
+        sha256: c7923e4eee82b06c007435892cb2c3212d9007fa482c6b718943bda71c02c5a7
+        x-checker-data:
+          type: anitya
+          project-id: 4220
+          url-template: https://github.com/thestk/rtmidi/archive/refs/tags/$version.tar.gz
 
   - shared-modules/glu/glu-9.json
 
@@ -219,37 +266,6 @@ modules:
         commands:
           - sed -e 's|FFLAGS=-fimplicit-none -O3 -funroll-loops|FFLAGS=-fimplicit-none
             -O3 -funroll-loops -L/app/lib|' -i Makeconf
-
-  - name: suitesparse
-    make-args:
-      - BLAS=-lopenblas
-      - LAPACK=
-      - library
-    make-install-args:
-      - BLAS=-lopenblas
-      - LAPACK=
-      - INSTALL_INCLUDE=/app/include/suitesparse
-      - INSTALL_LIB=/app/lib
-      - library
-    no-autogen: true
-    sources:
-      - type: archive
-        url: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v5.13.0.tar.gz
-        sha256: 59c6ca2959623f0c69226cf9afb9a018d12a37fab3a8869db5f6d7f83b6b147d
-        # suitesparse 7 fails to build
-        # x-checker-data:
-          # type: anitya
-          # project-id: 4908
-          # url-template: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v$version.tar.gz
-        # Comment on the module that we don't need.
-      - type: shell
-        commands:
-          - sed -i '/SLIP_LU/ s/^/# /' Makefile
-          - sed -i '/Mongoose/ s/^/# /' Makefile
-          - sed -i '/LDL/ s/^/# /' Makefile
-          - sed -i '/RBio/ s/^/# /' Makefile
-          - sed -i '/SPQR/ s/^/# /' Makefile
-          - sed -i '/GraphBLAS/ s/^/# /' Makefile
 
   - name: glpk
     sources:
@@ -430,20 +446,6 @@ modules:
           project-id: 16245
           url-template: https://github.com/zeromq/libzmq/archive/v$version.tar.gz
 
-  #- name: ncurses
-    #config-opts:
-      #- --with-shared
-    #make-install-args:
-      #- install.libs
-    #sources:
-      #- type: archive
-        #url: https://invisible-mirror.net/archives/ncurses/current/ncurses-6.2-20210911.tgz
-        #sha256: f0a7c31cedf440ed28e1f930bd60eb95a1c1135be6037d3c173df5753f52bde5
-        #x-checker-data:
-          #type: anitya
-          #project-id: 2057
-          #url-template: https://invisible-mirror.net/archives/ncurses/current/ncurses-$version.tgz
-
   - name: octave
     config-opts:
       - --disable-silent-rules
@@ -460,9 +462,9 @@ modules:
       cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
         -grecord-gcc-switches
       cxxflags-override: true
-    # Disabled due to https://github.com/flathub/org.octave.Octave/issues/95
-    #build-commands:
-      #- make check
+    # Disabled due to https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/issues/1558
+    # build-commands:
+      # - make check
     cleanup:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
