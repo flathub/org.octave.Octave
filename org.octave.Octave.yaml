@@ -181,15 +181,15 @@ modules:
         aarch64:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
-      - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10010/ghostscript-10.01.0.tar.xz
-        sha256: dfc8c3180546ebd5550c71d4ac68b04eed0f14186d93d35abc9324364bd3eac4
-        # url-template didn't work e.g. for version 10.01.0 it gives .../gs1010/... instead of the correct .../gs10010/...
+      - type: git
+        url: 	http://git.ghostscript.com/ghostpdl.git
+        commit: 06ba66167b2566ff75ee8486f2ee201e3817f891
+        tag: ghostpdl-10.01.2
         x-checker-data:
           type: anitya
           project-id: 1157
-          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs$major$minor$patch/ghostscript-$version.tar.xz
-
+          tag-template: ghostpdl-$version
+          
   - name: gl2ps
     buildsystem: cmake-ninja
     config-opts:
