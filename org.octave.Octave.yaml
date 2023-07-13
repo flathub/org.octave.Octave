@@ -115,12 +115,13 @@ modules:
       - type: archive
         url: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.0.1.tar.gz
         sha256: dc2f8d5c2657c120b30cce942f634ec08fc3a4b0b10e19d3eef7790b2bec8d1e
-        x-checker-data:
-          type: anitya
-          project-id: 4908
-          url-template: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v$version.tar.gz
-        # Comment out the modules that we don't need.
-      - type: shell
+        # Octave 8.2.0 is incompatible with SuiteSparse 7.1.0:
+        # https://github.com/gnu-octave/octave/commit/7ea31a1eefe6ce56b15c68011f50b444f9ba3adc
+        # x-checker-data:
+        #   type: anitya
+        #   project-id: 4908
+        #   url-template: https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v$version.tar.gz
+      - type: shell # Comment out the modules that we don't need.
         commands:
           - sed -i '/SLIP_LU/ s/^/# /' Makefile
           - sed -i '/Mongoose/ s/^/# /' Makefile
