@@ -176,10 +176,9 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: git
-        url: https://git.ghostscript.com/ghostpdl.git
+        url: https://github.com/ArtifexSoftware/ghostpdl.git
         commit: 06ba66167b2566ff75ee8486f2ee201e3817f891
         tag: ghostpdl-10.01.2
-        disable-shallow-clone: true
         x-checker-data:
           type: anitya
           project-id: 1157
