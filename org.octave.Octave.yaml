@@ -254,7 +254,8 @@ modules:
           url-template: https://sourceforge.net/projects/qrupdate/files/qrupdate/$minor.$patch/qrupdate-$version.tar.gz
       - type: shell
         commands:
-          - sed -e 's|FFLAGS=-fimplicit-none -O3 -funroll-loops|FFLAGS=-fimplicit-none -O3 -funroll-loops -L/app/lib|' -i Makeconf
+          - sed -e 's|FFLAGS=-fimplicit-none -O3 -funroll-loops|FFLAGS=-fimplicit-none
+            -O3 -funroll-loops -L/app/lib|' -i Makeconf
   - name: glpk
     sources:
       - type: archive
@@ -348,7 +349,10 @@ modules:
         sha256: e7346057db47d2fb384467fafccfcb13aa0741373c5d593bc72b55b2f0dd20a7
       - type: shell
         commands:
-          - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -e 's|\(header.path\) = .*|\1 = /app/include|' -e 's|\(trans.path\) = .*|\1 = /app/share/qt5/translations|' -e 's|\(qsci.path\) = .*|\1 = /app/share/qt5|' -e 's|\(features.path\) = .*|\1 = /app/lib/qt5/mkspecs/features|' -i Qt4Qt5/qscintilla.pro
+          - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -e 's|\(header.path\) =
+            .*|\1 = /app/include|' -e 's|\(trans.path\) = .*|\1 = /app/share/qt5/translations|'
+            -e 's|\(qsci.path\) = .*|\1 = /app/share/qt5|' -e 's|\(features.path\)
+            = .*|\1 = /app/lib/qt5/mkspecs/features|' -i Qt4Qt5/qscintilla.pro
   - name: sundials
     buildsystem: cmake-ninja
     config-opts:
@@ -359,8 +363,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/LLNL/sundials/releases/download/v6.5.1/sundials-6.5.1.tar.gz
-        sha256: 4252303805171e4dbdd19a01e52c1dcfe0dafc599c3cfedb0a5c2ffb045a8a75
+        url: https://github.com/LLNL/sundials/releases/download/v6.6.0/sundials-6.6.0.tar.gz
+        sha256: f90029b8da846c8faff5530fd1fa4847079188d040554f55c1d5d1e04743d29d
         x-checker-data:
           type: anitya
           project-id: 4910
@@ -427,9 +431,11 @@ modules:
     # these are the build flags used in the Freedesktop SDK, without "target_flags_glibcxx_assertions":
     # https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/blob/master/include/flags.yml
     build-options:
-      cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
+      cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
+        -grecord-gcc-switches
       cflags-override: true
-      cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -grecord-gcc-switches
+      cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
+        -grecord-gcc-switches
       cxxflags-override: true
     # Disabled due to https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/issues/1558
     # build-commands:
