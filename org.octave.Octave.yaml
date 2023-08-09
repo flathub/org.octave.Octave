@@ -444,8 +444,8 @@ modules:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/octave/octave-8.2.0.tar.xz
-        sha256: b7b9d6e5004ff039450cfedd2a59ddbe2a3c22296df927a8af994182eb2670de
+        url: https://ftp.gnu.org/gnu/octave/octave-8.3.0.tar.xz
+        sha256: 919c9494f02ca435e1e3474990e6df8ddef9acbc9c90565e08d40b8f50445ba9
         x-checker-data:
           type: anitya
           project-id: 2528
