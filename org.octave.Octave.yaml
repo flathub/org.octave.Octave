@@ -17,7 +17,6 @@ finish-args:
   - --filesystem=/media
   - --filesystem=/mnt
   - --filesystem=/run/media
-  - --filesystem=/var/run/media
   - --filesystem=/var/mnt
   - --talk-name=com.canonical.AppMenu.Registrar # required for global menu
   - --talk-name=org.freedesktop.Flatpak # allows spawning processes on the host via flatpak-spawn --host
