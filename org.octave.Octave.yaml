@@ -75,8 +75,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.23.tar.gz
-        sha256: 5d9491d07168a5d00116cdc068a40022c3455bf9293c7cb86a65b1054d7e5114
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.24.tar.gz
+        sha256: ceadc5065da97bd92404cac7254da66cc6eb192679cf1002098688978d4d5132
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -160,8 +160,8 @@ modules:
   - name: gnuplot
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.8/gnuplot-5.4.8.tar.gz
-        sha256: 931279c7caad1aff7d46cb4766f1ff41c26d9be9daf0bcf0c79deeee3d91f5cf
+        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/5.4.9/gnuplot-5.4.9.tar.gz
+        sha256: 7f52c0624d1bda3dfedd44a62514c371e0492c43cbf8fa1ca27eef4bb7bc89c5
         x-checker-data:
           type: anitya
           project-id: 1216
