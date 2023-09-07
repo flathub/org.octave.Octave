@@ -363,8 +363,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/LLNL/sundials/releases/download/v6.6.0/sundials-6.6.0.tar.gz
-        sha256: f90029b8da846c8faff5530fd1fa4847079188d040554f55c1d5d1e04743d29d
+        url: https://github.com/LLNL/sundials/releases/download/v6.6.1/sundials-6.6.1.tar.gz
+        sha256: 5162b0e6d19d7b14078a21441e0795cf38d1d883973be35901e018f9bb30c543
         x-checker-data:
           type: anitya
           project-id: 4910
