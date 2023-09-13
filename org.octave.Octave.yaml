@@ -400,8 +400,8 @@ modules:
   - name: libsodium # dependency of the zeromq module
     sources:
       - type: archive
-        url: https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz
-        sha256: b7292dd1da67a049c8e78415cd498ec138d194cfdb302e716b08d26b80fecc10
+        url: https://github.com/jedisct1/libsodium/archive/1.0.19.tar.gz
+        sha256: ac627795b45972fdfafd0ac6214896ced6b3135ebe5dea8b3cc04ceb44da3d4c
         x-checker-data:
           type: anitya
           project-id: 1728
