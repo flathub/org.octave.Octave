@@ -415,8 +415,8 @@ modules:
       - -Wno-dev # disable warnings for project developers
     sources:
       - type: archive
-        url: https://github.com/zeromq/libzmq/archive/v4.3.4.tar.gz
-        sha256: 0ff5a531c9ffaf0dfdc7dc78d13d1383088f454896d252934c429b2554d10559
+        url: https://github.com/zeromq/libzmq/archive/v4.3.5.tar.gz
+        sha256: 6c972d1e6a91a0ecd79c3236f04cf0126f2f4dfbbad407d72b4606a7ba93f9c6
         x-checker-data:
           type: anitya
           project-id: 16245
