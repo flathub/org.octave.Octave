@@ -300,8 +300,8 @@ modules:
         FCFLAGS: -fallow-argument-mismatch
     sources:
       - type: archive
-        url: https://github.com/opencollab/arpack-ng/archive/3.9.0.tar.gz
-        sha256: 24f2a2b259992d3c797d80f626878aa8e2ed5009d549dad57854bbcfb95e1ed0
+        url: https://github.com/opencollab/arpack-ng/archive/3.9.1.tar.gz
+        sha256: f6641deb07fa69165b7815de9008af3ea47eb39b2bb97521fbf74c97aba6e844
         x-checker-data:
           type: anitya
           project-id: 111
