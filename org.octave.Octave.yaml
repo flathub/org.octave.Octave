@@ -201,8 +201,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ArtifexSoftware/ghostpdl.git
-        commit: 8add3bf87045b3f83130160462dd8e8299f3a81d
-        tag: ghostpdl-10.02.0
+        commit: 80d5c438c2aca5fc49dfc477766e144ccc49d247
+        tag: ghostpdl-10.02.1
         x-checker-data:
           type: anitya
           project-id: 1157
