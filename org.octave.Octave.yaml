@@ -427,6 +427,7 @@ modules:
           url-template: https://github.com/zeromq/libzmq/archive/v$version.tar.gz
   - name: octave
     config-opts:
+      - --with-qt=6
       - --disable-silent-rules
       - --with-blas=openblas
       - --with-java-homedir=/app/jre
