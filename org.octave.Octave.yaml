@@ -8,7 +8,7 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk17
 finish-args:
   - --socket=wayland
-  - --socket=x11
+  - --socket=fallback-x11
   - --share=ipc
   - --device=dri
   - --socket=pulseaudio
@@ -448,10 +448,6 @@ modules:
     cleanup:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
-      - type: archive
-        url: https://ftp.gnu.org/gnu/octave/octave-8.4.0.tar.xz
-        sha256: 6f9ad73a3ee4291b6341d6c0f5e5c85d6e0310376e4991b959a6d340b3ffa8a8
-        x-checker-data:
-          type: anitya
-          project-id: 2528
-          url-template: https://ftp.gnu.org/gnu/octave/octave-$version.tar.xz
+      - type: git
+        url: https://github.com/gnu-octave/octave.git
+        commit: 626423d9c505dde5ee444d5f2c2d358d55bb7a39
