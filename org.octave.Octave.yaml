@@ -61,6 +61,22 @@ build-options:
     PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk11/bin
     PYTHON: python3
 modules:
+  - name: rapidjson
+    buildsystem: cmake-ninja
+    sources:
+      - type: archive
+        url: https://github.com/Tencent/rapidjson/archive/refs/tags/v1.1.0.tar.gz
+        sha256: bf7ced29704a1e696fbccf2a2b4ea068e7774fa37f6d7dd4039d0787f8bed98e
+        x-checker-data:
+          type: anitya
+          project-id: 7422
+          url-template: https://github.com/Tencent/rapidjson/archive/refs/tags/v$version.tar.gz
+      - type: shell
+        commands:
+          # https://github.com/Tencent/rapidjson/issues/2017#issuecomment-1160818211
+          - sed -e 's|-Werror||' -i CMakeLists.txt
+          - sed -e 's|-Werror||' -i example/CMakeLists.txt
+          
   - name: qscintilla
     buildsystem: qmake
     subdir: Qt4Qt5
