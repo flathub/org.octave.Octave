@@ -106,8 +106,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.26.tar.gz
-        sha256: 4e6e4f5cb14c209262e33e6816d70221a2fe49eb69eaf0a06f065598ac602c68
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.27.tar.gz
+        sha256: aa2d68b1564fe2b13bc292672608e9cdeeeb6dc34995512e65c3b10f4599e897
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -260,8 +260,8 @@ modules:
       - -Wno-dev # suppress warning for project developers
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_14_3.tar.gz
-        sha256: df5ee33c74d5efb59738075ef96f4201588e1f1eeb233f047ac7fd1072dee1f6
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1.14.4.1.tar.gz
+        sha256: a29f96f7638d925bde7d227802ba8ff6fd09edec655677b30021a367a83a4dcd
         x-checker-data:
           type: anitya
           project-id: 1303
