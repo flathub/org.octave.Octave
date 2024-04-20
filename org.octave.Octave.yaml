@@ -450,7 +450,6 @@ modules:
       cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
         -grecord-gcc-switches
       cxxflags-override: true
-    Disabled due to https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/issues/1558
     build-commands:
       - make check
     cleanup:
