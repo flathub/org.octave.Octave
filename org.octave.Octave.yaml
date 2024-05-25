@@ -214,14 +214,14 @@ modules:
         aarch64:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
-      - type: git
-        url: https://github.com/ArtifexSoftware/ghostpdl.git
-        commit: 80d5c438c2aca5fc49dfc477766e144ccc49d247
-        tag: ghostpdl-10.02.1
+      - type: archive
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/ghostpdl-10.03.0.tar.xz
+        sha256: 854fd1958711b9b5108c052a6d552b906f1e3ebf3262763febf347d77618639d
         x-checker-data:
-          type: anitya
-          project-id: 1157
-          tag-template: ghostpdl-$version
+          type: json
+          url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
+          version-query: '.name | split(" ") | .[1]'
+          url-query: '.assets[] | select(.name|test("^ghostscript-(.*).tar.xz$")) | .browser_download_url'
 
   - name: gl2ps
     buildsystem: cmake-ninja
@@ -277,7 +277,7 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 1303
-          url-template: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-$version.tar.gz
+          url-template: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5_$version.tar.gz
           stable-only: true
 
   - name: qrupdate
