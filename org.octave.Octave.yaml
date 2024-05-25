@@ -108,8 +108,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.26.tar.gz
-        sha256: 4e6e4f5cb14c209262e33e6816d70221a2fe49eb69eaf0a06f065598ac602c68
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.27.tar.gz
+        sha256: aa2d68b1564fe2b13bc292672608e9cdeeeb6dc34995512e65c3b10f4599e897
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -215,13 +215,14 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/ghostpdl-10.03.0.tar.xz
-        sha256: 854fd1958711b9b5108c052a6d552b906f1e3ebf3262763febf347d77618639d
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostscript-10.03.1.tar.xz
+        sha256: 157212edc96b8ccc409475dce2e49833fb4427f150c455258ded9632c106abee
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
-          version-query: '.name | split(" ") | .[1]'
-          url-query: '.assets[] | select(.name|test("^ghostscript-(.*).tar.xz$")) | .browser_download_url'
+          version-query: .name | split(" ") | .[1]
+          url-query: .assets[] | select(.name|test("^ghostscript-(.*).tar.xz$")) |
+            .browser_download_url
 
   - name: gl2ps
     buildsystem: cmake-ninja
@@ -272,8 +273,8 @@ modules:
       - -Wno-dev # suppress warning for project developers
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_14_3.tar.gz
-        sha256: df5ee33c74d5efb59738075ef96f4201588e1f1eeb233f047ac7fd1072dee1f6
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5_1.14.4.3.tar.gz
+        sha256: 690c1db7ba0fed4ffac61709236675ffd99d95d191e8920ee79c58d7e7ea3361
         x-checker-data:
           type: anitya
           project-id: 1303
