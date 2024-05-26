@@ -108,8 +108,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.26.tar.gz
-        sha256: 4e6e4f5cb14c209262e33e6816d70221a2fe49eb69eaf0a06f065598ac602c68
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.27.tar.gz
+        sha256: aa2d68b1564fe2b13bc292672608e9cdeeeb6dc34995512e65c3b10f4599e897
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -438,8 +438,8 @@ modules:
   - name: libsodium # dependency of the zeromq module
     sources:
       - type: archive
-        url: https://github.com/jedisct1/libsodium/archive/1.0.19.tar.gz
-        sha256: 1d281a8a5e299a38e5c16ff60f293bba0796dc0fda8e49bc582d4bc1935572ed
+        url: https://github.com/jedisct1/libsodium/archive/1.0.20.tar.gz
+        sha256: b4712cda8c8f4dd4d3d56fa26e1c2b543ff131b88e0bd2590fc63c1ace9eda3d
         x-checker-data:
           type: anitya
           project-id: 1728
