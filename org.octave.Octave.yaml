@@ -71,7 +71,7 @@ modules:
 
   - name: qscintilla
     buildsystem: qmake
-    subdir: Qt4Qt5
+    subdir: src
     make-install-args:
       - DESTDIR=/app
       - PREFIX=/app
@@ -79,20 +79,14 @@ modules:
       - CONFIG+=release
     sources:
       - type: archive
-        url: https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.11.6/QScintilla-2.11.6.tar.gz
-        sha256: e7346057db47d2fb384467fafccfcb13aa0741373c5d593bc72b55b2f0dd20a7
+        url: https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.14.1/QScintilla_src-2.14.1.tar.gz
+        sha256: dfe13c6acc9d85dfcba76ccc8061e71a223957a6c02f3c343b30a9d43a4cdd4d
         # Failed to check archive qscintilla/QScintilla-2.11.6.tar.gz with AnityaChecker: Wrong content type 'text/plain' received
         # from 'https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.14.1/QScintilla_src-2.14.1.tar.gz
         # x-checker-data:
         #   type: anitya
         #   project-id: 10082
         #   url-template: https://www.riverbankcomputing.com/static/Downloads/QScintilla/$version/QScintilla_src-$version.tar.gz
-      - type: shell
-        commands:
-          - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -e 's|\(header.path\) =
-            .*|\1 = /app/include|' -e 's|\(trans.path\) = .*|\1 = /app/share/qt5/translations|'
-            -e 's|\(qsci.path\) = .*|\1 = /app/share/qt5|' -e 's|\(features.path\)
-            = .*|\1 = /app/lib/qt5/mkspecs/features|' -i Qt4Qt5/qscintilla.pro
 
   - name: openblas # dependency of the suitesparse module
     no-autogen: true
