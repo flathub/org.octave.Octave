@@ -500,3 +500,4 @@ modules:
         # See GitHub issues #114 and #264
         commands:
           - sed -i '/^%!/d' libinterp/corefcn/data.cc
+          - sed -i '/^%!/d' scripts/sparse/eigs.m
