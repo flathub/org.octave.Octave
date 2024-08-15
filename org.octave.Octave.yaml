@@ -490,3 +490,15 @@ modules:
           type: anitya
           project-id: 2528
           url-template: https://ftp.gnu.org/gnu/octave/octave-$version.tar.xz
+      - type: shell
+        # Tests can be added to oct functions in the C++ sources just as easily, see find.cc for example.
+        # The syntax is exactly the same, but done within C comment blocks. 
+        # https://wiki.octave.org/Tests#Writing_tests
+        # Removing comments from data.cc, since some tests are borken
+        #   libinterp/corefcn/data.cc-tst .................................. pass 1234/1248 [ 3.514s / 10.574s]
+        #                                                            FAIL    8
+        #                                             (reported bug) XFAIL   6
+        # See GitHub issues #114 and #264
+        # Cf. https://stackoverflow.com/a/2394040/2278742 for command
+        commands:
+          - gcc -fpreprocessed -dD -E -P libinterp/corefcn/data.cc > tmp.cpp && mv tmp.cpp libinterp/corefcn/data.cc
