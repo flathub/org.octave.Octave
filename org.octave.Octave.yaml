@@ -463,14 +463,13 @@ modules:
           url-template: https://github.com/zeromq/libzmq/archive/v$version.tar.gz
 
   - name: octave
-    env:
-      CC: /usr/lib/sdk/llvm18/bin/clang
-      CXX: /usr/lib/sdk/llvm18/bin/clang++
     config-opts:
       - --disable-silent-rules
       - --with-blas=openblas
       - --with-java-homedir=/app/jre
       - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
+      - CC=/usr/lib/sdk/llvm18/bin/clang
+      - CXX=/usr/lib/sdk/llvm18/bin/clang++
     # workaround for https://savannah.gnu.org/bugs/?55547
     # these are the build flags used in the Freedesktop SDK, without "target_flags_glibcxx_assertions":
     # https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/blob/master/include/flags.yml
