@@ -468,21 +468,22 @@ modules:
       - --with-blas=openblas
       - --with-java-homedir=/app/jre
       - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
-      - CC=/usr/lib/sdk/llvm18/bin/clang
-      - CXX=/usr/lib/sdk/llvm18/bin/clang++
-      - AR=/usr/lib/sdk/llvm18/bin/llvm-ar
-      - RANLIB=/usr/lib/sdk/llvm18/bin/llvm-ranlib
+      - CC=clang
+      - CXX=clang++
+      - AR=llvm-ar
+      - RANLIB=llvm-ranlib
     # workaround for https://savannah.gnu.org/bugs/?55547
     # these are the build flags used in the Freedesktop SDK, without "target_flags_glibcxx_assertions":
     # https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/blob/master/include/flags.yml
     build-options:
+      append-ld-library-path: /usr/lib/sdk/llvm18/lib
+      append-path: /usr/lib/sdk/llvm18/bin
       cflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
         -grecord-gcc-switches
       cflags-override: true
       cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
         -grecord-gcc-switches
       cxxflags-override: true
-    # Disabled due to https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/issues/1558
     build-commands:
       - make check
     cleanup:
