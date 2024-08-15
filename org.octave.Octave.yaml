@@ -464,8 +464,8 @@ modules:
 
   - name: octave
     env:
-      CC: clang
-      CXX: clang++
+      CC: /usr/lib/sdk/llvm18/bin/clang
+      CXX: /usr/lib/sdk/llvm18/bin/clang++
     config-opts:
       - --disable-silent-rules
       - --with-blas=openblas
