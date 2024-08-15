@@ -470,6 +470,8 @@ modules:
       - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
       - CC=/usr/lib/sdk/llvm18/bin/clang
       - CXX=/usr/lib/sdk/llvm18/bin/clang++
+      - AR=/usr/lib/sdk/llvm18/bin/llvm-ar
+      - RANLIB=/usr/lib/sdk/llvm18/bin/llvm-ranlib
     # workaround for https://savannah.gnu.org/bugs/?55547
     # these are the build flags used in the Freedesktop SDK, without "target_flags_glibcxx_assertions":
     # https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/blob/master/include/flags.yml
