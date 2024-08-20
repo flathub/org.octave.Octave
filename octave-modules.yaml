@@ -349,7 +349,7 @@ modules:
 - name: openjdk
   buildsystem: simple
   build-commands:
-    - /usr/lib/sdk/openjdk11/install.sh
+    - /usr/lib/sdk/openjdk/install.sh
 
 # ./flatpak-pip-generator -r requirements.txt
 - python3-requirements.json # dependencies of the symbolic package

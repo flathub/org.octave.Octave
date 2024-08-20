@@ -5,7 +5,7 @@ sdk: org.kde.Sdk
 command: octave
 rename-icon: octave
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk17
+  - org.freedesktop.Sdk.Extension.openjdk
 finish-args:
   - --socket=wayland
   - --socket=x11
@@ -58,7 +58,8 @@ cleanup:
   - fluid.*
 build-options:
   env:
-    PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk11/bin
+    # https://github.com/flathub/org.freedesktop.Sdk.Extension.openjdk/blob/f5e566f9e2245e34f6c166209c396483a62527ca/org.freedesktop.Sdk.Extension.openjdk.yaml#L186
+    PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk/bin
     PYTHON: python3
 modules:
   - octave-modules.yaml
