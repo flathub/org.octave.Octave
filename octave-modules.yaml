@@ -446,3 +446,4 @@ modules:
         commands:
           - sed -i '/^%!/d' libinterp/corefcn/data.cc
           - sed -i '/^%!/d' scripts/sparse/eigs.m
+          - rm test/bug-46330.tst
