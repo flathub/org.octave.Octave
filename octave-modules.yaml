@@ -130,8 +130,8 @@ modules:
       cxxflags: -fPIC
     sources:
       - type: archive
-        url: https://www.fltk.org/pub/fltk/1.3.9/fltk-1.3.9-source.tar.gz
-        sha256: d736b0445c50d607432c03d5ba5e82f3fba2660b10bc1618db8e077a42d9511b
+        url: https://www.fltk.org/pub/fltk/1.4.0/fltk-1.4.0-source.tar.gz
+        sha256: 59a977d58975071b04b0d2e9c176bdca805404161ab712605019a5f8ff3c3c53
         x-checker-data:
           type: anitya
           project-id: 823
@@ -157,8 +157,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostscript-10.03.1.tar.xz
-        sha256: 157212edc96b8ccc409475dce2e49833fb4427f150c455258ded9632c106abee
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostscript-10.04.0.tar.xz
+        sha256: 527eef0b6cd04ecf1c8d7a11796c69a52d34ffe36afca86a400729a2fc01c887
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
@@ -215,8 +215,8 @@ modules:
       - -Wno-dev # suppress warning for project developers
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5_1.14.4.3.tar.gz
-        sha256: 690c1db7ba0fed4ffac61709236675ffd99d95d191e8920ee79c58d7e7ea3361
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5_1.14.5.tar.gz
+        sha256: c83996dc79080a34e7b5244a1d5ea076abfd642ec12d7c25388e2fdd81d26350
         x-checker-data:
           type: anitya
           project-id: 1303
@@ -274,8 +274,8 @@ modules:
       - --with-quantum-depth=16
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.44/GraphicsMagick-1.3.44.tar.xz
-        sha256: 6ac28470d2fbd3d5f60859dd43f3cee2585e955e32896f892b4dc61dda101ea0
+        url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.45/GraphicsMagick-1.3.45.tar.xz
+        sha256: dcea5167414f7c805557de2d7a47a9b3147bcbf617b91f5f0f4afe5e6543026b
         x-checker-data:
           type: anitya
           project-id: 1248
