@@ -49,8 +49,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.28.tar.gz
-        sha256: f1003466ad074e9b0c8d421a204121100b0751c96fc6fcf3d1456bd12f8a00a1
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.29.tar.gz
+        sha256: 38240eee1b29e2bde47ebb5d61160207dc68668a54cac62c076bb5032013b1eb
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -157,8 +157,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostscript-10.03.1.tar.xz
-        sha256: 157212edc96b8ccc409475dce2e49833fb4427f150c455258ded9632c106abee
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostscript-10.04.0.tar.xz
+        sha256: 527eef0b6cd04ecf1c8d7a11796c69a52d34ffe36afca86a400729a2fc01c887
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
@@ -215,8 +215,8 @@ modules:
       - -Wno-dev # suppress warning for project developers
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5_1.14.4.3.tar.gz
-        sha256: 690c1db7ba0fed4ffac61709236675ffd99d95d191e8920ee79c58d7e7ea3361
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5_1.14.5.tar.gz
+        sha256: c83996dc79080a34e7b5244a1d5ea076abfd642ec12d7c25388e2fdd81d26350
         x-checker-data:
           type: anitya
           project-id: 1303
@@ -274,8 +274,8 @@ modules:
       - --with-quantum-depth=16
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.44/GraphicsMagick-1.3.44.tar.xz
-        sha256: 6ac28470d2fbd3d5f60859dd43f3cee2585e955e32896f892b4dc61dda101ea0
+        url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.45/GraphicsMagick-1.3.45.tar.xz
+        sha256: dcea5167414f7c805557de2d7a47a9b3147bcbf617b91f5f0f4afe5e6543026b
         x-checker-data:
           type: anitya
           project-id: 1248
@@ -339,8 +339,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/LLNL/sundials/releases/download/v7.1.1/sundials-7.1.1.tar.gz
-        sha256: ea7d6edfb52448ddfdc1ec48f89a721fe6c0a259c10f8ef56f60fcded87a94bb
+        url: https://github.com/LLNL/sundials/releases/download/v7.2.1/sundials-7.2.1.tar.gz
+        sha256: 3781e3f7cdf372ca12f7fbe64f561a8b9a507b8a8b2c4d6ce28d8e4df4befbea
         x-checker-data:
           type: anitya
           project-id: 4910
@@ -367,8 +367,8 @@ modules:
       - PYTHON=/usr/bin/python3
     sources:
       - type: archive
-        url: https://ftpmirror.gnu.org/units/units-2.23.tar.gz
-        sha256: d957b451245925c9e614c4513397449630eaf92bd62b8495ba09bbe351a17370
+        url: https://ftpmirror.gnu.org/units/units-2.24.tar.gz
+        sha256: 1e502c4edfacf20b29284716c72e5ddb51a495a2365d7b03e7960494c4a0c902
         x-checker-data:
           type: anitya
           project-id: 5048
@@ -428,8 +428,8 @@ modules:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/octave/octave-9.2.0.tar.xz
-        sha256: 21417afb579105b035cac0bea09201522e384893ae90a781b8727efa32765807
+        url: https://ftp.gnu.org/gnu/octave/octave-9.3.0.tar.xz
+        sha256: 712468513db7e13b76f28c4b82cdba7d6f3f634c836ddb27a7a8fe9d708145f3
         x-checker-data:
           type: anitya
           project-id: 2528
