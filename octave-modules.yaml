@@ -49,8 +49,8 @@ modules:
       - PREFIX=/app
     sources:
       - type: archive
-        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.28.tar.gz
-        sha256: f1003466ad074e9b0c8d421a204121100b0751c96fc6fcf3d1456bd12f8a00a1
+        url: https://github.com/xianyi/OpenBLAS/archive/v0.3.29.tar.gz
+        sha256: 38240eee1b29e2bde47ebb5d61160207dc68668a54cac62c076bb5032013b1eb
         x-checker-data:
           type: anitya
           project-id: 2540
@@ -140,8 +140,8 @@ modules:
   - name: gnuplot
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/6.0.1/gnuplot-6.0.1.tar.gz
-        sha256: e85a660c1a2a1808ff24f7e69981ffcbac66a45c9dcf711b65610b26ea71379a
+        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/6.0.2/gnuplot-6.0.2.tar.gz
+        sha256: f68a3b0bbb7bbbb437649674106d94522c00bf2f285cce0c19c3180b1ee7e738
         x-checker-data:
           type: anitya
           project-id: 1216
@@ -215,8 +215,8 @@ modules:
       - -Wno-dev # suppress warning for project developers
     sources:
       - type: archive
-        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5_1.14.4.3.tar.gz
-        sha256: 690c1db7ba0fed4ffac61709236675ffd99d95d191e8920ee79c58d7e7ea3361
+        url: https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5_1.14.6.tar.gz
+        sha256: 09ee1c671a87401a5201c06106650f62badeea5a3b3941e9b1e2e1e08317357f
         x-checker-data:
           type: anitya
           project-id: 1303
@@ -274,8 +274,8 @@ modules:
       - --with-quantum-depth=16
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.44/GraphicsMagick-1.3.44.tar.xz
-        sha256: 6ac28470d2fbd3d5f60859dd43f3cee2585e955e32896f892b4dc61dda101ea0
+        url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.45/GraphicsMagick-1.3.45.tar.xz
+        sha256: dcea5167414f7c805557de2d7a47a9b3147bcbf617b91f5f0f4afe5e6543026b
         x-checker-data:
           type: anitya
           project-id: 1248
@@ -339,8 +339,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://github.com/LLNL/sundials/releases/download/v7.1.1/sundials-7.1.1.tar.gz
-        sha256: ea7d6edfb52448ddfdc1ec48f89a721fe6c0a259c10f8ef56f60fcded87a94bb
+        url: https://github.com/LLNL/sundials/releases/download/v7.3.0/sundials-7.3.0.tar.gz
+        sha256: fd970a9023f8ea37b81c5065c067bf1726f656b39f5907b48169a6f98d306ba7
         x-checker-data:
           type: anitya
           project-id: 4910
@@ -367,8 +367,8 @@ modules:
       - PYTHON=/usr/bin/python3
     sources:
       - type: archive
-        url: https://ftpmirror.gnu.org/units/units-2.23.tar.gz
-        sha256: d957b451245925c9e614c4513397449630eaf92bd62b8495ba09bbe351a17370
+        url: https://ftpmirror.gnu.org/units/units-2.24.tar.gz
+        sha256: 1e502c4edfacf20b29284716c72e5ddb51a495a2365d7b03e7960494c4a0c902
         x-checker-data:
           type: anitya
           project-id: 5048
@@ -428,8 +428,8 @@ modules:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/octave/octave-9.2.0.tar.xz
-        sha256: 21417afb579105b035cac0bea09201522e384893ae90a781b8727efa32765807
+        url: https://ftp.gnu.org/gnu/octave/octave-10.1.0.tar.xz
+        sha256: 051d092fe7abbed4ed9b74c8c40f3dfb1b9aa9eede770ac6c7e9c8c9e895e0c9
         x-checker-data:
           type: anitya
           project-id: 2528
