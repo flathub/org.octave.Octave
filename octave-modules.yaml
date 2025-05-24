@@ -423,6 +423,8 @@ modules:
           type: anitya
           project-id: 2528
           url-template: https://ftp.gnu.org/gnu/octave/octave-$version.tar.xz
+      - type: patch
+        path: patches/octave-fix-screenshot-link.patch
       - type: shell
       # Tests can be added to oct functions in the C++ sources just as easily, see find.cc for example.
       # The syntax is exactly the same, but done within C comment blocks.
