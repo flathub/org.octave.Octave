@@ -1,0 +1,25 @@
+From 3b5fe52ba2d4f81f066e3e8f346d75bd0f8fdace Mon Sep 17 00:00:00 2001
+From: kasraghu <raghu@kasara.net>
+Date: Sat, 24 May 2025 13:52:43 +0200
+Subject: [PATCH] fix screenshot link
+
+---
+ etc/icons/org.octave.Octave.metainfo.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/etc/icons/org.octave.Octave.metainfo.xml b/etc/icons/org.octave.Octave.metainfo.xml
+index 2c72fe1..a36de70 100644
+--- a/etc/icons/org.octave.Octave.metainfo.xml
++++ b/etc/icons/org.octave.Octave.metainfo.xml
+@@ -173,7 +173,7 @@ along with Octave; see the file COPYING.  If not, see
+     -->
+     <screenshot type="default">
+       <caption>Graphical user interface</caption>
+-      <image>https://www.gnu.org/software/octave/img/screenshot.png</image>
++      <image>https://octave.org/img/screenshot.png</image>
+     </screenshot>
+   </screenshots>
+ 
+-- 
+2.49.0
+
