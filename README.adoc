@@ -1,0 +1,20 @@
+= Octave packaged for Flatpak
+
+== How to test
+
+Reference: https://flathub.org/apps/org.flatpak.Builder
+
+=== Validate manifest
+`flatpak run --command=flatpak-builder-lint org.flatpak.Builder manifest org.octave.Octave.yaml`
+
+==== Build
+`flatpak run org.flatpak.Builder --force-clean --sandbox --user --install --install-deps-from=flathub --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=repo builddir org.octave.Octave.yaml`
+
+==== Validate repo
+. `ostree commit --repo=repo --canonical-permissions --branch=screenshots/x86_64 builddir/files/share/app-info/media`
+. `flatpak run --command=flatpak-builder-lint org.flatpak.Builder repo repo`
+
+==== Run
+
+- CLI: `flatpak run org.octave.Octave`
+- GUI: `flatpak run org.octave.Octave --gui`
