@@ -341,13 +341,9 @@ modules:
     config-opts:
       - --disable-nls
     sources:
-      - type: git
-        url: https://git.savannah.gnu.org/git/texinfo
-        commit: f244dc37b295ec0867524c1725b3a96a04ca6ba1
-        tag: texinfo-7.2
-        x-checker-data:
-          type: git
-          tag-pattern: "^texinfo-([\\d.]+)$"
+      - type: archive
+        url: https://ftpmirror.gnu.org/texinfo/texinfo-7.2.tar.xz
+        sha256: 0329d7788fbef113fa82cb80889ca197a344ce0df7646fe000974c5d714363a6
 
   - name: units # dependency of the miscellaneous package
     config-opts:
