@@ -97,12 +97,8 @@ modules:
       #   type: anitya
       #   project-id: 10082
       #   url-template: https://www.riverbankcomputing.com/static/Downloads/QScintilla/$version/QScintilla_src-$version.tar.gz
-      - type: shell
-        commands:
-          - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -e 's|\(header.path\) =
-            .*|\1 = /app/include|' -e 's|\(trans.path\) = .*|\1 = /app/share/qt5/translations|'
-            -e 's|\(qsci.path\) = .*|\1 = /app/share/qt5|' -e 's|\(features.path\)
-            = .*|\1 = /app/lib/qt5/mkspecs/features|' -i src/qscintilla.pro
+      - type: patch
+        path: patches/qscintilla-paths.patch
 
   - name: rtmidi # dependency of the audio package
     buildsystem: cmake-ninja
@@ -422,14 +418,14 @@ modules:
       - type: patch
         path: patches/octave-fix-screenshot-link.patch
       - type: shell
-      # Tests can be added to oct functions in the C++ sources just as easily, see find.cc for example.
-      # The syntax is exactly the same, but done within C comment blocks.
-      # https://wiki.octave.org/Tests#Writing_tests
-      # Removing comments from data.cc, since some tests are broken
-      #   libinterp/corefcn/data.cc-tst .................................. pass 1234/1248 [ 3.514s / 10.574s]
-      #                                                            FAIL    8
-      #                                             (reported bug) XFAIL   6
-      # See GitHub issues #114 and #264
+        # Tests can be added to oct functions in the C++ sources just as easily, see find.cc for example.
+        # The syntax is exactly the same, but done within C comment blocks.
+        # https://wiki.octave.org/Tests#Writing_tests
+        # Removing comments from data.cc, since some tests are broken
+        #   libinterp/corefcn/data.cc-tst .................................. pass 1234/1248 [ 3.514s / 10.574s]
+        #                                                            FAIL    8
+        #                                             (reported bug) XFAIL   6
+        # See GitHub issues #114 and #264
         commands:
           - sed -i '/^%!/d' libinterp/corefcn/data.cc
           - sed -i '/^%!/d' scripts/sparse/eigs.m
