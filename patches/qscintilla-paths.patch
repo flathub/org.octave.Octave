@@ -1,0 +1,32 @@
+diff --git a/src/qscintilla.pro b/src/qscintilla.pro
+index c6f143a..fdf17f3 100644
+--- a/src/qscintilla.pro
++++ b/src/qscintilla.pro
+@@ -70,22 +70,22 @@ unix:!macx {
+ # Scintilla namespace rather than pollute the global namespace.
+ #DEFINES += SCI_NAMESPACE
+ 
+-target.path = $$[QT_INSTALL_LIBS]
++target.path = /app/lib
+ INSTALLS += target
+ 
+-header.path = $$[QT_INSTALL_HEADERS]
++header.path = /app/include
+ header.files = Qsci
+ INSTALLS += header
+ 
+-trans.path = $$[QT_INSTALL_TRANSLATIONS]
++trans.path = /app/share/qt5/translations
+ trans.files = qscintilla_*.qm
+ INSTALLS += trans
+ 
+-qsci.path = $$[QT_INSTALL_DATA]
++qsci.path = /app/share/qt5
+ qsci.files = ../qsci
+ INSTALLS += qsci
+ 
+-features.path = $$[QT_HOST_DATA]/mkspecs/features
++features.path = /app/lib/qt5/mkspecs/features
+ CONFIG(staticlib) {
+     features.files = $$PWD/features_staticlib/qscintilla2.prf
+ } else {

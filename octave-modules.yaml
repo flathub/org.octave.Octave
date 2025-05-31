@@ -97,12 +97,8 @@ modules:
       #   type: anitya
       #   project-id: 10082
       #   url-template: https://www.riverbankcomputing.com/static/Downloads/QScintilla/$version/QScintilla_src-$version.tar.gz
-      - type: shell
-        commands:
-          - sed -e 's|\(target.path\) = .*|\1 = /app/lib|' -e 's|\(header.path\) =
-            .*|\1 = /app/include|' -e 's|\(trans.path\) = .*|\1 = /app/share/qt5/translations|'
-            -e 's|\(qsci.path\) = .*|\1 = /app/share/qt5|' -e 's|\(features.path\)
-            = .*|\1 = /app/lib/qt5/mkspecs/features|' -i src/qscintilla.pro
+      - type: patch
+        path: patches/qscintilla-paths.patch
 
   - name: rtmidi # dependency of the audio package
     buildsystem: cmake-ninja
