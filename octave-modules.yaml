@@ -319,8 +319,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/LLNL/sundials
-        commit: e941546af1a5b5e492dcac0a1872540e9961c556
-        tag: v7.3.0
+        commit: c3ff4663573953facb33eb026dd5d80444ecedc8
+        tag: v7.4.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
