@@ -22,8 +22,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ab/ac/8f96ba9b4cfe3e4ea201f23f4f97165862395e9331a424ed325ae37024a8/setuptools_scm-8.3.1-py3-none-any.whl",
-                    "sha256": "332ca0d43791b818b841213e76b1971b7711a960761c5bea5fc5cdb5196fbce3",
+                    "url": "https://files.pythonhosted.org/packages/0c/c2/d5c5722178eb4f8d449d96dd7d6ea894fd0cb3313a24efb8bfef65fcc411/setuptools_scm-9.0.0-py3-none-any.whl",
+                    "sha256": "6768003ef91d3343b3f7194f911c22bcbd82ee7844e8907c5e4b35158f128b2e",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "setuptools_scm",

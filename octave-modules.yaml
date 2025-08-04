@@ -126,8 +126,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/fltk/fltk
-        commit: aaabff439306215b3195dff5f2152fe6eadaa323
-        tag: release-1.4.3
+        commit: 9c70ea95a176933ffd575022d145c284d1fc9ef7
+        tag: release-1.4.4
         x-checker-data:
           type: git
           tag-pattern: ^release-([\d.]+)$
@@ -319,8 +319,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/LLNL/sundials
-        commit: e941546af1a5b5e492dcac0a1872540e9961c556
-        tag: v7.3.0
+        commit: 8e17876d3b4d682b4098684b07a85b005a122f81
+        tag: v7.4.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
