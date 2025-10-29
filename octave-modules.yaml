@@ -10,7 +10,7 @@ modules:
       - -DSUITESPARSE_USE_64BIT_BLAS=ON
       - -DSUITESPARSE_DEMOS=OFF
       - -DBUILD_TESTING=OFF
-      - -DSUITESPARSE_ENABLE_PROJECTS=amd;colamd;spex;btf;camd;ccolamd;cholmod;cxsparse;klu;umfpack;paru;spqr
+      - -DSUITESPARSE_ENABLE_PROJECTS=amd;colamd;camd;ccolamd;cholmod;cxsparse;klu;umfpack;spqr
     builddir: true
     cleanup:
       - /bin
