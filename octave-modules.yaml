@@ -7,7 +7,6 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_INSTALL_PREFIX=/app
-      - -DSUITESPARSE_USE_64BIT_BLAS=ON
       - -DSUITESPARSE_DEMOS=OFF
       - -DBUILD_TESTING=OFF
       - -DSUITESPARSE_ENABLE_PROJECTS=amd;colamd;camd;ccolamd;cholmod;cxsparse;klu;umfpack;spqr
