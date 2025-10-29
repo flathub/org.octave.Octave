@@ -45,7 +45,7 @@ modules:
             x-checker-data:
               type: anitya
               project-id: 2540
-              url-template: "https://github.com/OpenMathLib/OpenBLAS/archive/v$version.tar.gz"
+              tag-template: "v$version"
       - name: mpfr
         sources:
           - type: archive
