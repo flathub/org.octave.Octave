@@ -40,8 +40,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/OpenMathLib/OpenBLAS
-            commit: 993fad6aebbce34a97d3f8c34d6d79d35b64cc48
-            tag: v0.3.30
+            commit: 8795fc7985635de1ecf674b87e2008a15097ffab
+            tag: v0.3.29
             x-checker-data:
               type: anitya
               project-id: 2540
