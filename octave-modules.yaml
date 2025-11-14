@@ -35,17 +35,24 @@ modules:
           - -DNO_LAPACKE=1
           - -DCMAKE_INSTALL_PREFIX=/app
         cleanup:
+          - /bin
           - /include
+          - /lib/cmake
+          - /lib/debug
+          - /lib/*.a
+          - /lib/*.la
           - /lib/pkgconfig
+          - /share/man
         sources:
-          - type: git
-            url: https://github.com/OpenMathLib/OpenBLAS
-            commit: 8795fc7985635de1ecf674b87e2008a15097ffab
-            tag: v0.3.29
+          - type: archive
+            url: https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.29/OpenBLAS-0.3.29.tar.gz
+            sha512: 046316b4297460bffca09c890ecad17ea39d8b3db92ff445d03b547dd551663d37e40f38bce8ae11e2994374ff01e622b408da27aa8e40f4140185ee8f001a60
             x-checker-data:
               type: anitya
               project-id: 2540
-              tag-template: "v$version"
+              url-template: https://github.com/OpenMathLib/OpenBLAS/archive/v$version.tar.gz
+
+
       - name: mpfr
         sources:
           - type: archive
