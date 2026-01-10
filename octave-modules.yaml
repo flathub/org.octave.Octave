@@ -175,10 +175,8 @@ modules:
           tag-pattern: ^v([\d.]+)$
 
   - name: epstool
-    skip-arches:
-      - i386
-      - arm
-      - aarch64
+    only-arches:
+      - x86_64
     no-autogen: true
     no-parallel-make: true
     make-install-args:
