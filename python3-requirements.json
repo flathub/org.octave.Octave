@@ -41,8 +41,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/16/5d/7f950d12fc2775234ca8e08617273659a9fac6f0030d28b123332303201c/mpmath-1.4.0-py3-none-any.whl",
-                    "sha256": "1910f299a1346afcc47d17586c6b3b2a39fd5e0c0829fcecd87c57acd5007c95",
+                    "url": "https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl",
+                    "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "mpmath",
