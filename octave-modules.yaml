@@ -18,12 +18,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/DrTimothyAldenDavis/SuiteSparse
-        commit: b35a1f9318f4bd42085f4b5ea56f29c89d342d4d
-        tag: v7.11.0
+        commit: 42151688813c45846a597edcb601435a0e38f3dd
+        tag: v7.12.2
         x-checker-data:
           type: anitya
           project-id: 4908
-          tag-template: "v$version"
+          tag-template: v$version
     modules:
       - name: openblas
         buildsystem: cmake-ninja
@@ -40,12 +40,12 @@ modules:
         sources:
           - type: git
             url: https://github.com/OpenMathLib/OpenBLAS
-            commit: 8795fc7985635de1ecf674b87e2008a15097ffab
-            tag: v0.3.29
+            commit: 76f1be470c9b9f80dc6e27407e13b975df436489
+            tag: v0.3.31
             x-checker-data:
               type: anitya
               project-id: 2540
-              tag-template: "v$version"
+              tag-template: v$version
       - name: mpfr
         sources:
           - type: archive
@@ -122,8 +122,8 @@ modules:
   - name: gnuplot
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/6.0.3/gnuplot-6.0.3.tar.gz
-        sha256: ec52e3af8c4083d4538152b3f13db47f6d29929a3f6ecec5365c834e77f251ab
+        url: https://sourceforge.net/projects/gnuplot/files/gnuplot/6.0.4/gnuplot-6.0.4.tar.gz
+        sha256: 458d94769625e73d5f6232500f49cbadcb2b183380d43d2266a0f9701aeb9c5b
         x-checker-data:
           type: anitya
           project-id: 1216
@@ -139,8 +139,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostscript-10.05.1.tar.xz
-        sha256: 22f2bdca15c28830c9715cddc5c296ea66898bfdab0b604a4e0bcfeb03af6cad
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.xz
+        sha256: 64352648c2c081c8a9fb1a12dc1965e01ead7c57f58b72d1b54f6ef1cef3c561
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
@@ -196,8 +196,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/HDFGroup/hdf5
-        commit: 7bf340440909d468dbb3cf41f0ea0d87f5050cea
-        tag: hdf5_1.14.6
+        commit: a6ff8aed236ee1e1deff6415e88b16c42b22f17c
+        tag: hdf5_2.0.0
         x-checker-data:
           type: git
           tag-pattern: ^hdf5_([\d.]+)$
@@ -253,8 +253,8 @@ modules:
       - --with-quantum-depth=16
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.45/GraphicsMagick-1.3.45.tar.xz
-        sha256: dcea5167414f7c805557de2d7a47a9b3147bcbf617b91f5f0f4afe5e6543026b
+        url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.46/GraphicsMagick-1.3.46.tar.xz
+        sha256: c7c706a505e9c6c3764156bb94a0c9644d79131785df15a89c9f8721d1abd061
         x-checker-data:
           type: anitya
           project-id: 1248
@@ -304,8 +304,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/LLNL/sundials
-        commit: 8e17876d3b4d682b4098684b07a85b005a122f81
-        tag: v7.4.0
+        commit: ddf5daba8397ea89287a0fec6f1b3bc3fe6c548b
+        tag: v7.6.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -331,8 +331,8 @@ modules:
       - PYTHON=/usr/bin/python3
     sources:
       - type: archive
-        url: https://ftpmirror.gnu.org/units/units-2.24.tar.gz
-        sha256: 1e502c4edfacf20b29284716c72e5ddb51a495a2365d7b03e7960494c4a0c902
+        url: https://ftpmirror.gnu.org/units/units-2.25.tar.gz
+        sha256: 36edf43ac00b4d6304baea91387e65ab05118bf65c921f73d3b08828e5a6ec0b
         x-checker-data:
           type: anitya
           project-id: 5048
@@ -346,8 +346,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/jedisct1/libsodium
-        commit: 9511c982fb1d046470a8b42aa36556cdb7da15de
-        tag: 1.0.20-RELEASE
+        commit: d24faf56214469b354b01c8ba36257e04737101e
+        tag: 1.0.21-RELEASE
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)-RELEASE$
@@ -392,10 +392,10 @@ modules:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/octave/octave-10.3.0.tar.xz
+        url: https://ftp.gnu.org/gnu/octave/octave-11.1.0.tar.xz
         mirror-urls:
           - https://ftpmirror.gnu.org/gnu/octave/octave-10.3.0.tar.xz
-        sha256: 92ae9bf2edcd288bd2df9fd0b4f7aa719b49d3940fceb154c5fdcd846f254da1
+        sha256: 8b3e2d0ec1809e8a2bed11de779014b6eb6a469c0caad1b339d29a6126e3cb6a
         x-checker-data:
           is-main-source: true
           type: anitya

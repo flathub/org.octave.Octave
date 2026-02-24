@@ -12,8 +12,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl",
-                    "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
+                    "url": "https://files.pythonhosted.org/packages/b7/b9/c538f279a4e237a006a2c98387d081e9eb060d203d8ed34467cc0f0b9b53/packaging-26.0-py3-none-any.whl",
+                    "sha256": "b36f1fef9334a5588b4166f8bcd26a14e521f2b55e6b9de3aaa80d3ff7a37529",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "packaging",
@@ -22,8 +22,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ef/37/eb7abd476005010d37511ab527a08345469bf7cb305ceb6e7e3a9914d417/setuptools_scm-9.0.3-py3-none-any.whl",
-                    "sha256": "f680bcb0f45a474f10a253c6a1f9db206e1d77ef28d8f759a7dee984b19fb363",
+                    "url": "https://files.pythonhosted.org/packages/3d/ea/ac2bf868899d0d2e82ef72d350d97a846110c709bacf2d968431576ca915/setuptools_scm-9.2.2-py3-none-any.whl",
+                    "sha256": "30e8f84d2ab1ba7cb0e653429b179395d0c33775d54807fc5f1dd6671801aef7",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "setuptools_scm",
@@ -41,8 +41,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl",
-                    "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+                    "url": "https://files.pythonhosted.org/packages/16/5d/7f950d12fc2775234ca8e08617273659a9fac6f0030d28b123332303201c/mpmath-1.4.0-py3-none-any.whl",
+                    "sha256": "1910f299a1346afcc47d17586c6b3b2a39fd5e0c0829fcecd87c57acd5007c95",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "mpmath",
