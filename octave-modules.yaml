@@ -346,8 +346,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/jedisct1/libsodium
-        commit: d24faf56214469b354b01c8ba36257e04737101e
-        tag: 1.0.21-RELEASE
+        commit: 9511c982fb1d046470a8b42aa36556cdb7da15de
+        tag: 1.0.20-RELEASE
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)-RELEASE$
