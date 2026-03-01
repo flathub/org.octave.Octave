@@ -1,0 +1,34 @@
+diff --git a/etc/icons/org.octave.Octave.metainfo.xml b/etc/icons/org.octave.Octave.metainfo.xml
+index f147f0d0d1..7521dda3a1 100644
+--- a/etc/icons/org.octave.Octave.metainfo.xml
++++ b/etc/icons/org.octave.Octave.metainfo.xml
+@@ -24,11 +24,11 @@ along with Octave; see the file COPYING.  If not, see
+ 
+ -->
+ <component type="desktop-application">
+-  <id>org.octave.Octave.desktop</id>
++  <id>org.octave.Octave</id>
+   <metadata_license>FSFAP</metadata_license>
+   <project_license>GPL-3.0+</project_license>
+   <name>GNU Octave</name>
+-  <summary>Interactive programming environment for numerical computations</summary>
++  <summary>Scientific Programming Language</summary>
+   <summary xml:lang="ca">Entorn de programació interactiva per a càlculs numèrics</summary>
+   <summary xml:lang="de">Interaktive Programmierumgebung für numerische Berechnungen</summary>
+   <summary xml:lang="es">Entorno de programación interactiva para cálculos numéricos</summary>
+@@ -173,9 +173,14 @@ along with Octave; see the file COPYING.  If not, see
+     -->
+     <screenshot type="default">
+       <caption>Graphical user interface</caption>
+-      <image>https://www.gnu.org/software/octave/img/screenshot.png</image>
++      <image>https://octave.org/img/screenshot.png</image>
+     </screenshot>
+   </screenshots>
++  
++  <branding>
++    <color type="primary" scheme_preference="light">#cccccc</color>
++    <color type="primary" scheme_preference="dark">#0e0e0e</color>
++  </branding>
+ 
+   <launchable type="desktop-id">org.octave.Octave.desktop</launchable>
+   <provides>
