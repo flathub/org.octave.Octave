@@ -387,7 +387,7 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/octave/octave-11.1.0.tar.xz
         mirror-urls:
-          - https://ftpmirror.gnu.org/gnu/octave/octave-11.1.0.tar.gz
+          - https://ftpmirror.gnu.org/gnu/octave/octave-11.1.0.tar.xz
         sha256: 8b3e2d0ec1809e8a2bed11de779014b6eb6a469c0caad1b339d29a6126e3cb6a
         x-checker-data:
           is-main-source: true
