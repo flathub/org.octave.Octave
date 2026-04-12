@@ -30,6 +30,8 @@ modules:
         config-opts:
           - -DBUILD_SHARED_LIBS=ON
           - -DDYNAMIC_ARCH=ON
+          - -DDYNAMIC_OLDER=ON
+          - -DTARGET=GENERIC
           - -DUSE_OPENMP=ON
           - -DBUILD_WITHOUT_CBLAS=ON
           - -DNO_LAPACKE=1
