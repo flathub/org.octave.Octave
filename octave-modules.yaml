@@ -164,11 +164,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/qhull/qhull
-        commit: 613debeaea72ee66626dace9ba1a2eff11b5d37d
-        tag: v8.0.2
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
+        commit: d1c2fc0caa5f644f3a0f220290d4a868c68ed4f6
 
   - name: epstool
     only-arches:
