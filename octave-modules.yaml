@@ -148,6 +148,7 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DOpenGL_GL_PREFERENCE=GLVND
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: http://geuz.org/gl2ps/src/gl2ps-1.4.2.tgz
