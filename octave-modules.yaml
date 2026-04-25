@@ -66,7 +66,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Tencent/rapidjson
-        commit: 3b2441b87f99ab65f37b141a7b548ebadb607b96
+        commit: 24b5e7a8b27f42fa16b96fc70aade9106cf7102f
 
   - name: qscintilla
     buildsystem: qmake
@@ -148,6 +148,7 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DOpenGL_GL_PREFERENCE=GLVND
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: http://geuz.org/gl2ps/src/gl2ps-1.4.2.tgz
@@ -163,11 +164,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/qhull/qhull
-        commit: 613debeaea72ee66626dace9ba1a2eff11b5d37d
-        tag: v8.0.2
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
+        commit: d1c2fc0caa5f644f3a0f220290d4a868c68ed4f6
 
   - name: epstool
     only-arches:
