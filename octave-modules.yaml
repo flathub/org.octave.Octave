@@ -216,6 +216,8 @@ modules:
             -O3 -funroll-loops -L/app/lib|' -i Makeconf
 
   - name: glpk
+    build-options:
+      cflags: -ansi
     sources:
       - type: archive
         url: https://ftpmirror.gnu.org/glpk/glpk-5.0.tar.gz
