@@ -235,12 +235,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/PortAudio/portaudio
-        tag: v19.7.0
+        commit: 375345a752822e795bf6daeaa8e9ba981389c0ca
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
 
-        commit: 147dd722548358763a8b649b3e4b41dfffbcfbb6
   - name: graphicsmagick
     config-opts:
       - --enable-shared
