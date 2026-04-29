@@ -277,6 +277,7 @@ modules:
       - -Wno-dev # suppress warning for project developers
       - -DENABLE_THREADS=ON
       - -DENABLE_FLOAT=ON
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: http://www.fftw.org/fftw-3.3.11.tar.gz
