@@ -351,6 +351,7 @@ modules:
     builddir: true
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       - -DWITH_DOC=OFF
       - -Wno-dev # disable warnings for project developers
     sources:
