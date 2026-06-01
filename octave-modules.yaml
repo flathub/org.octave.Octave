@@ -42,8 +42,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/OpenMathLib/OpenBLAS
-            commit: 62bcfb0dc9f1cfa685fc04135c50e2780c303137
-            tag: v0.3.33
+            commit: 76f1be470c9b9f80dc6e27407e13b975df436489
+            tag: v0.3.31
             x-checker-data:
               type: anitya
               project-id: 2540
@@ -108,8 +108,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/fltk/fltk
-        commit: a9b1113516ffd15fc7602a6d425a317df30f4720
-        tag: release-1.4.5
+        commit: 9c70ea95a176933ffd575022d145c284d1fc9ef7
+        tag: release-1.4.4
         x-checker-data:
           type: git
           tag-pattern: ^release-([\d.]+)$
@@ -134,8 +134,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10071/ghostscript-10.07.1.tar.xz
-        sha256: 1cdb766de8db8f1e589c817f09c5855ea5f65dfc8540e465a69ac14c18416025
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.xz
+        sha256: 64352648c2c081c8a9fb1a12dc1965e01ead7c57f58b72d1b54f6ef1cef3c561
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
@@ -188,8 +188,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/HDFGroup/hdf5
-        commit: 24176582e5e4093f02399d726d04f25db1772fe3
-        tag: hdf5_2.1.0
+        commit: a6ff8aed236ee1e1deff6415e88b16c42b22f17c
+        tag: hdf5_2.0.0
         x-checker-data:
           type: git
           tag-pattern: ^hdf5_([\d.]+)$
@@ -232,24 +232,22 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -Wno-dev # suppress warning for project developers
-      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/PortAudio/portaudio
-        commit: 147dd722548358763a8b649b3e4b41dfffbcfbb6
+        commit: 375345a752822e795bf6daeaa8e9ba981389c0ca
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
 
-        tag: v19.7.0
   - name: graphicsmagick
     config-opts:
       - --enable-shared
       - --with-quantum-depth=16
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.47/GraphicsMagick-1.3.47.tar.xz
-        sha256: 95fb682dab0206a9db168d065963f4ffdf5a60b0b2a375aca1f4492fb18d0627
+        url: https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.45/GraphicsMagick-1.3.45.tar.xz
+        sha256: dcea5167414f7c805557de2d7a47a9b3147bcbf617b91f5f0f4afe5e6543026b
         x-checker-data:
           type: anitya
           project-id: 1248
@@ -300,8 +298,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/LLNL/sundials
-        commit: 0a1024b7fb902a5eae3142adf8c13561c6989543
-        tag: v7.7.0
+        commit: ddf5daba8397ea89287a0fec6f1b3bc3fe6c548b
+        tag: v7.6.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -327,8 +325,8 @@ modules:
       - PYTHON=/usr/bin/python3
     sources:
       - type: archive
-        url: https://ftpmirror.gnu.org/units/units-2.27.tar.gz
-        sha256: e1bbdb09672e7c08eee986749e7a1629eb84a6bdf41f5a2a79d6804444abbe10
+        url: https://ftpmirror.gnu.org/units/units-2.25.tar.gz
+        sha256: 36edf43ac00b4d6304baea91387e65ab05118bf65c921f73d3b08828e5a6ec0b
         x-checker-data:
           type: anitya
           project-id: 5048
@@ -342,8 +340,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/jedisct1/libsodium
-        commit: 77e1ce5d6dee871c49ef211222ba18ef0c486bda
-        tag: 1.0.22-RELEASE
+        commit: 9511c982fb1d046470a8b42aa36556cdb7da15de
+        tag: 1.0.20-RELEASE
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)-RELEASE$
@@ -389,13 +387,15 @@ modules:
       - /share/icons/hicolor/1024x1024 # workaround for https://savannah.gnu.org/bugs/?55836
     sources:
       - type: archive
-        url: https://ftpmirror.gnu.org/gnu/octave/octave-11.2.0.tar.xz
-        sha256: 2aced37056d288b027af7f18d73c6e48a4a76809279c6038b4c2f2854dcffd2d
+        url: https://ftp.gnu.org/gnu/octave/octave-11.1.0.tar.xz
+        mirror-urls:
+          - https://ftpmirror.gnu.org/gnu/octave/octave-11.1.0.tar.xz
+        sha256: 8b3e2d0ec1809e8a2bed11de779014b6eb6a469c0caad1b339d29a6126e3cb6a
         x-checker-data:
           is-main-source: true
           type: anitya
           project-id: 2528
-          url-template: https://ftpmirror.gnu.org/gnu/octave/octave-$version.tar.xz  # Because Github is not reliable with ftp.gnu.org
+          url-template: https://ftp.gnu.org/gnu/octave/octave-$version.tar.xz
       - type: patch
         path: patches/octave-metainfo.patch
       - type: shell
