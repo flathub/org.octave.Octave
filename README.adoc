@@ -12,10 +12,16 @@ Reference: https://flathub.org/apps/org.flatpak.Builder
 `flatpak run org.flatpak.Builder --force-clean --sandbox --user --install --install-deps-from=flathub --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=repo builddir org.octave.Octave.yaml`
 
 ==== Validate repo
-. `ostree commit --repo=repo --canonical-permissions --branch=screenshots/x86_64 builddir/files/share/app-info/media`
-. `flatpak run --command=flatpak-builder-lint org.flatpak.Builder repo repo`
+1. `ostree commit --repo=repo --canonical-permissions --branch=screenshots/x86_64 builddir/files/share/app-info/media`
+2. `flatpak run --command=flatpak-builder-lint org.flatpak.Builder repo repo`
 
 ==== Run
 
 - CLI: `flatpak run org.octave.Octave`
 - GUI: `flatpak run org.octave.Octave --gui`
+
+== Creating python dependencies' modules
+
+Reference: https://docs.flatpak.org/en/latest/python.html
+
+1. `python3 -m flatpak_pip_generator --runtime='org.kde.Sdk//6.10' --requirements-file='symbolic-pkg-deps.txt' --checker-data --output symbolic-pkg-deps`

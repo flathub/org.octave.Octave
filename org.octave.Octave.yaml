@@ -62,4 +62,5 @@ build-options:
     PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk/bin
     PYTHON: python3
 modules:
+  - symbolic-pkg-deps.json # dependencies of the symbolic package
   - octave-modules.yaml

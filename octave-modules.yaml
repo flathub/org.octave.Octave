@@ -309,12 +309,6 @@ modules:
     build-commands:
       - /usr/lib/sdk/openjdk/install.sh
 
-  # python3 flatpak-pip-generator --runtime='org.freedesktop.Sdk//24.08' --requirements-file='requirements.txt' --checker-data --output python3-requirements
-  # On 2026-05, I tried the following and it made the same output, whether with org.kde.Sdk or org.freedesktop.Sdk as above
-  # pip install flatpak-pip-generator
-  # python3 -m flatpak_pip_generator --runtime='org.kde.Sdk//6.10' --requirements-file='requirements.txt' --checker-data --output python3-requirements
-  - python3-requirements.json # dependencies of the symbolic package
-
   - name: texinfo
     config-opts:
       - --disable-nls
