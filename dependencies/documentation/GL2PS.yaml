@@ -1,0 +1,14 @@
+name: gl2ps
+buildsystem: cmake-ninja
+config-opts:
+  - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+  - -DOpenGL_GL_PREFERENCE=GLVND
+  - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+sources:
+  - type: archive
+    url: http://geuz.org/gl2ps/src/gl2ps-1.4.2.tgz
+    sha256: 8d1c00c1018f96b4b97655482e57dcb0ce42ae2f1d349cd6d4191e7848d9ffe9
+    x-checker-data:
+      type: anitya
+      project-id: 1173
+      url-template: http://geuz.org/gl2ps/src/gl2ps-$version.tgz

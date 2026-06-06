@@ -1,0 +1,15 @@
+name: units # dependency of the miscellaneous package
+config-opts:
+  - PYTHON=/usr/bin/python3
+sources:
+  - type: archive
+    url: https://ftpmirror.gnu.org/units/units-2.27.tar.gz
+    sha256: e1bbdb09672e7c08eee986749e7a1629eb84a6bdf41f5a2a79d6804444abbe10
+    x-checker-data:
+      type: anitya
+      project-id: 5048
+      url-template: https://ftpmirror.gnu.org/units/units-$version.tar.gz
+  - type: patch
+    path: ../../patches/units-install-info.patch
+post-install:
+  - mv -f /app/com/units/currency.units /app/share/units/currency.units

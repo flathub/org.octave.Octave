@@ -1,0 +1,34 @@
+name: suitesparse
+buildsystem: cmake-ninja
+config-opts:
+  - -DCMAKE_INSTALL_PREFIX=/app
+  - -DSUITESPARSE_DEMOS=OFF
+  - -DBUILD_TESTING=OFF
+  - -DSUITESPARSE_ENABLE_PROJECTS=amd;colamd;camd;ccolamd;cholmod;cxsparse;klu;umfpack;spqr
+builddir: true
+cleanup:
+  - /bin
+  - /include
+  - /lib/pkgconfig
+sources:
+  - type: git
+    url: https://github.com/DrTimothyAldenDavis/SuiteSparse
+    commit: 42151688813c45846a597edcb601435a0e38f3dd
+    tag: v7.12.2
+    x-checker-data:
+      type: anitya
+      project-id: 4908
+      tag-template: v$version
+
+modules:
+  - name: mpfr
+    sources:
+      - type: archive
+        url: https://www.mpfr.org/mpfr-current/mpfr-4.2.2.tar.xz
+        sha256: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+        x-checker-data:
+          type: anitya
+          project-id: 2019
+          url-template: https://www.mpfr.org/mpfr-current/mpfr-$version.tar.xz
+
+

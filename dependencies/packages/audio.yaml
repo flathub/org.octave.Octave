@@ -1,0 +1,10 @@
+name: rtmidi # dependency of the audio package
+buildsystem: cmake-ninja
+sources:
+  - type: git
+    url: https://github.com/thestk/rtmidi
+    commit: 1e5b49925aa60065db52de44c366d446a902547b
+    tag: 6.0.0
+    x-checker-data:
+      type: git
+      tag-pattern: ^([\d.]+)$

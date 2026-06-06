@@ -1,0 +1,18 @@
+name: fltk
+buildsystem: cmake-ninja
+config-opts:
+  - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+  - -DOPTION_BUILD_SHARED_LIBS=ON
+  - -DFLTK_LIBDIR:PATH=lib
+  - -DOpenGL_GL_PREFERENCE=GLVND
+build-options:
+  cflags: -fPIC
+  cxxflags: -fPIC
+sources:
+  - type: git
+    url: https://github.com/fltk/fltk
+    commit: a9b1113516ffd15fc7602a6d425a317df30f4720
+    tag: release-1.4.5
+    x-checker-data:
+      type: git
+      tag-pattern: ^release-([\d.]+)$

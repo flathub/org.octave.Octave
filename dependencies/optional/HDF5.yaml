@@ -1,0 +1,14 @@
+name: hdf5
+buildsystem: cmake-ninja
+builddir: true
+config-opts:
+  - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+  - -Wno-dev # suppress warning for project developers
+sources:
+  - type: git
+    url: https://github.com/HDFGroup/hdf5
+    commit: 24176582e5e4093f02399d726d04f25db1772fe3
+    tag: hdf5_2.1.0
+    x-checker-data:
+      type: git
+      tag-pattern: ^hdf5_([\d.]+)$

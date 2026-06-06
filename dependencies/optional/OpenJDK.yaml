@@ -1,0 +1,4 @@
+name: openjdk
+buildsystem: simple
+build-commands:
+  - /usr/lib/sdk/openjdk/install.sh

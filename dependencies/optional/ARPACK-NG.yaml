@@ -1,0 +1,16 @@
+name: arpack-ng
+buildsystem: cmake-ninja
+config-opts:
+  - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+build-options:
+  env:
+    FFLAGS: -fallow-argument-mismatch
+    FCFLAGS: -fallow-argument-mismatch
+sources:
+  - type: git
+    url: https://github.com/opencollab/arpack-ng
+    commit: 40329031ae8deb7c1e26baf8353fa384fc37c251
+    tag: 3.9.1
+    x-checker-data:
+      type: git
+      tag-pattern: ^([\d.]+)$

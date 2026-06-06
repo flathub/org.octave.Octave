@@ -61,6 +61,11 @@ build-options:
     # https://github.com/flathub/org.freedesktop.Sdk.Extension.openjdk/blob/f5e566f9e2245e34f6c166209c396483a62527ca/org.freedesktop.Sdk.Extension.openjdk.yaml#L186
     PATH: /app/bin:/usr/bin:/usr/lib/sdk/openjdk/bin
     PYTHON: python3
+
 modules:
-  - symbolic-pkg-deps.json # dependencies of the symbolic package
+  - dependencies/packages/audio.yaml
+  - dependencies/packages/miscellaneous.yaml
+  - dependencies/packages/symbolic.json
+  - dependencies/packages/zeromq.yaml
   - octave-modules.yaml
+

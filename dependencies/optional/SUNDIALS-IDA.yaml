@@ -1,0 +1,16 @@
+name: sundials
+buildsystem: cmake-ninja
+config-opts:
+  - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+  - -DENABLE_KLU=ON
+  - -DKLU_INCLUDE_DIR:PATH=/app/include/suitesparse
+  - -DKLU_LIBRARY_DIR:PATH=/app/lib
+builddir: true
+sources:
+  - type: git
+    url: https://github.com/LLNL/sundials
+    commit: 0a1024b7fb902a5eae3142adf8c13561c6989543
+    tag: v7.7.0
+    x-checker-data:
+      type: git
+      tag-pattern: ^v([\d.]+)$

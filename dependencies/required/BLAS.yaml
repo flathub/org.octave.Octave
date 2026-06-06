@@ -1,0 +1,23 @@
+name: openblas
+buildsystem: cmake-ninja
+config-opts:
+  - -DBUILD_SHARED_LIBS=ON
+  - -DDYNAMIC_ARCH=ON
+  - -DDYNAMIC_OLDER=ON
+  - -DTARGET=GENERIC
+  - -DUSE_OPENMP=ON
+  - -DBUILD_WITHOUT_CBLAS=ON
+  - -DNO_LAPACKE=1
+  - -DCMAKE_INSTALL_PREFIX=/app
+cleanup:
+  - /include
+  - /lib/pkgconfig
+sources:
+  - type: git
+    url: https://github.com/OpenMathLib/OpenBLAS
+    commit: 62bcfb0dc9f1cfa685fc04135c50e2780c303137
+    tag: v0.3.33
+    x-checker-data:
+      type: anitya
+      project-id: 2540
+      tag-template: v$version

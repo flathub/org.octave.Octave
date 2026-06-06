@@ -1,0 +1,14 @@
+name: portaudio
+buildsystem: cmake-ninja
+config-opts:
+  - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+  - -Wno-dev # suppress warning for project developers
+  - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+sources:
+  - type: git
+    url: https://github.com/PortAudio/portaudio
+    commit: 147dd722548358763a8b649b3e4b41dfffbcfbb6
+    tag: v19.7.0
+    x-checker-data:
+      type: git
+      tag-pattern: ^v([\d.]+)$
