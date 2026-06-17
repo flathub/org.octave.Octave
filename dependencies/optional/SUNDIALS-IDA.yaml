@@ -1,10 +1,20 @@
+# References:
+# https://github.com/gnu-octave/docker/blob/main/build-octave-11.docker
 name: sundials
 buildsystem: cmake-ninja
 config-opts:
   - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+  - -DEXAMPLES_ENABLE_C=OFF                      \
   - -DENABLE_KLU=ON
   - -DKLU_INCLUDE_DIR:PATH=/app/include/suitesparse
   - -DKLU_LIBRARY_DIR:PATH=/app/lib
+  - -DBUILD_ARKODE=OFF                           
+  - -DBUILD_CVODE=OFF                            
+  - -DBUILD_CVODES=OFF                           
+  - -DBUILD_IDA=ON                               
+  - -DBUILD_IDAS=OFF                             
+  - -DBUILD_KINSOL=OFF                           
+  - -DBUILD_CPODES=OFF 
 builddir: true
 sources:
   - type: git

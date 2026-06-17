@@ -1,11 +1,14 @@
+# References:
+# https://github.com/gnu-octave/docker/blob/main/build-octave-11.docker
 name: octave-modules
 buildsystem: simple
 build-commands: []
 modules:
   - name: octave
     config-opts:
-      - --disable-silent-rules
-      - --with-blas=openblas
+      - --prefix=/app
+      - --enable-64
+      - --with-blas='-lopenblas'
       - --with-java-homedir=/app/jre
       - --with-java-includedir=/usr/lib/sdk/openjdk11/jvm/openjdk-11/include
     # workaround for https://savannah.gnu.org/bugs/?55547
@@ -18,6 +21,8 @@ modules:
       cxxflags: -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong
         -grecord-gcc-switches
       cxxflags-override: true
+      env:
+        - F77_INTEGER_8_FLAG: -fdefault-integer-8
     build-commands:
       # failure on aarch64
       # profiler/profile.m .............................................free(): invalid pointer

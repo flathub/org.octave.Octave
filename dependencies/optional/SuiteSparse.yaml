@@ -1,10 +1,14 @@
+# References:
+# https://github.com/gnu-octave/docker/blob/main/build-octave-11.docker
 name: suitesparse
 buildsystem: cmake-ninja
 config-opts:
-  - -DCMAKE_INSTALL_PREFIX=/app
   - -DSUITESPARSE_DEMOS=OFF
   - -DBUILD_TESTING=OFF
-  - -DSUITESPARSE_ENABLE_PROJECTS=amd;colamd;camd;ccolamd;cholmod;cxsparse;klu;umfpack;spqr
+  - -DSUITESPARSE_ENABLE_PROJECTS=suitesparse_config;mongoose;amd;btf;camd;ccolamd;colamd;cholmod;cxsparse;ldl;klu;umfpack;paru;rbio;spqr;spex
+  - -DSUITESPARSE_USE_CUDA=OFF
+  - -DSUITESPARSE_USE_64BIT_BLAS=ON
+  - -DSUITESPARSE_USE_STRICT=ON
 builddir: true
 cleanup:
   - /bin

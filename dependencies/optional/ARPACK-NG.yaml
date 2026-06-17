@@ -1,11 +1,18 @@
+# References:
+# https://github.com/gnu-octave/docker/blob/main/build-octave-11.docker
 name: arpack-ng
-buildsystem: cmake-ninja
+buildsystem: autotools
+builddir: true
 config-opts:
-  - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+  - --prefix=/app
+  - --libdir=/app/lib
+  - --with-blas='-lopenblas'
+  - --with-lpack=''
 build-options:
   env:
-    FFLAGS: -fallow-argument-mismatch
-    FCFLAGS: -fallow-argument-mismatch
+    - FFLAGS: -fallow-argument-mismatch
+    - FCFLAGS: -fallow-argument-mismatch
+    - INTERFACE64: 1
 sources:
   - type: git
     url: https://github.com/opencollab/arpack-ng

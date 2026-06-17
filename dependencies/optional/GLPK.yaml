@@ -1,6 +1,12 @@
+# References:
+# https://github.com/gnu-octave/docker/blob/main/build-octave-11.docker
 name: glpk
 build-options:
   cflags: -ansi
+config-opts:
+  - --with-gmp
+  - --prefix=/app
+  - --libdir=/app/lib
 sources:
   - type: archive
     url: https://ftpmirror.gnu.org/glpk/glpk-5.0.tar.gz

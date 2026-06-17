@@ -1,17 +1,27 @@
+# References:
+# https://github.com/gnu-octave/docker/blob/main/build-octave-11.docker
+# https://www.openmathlib.org/OpenBLAS/docs/build_system/
+# https://www.openmathlib.org/OpenBLAS/docs/distributing/
 name: openblas
-buildsystem: cmake-ninja
-config-opts:
-  - -DBUILD_SHARED_LIBS=ON
-  - -DDYNAMIC_ARCH=ON
-  - -DDYNAMIC_OLDER=ON
-  - -DTARGET=GENERIC
-  - -DUSE_OPENMP=ON
-  - -DBUILD_WITHOUT_CBLAS=ON
-  - -DNO_LAPACKE=1
-  - -DCMAKE_INSTALL_PREFIX=/app
-cleanup:
-  - /include
-  - /lib/pkgconfig
+buildsystem: autotools
+no-autogen: true
+builddir: true
+build-options:
+  env:
+    - BUILD_SHARED_LIBS: 1
+    - BINARY: 64
+    - INTERFACE64: 1
+    - DYNAMIC_ARCH: 1
+    - DYNAMIC_OLDER: 1
+    - TARGET: GENERIC
+    - CONSISTENT_FPCSR: 1
+    - USE_THREAD: 1
+    - USE_OPENMP: 1
+    - NUM_THREADS: 256
+make-install-args:
+  - PREFIX=/app
+post-install:
+  - "ln -s /app/lib/libopenblas.so /app/lib/libopenblas64.so"
 sources:
   - type: git
     url: https://github.com/OpenMathLib/OpenBLAS
